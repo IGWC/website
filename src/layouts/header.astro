@@ -7,7 +7,7 @@ const stickers = Object.values(import.meta.glob('/src/pages/pieces/sticker*.md',
 const { pathname } = Astro.url;
 const posts = Object.values(import.meta.glob('/src/pages/*.md', { eager: true }));
 posts.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
-
+console.log(pathname.slice(1))
 ---
 
 <header>
@@ -15,7 +15,7 @@ posts.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
   <p id="subtitle"><span>Indiana Graduate Workers Coalition</span> <span>United Electrical Workers</span></p>
   <nav>
   <ul>
-{posts.map((post) => <li class={pathname === post.url ? 'current' : ''}><a href={post.url}>{post.frontmatter.title}</a></li>)}
+{posts.map((post) => <li class={pathname.replace(/\/$/, '') === post.url.replace(/\/$/, '') ? 'current' : ''}><a href={post.url}>{post.frontmatter.title}</a></li>)}
   </ul>
   {stickers.map((sticker, index) => <div class:list={["sticker", 'rotate' + index]} set:html={sticker.compiledContent()} />)}
   </nav>
