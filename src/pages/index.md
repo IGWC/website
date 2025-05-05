@@ -2,7 +2,7 @@
 layout: /src/layouts/main.astro
 ---
 
-![<#caption#>](/src/media/2024-march.jpg)
+![<#caption#>](../media/2024-march.jpg)
 
 Indiana Graduate Workers Coalition (IGWC) is a member-run labor union representing over 1,700 graduate workers and students at Indiana University, Bloomington.
 
