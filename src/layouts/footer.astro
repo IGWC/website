@@ -1,0 +1,15 @@
+---
+import {Content as Footer} from '/src/pages/pieces/footer.md'
+import { execSync } from "child_process";
+const lastModified = new Date(execSync('git log -1 --pretty="format:%cI"', { encoding: 'utf-8' }));
+import {frontmatter as slogans} from '/src/pages/pieces/slogans.md';
+const slogan = slogans[Math.floor(Math.random() * slogans.length)];
+---
+
+<footer>
+  <p>IGWC &copy; {lastModified.getFullYear()} &mdash; “{slogan}”<br>
+  Updated: {lastModified.toDateString()} {lastModified.toLocaleTimeString("en-US", { hour12: false, timeZoneName: "short" })}</p>
+
+  <Footer />
+  
+</footer>
