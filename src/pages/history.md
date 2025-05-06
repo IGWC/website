@@ -10,4 +10,4 @@ order: 4
 
 In 2019, 
 
-![<#caption#>](../media/IMG_2140.JPG)
+![<#caption#>](../media/IMG_2140.jpg)
