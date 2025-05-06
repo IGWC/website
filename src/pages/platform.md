@@ -4,6 +4,8 @@ title: Platform
 order: 2
 ---
 
+![<#caption#>](../media/IMG_2409.JPG)
+
 # Platform
 
 First and foremost, graduate workers require a **living wage** and a pathway towards universal 12-month contracts. The [MIT Living Wage Calculator](https://livingwage.mit.edu/counties/18105) defines a living wage for Bloomington as $43,605. Currently, graduate workers at IU make only a minimum stipend of $24,000. 
@@ -30,5 +32,6 @@ While a Living Wage and Collective Bargaining are our primary demands, our platf
 
 - We call for continued investment in graduate funding from the administration so that necessary improvements in our working conditions are sustainable and do not come at the expense of departments, especially smaller programs and marginalized graduate workers.
 
+-----
 
-
+We've already

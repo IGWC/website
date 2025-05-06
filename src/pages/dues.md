@@ -4,10 +4,11 @@ title: Voluntary Dues
 order: 5
 ---
 
+![](../media/0E4A0647.jpg)
+
 # Voluntary Dues
 
-
-Voluntary dues keep our union strong! The IGWC asks members to pay voluntary and regular dues to provide a reliable source of funding for covering costs associated with organizing, bargaining, and hosting social events that benefit organizing. In 2024, we were able to hire multiple of our own staff to support our organizing as a direct result of these dues! While IGWC has a strong reserve of hardship money, we also require funds for generalized expenses.
+Voluntary dues keep our union strong! Members' dues provide a reliable source of funding for covering costs associated with organizing, bargaining, and hosting social events that benefit organizing. In 2024, we were able to hire multiple of our own staff to support our organizing as a direct result of these dues! While IGWC has a strong reserve of hardship money, we also require funds for generalized expenses.
 
 The General Assembly set the voluntary dues recommendation at $32 per month. This amount equals 1.33% of our lowest paid SAA salary ($24,000).
 
