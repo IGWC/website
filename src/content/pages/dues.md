@@ -13,7 +13,7 @@ The General Assembly set the voluntary dues recommendation at $32 per month. Thi
 
 <script src="https://donorbox.org/widget.js" paypalExpress="false"></script> <iframe src="https://donorbox.org/embed/igwc-ue-voluntary-dues-ii?" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style="max-width: 100%; min-width: 250px; max-height:none!important" allow="payment"></iframe>
 
-Please email the Financial Officer [indianagradworkers@gmail.com](mailto:indianagradworkers@gmail.com) with any questions.
+Please email the Financial Officer [finance@indianagrads.org](mailto:finance@indianagrads.org) with any questions.
 
 # Donate to our Campaign/Strike fund!
 
