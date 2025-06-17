@@ -1,0 +1,28 @@
+---
+import Layout from '/src/layouts/main.astro';
+---
+
+<style>
+.container{
+min-height: calc(100vh - 5rem);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  & h1{
+    font-size: 10rem;
+    font-family: CommitMonoIGWC, monospace;
+    border-bottom:none;
+    margin: 0;
+    line-height: 0.7;
+    filter: drop-shadow(2px 0px 1px #cc1229);
+  }
+}
+</style>
+
+<Layout frontmatter="">
+<div class="container">
+	<h1>404</h1>
+	<p>To be honest, we're not sure what page you were trying to get to. It's chill though.</p>
+</div>
+</Layout>

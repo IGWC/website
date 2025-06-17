@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Logo from '../media/logo.svg';
+
+const pieces = await getCollection('pieces');
+const stickers = pieces.filter(piece => piece.data.type === 'sticker');
+stickers.sort((a, b) => a.data.order - b.data.order);
+
+const banner = pieces.filter(piece => piece.data.type === 'banner');
+
+const { pathname } = Astro.url;
+const pages = await getCollection("pages")
+pages.sort((a, b) => a.data.order - b.data.order);
+//console.log(pathname.slice(1), pages[1].id) 
+---
+
+<header>
+  <a href="/"><Logo /></a>
+  <p id="subtitle"><span>Indiana Graduate Workers Coalition</span> <span>United Electrical Workers</span></p>
+  {banner.map(sticker => sticker.data.order > 0 ? <div id="banner"><p><a href={sticker.data.url}>{sticker.data.text}</a></p></div> : "" )
+  }
+  <nav>
+  <ul>
+{pages.map((page) => page.data.order > 0 ? <li aria-current={pathname.startsWith(page.id, 1) ? 'page' : 'false'}><a href={'/' + page.id}>{page.data.title}</a></li> : "")}
+  </ul>
+  {stickers.map(sticker => sticker.data.order > 0 ? <div class:list={["sticker", 'rotate' + sticker.data.order]}><p><a href={sticker.data.url}>{sticker.data.text}</a></p></div> : "" )}
+  </nav>
+</header>

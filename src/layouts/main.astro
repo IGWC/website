@@ -1,0 +1,34 @@
+---
+import '/src/styles/global.css';
+import Header from '/src/layouts/header.astro';
+import Footer from '/src/layouts/footer.astro';
+import SEO from '/src/layouts/seo.astro';
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+<!-- 
+    GET YOUR OWN ARTISAN HTML @ 
+      ✨ CHEAP.URLS.LOAN ✨
+"MORE CONVENIENT THAN A NEW HOBBY" 
+-->
+	<head>
+		<SEO title={frontmatter.title ? "Indiana Graduate Workers Coalition – " + frontmatter.title : "Indiana Graduate Workers Coalition"} description={frontmatter.description ? frontmatter.description : "Indiana Graduate Workers Coalition (IGWC) is a member-run labor union representing over 1,700 graduate workers and students at Indiana University, Bloomington. We're fighting for a living wage, collective bargaining rights, and better working conditions for graduate workers."} />
+	</head>
+	<body>
+		<Header />
+		<main>
+		<article>
+			<slot />
+		</article>
+		</main>
+		<Footer />
+		<script>
+		const actionElements = document.querySelectorAll('.action');
+  actionElements.forEach(element => {
+    const rotation = Math.floor(Math.random() * 20) - 10;
+    element.style.transform = `rotate(${rotation}deg)`;
+  });
+  </script>
+	</body>
+</html>
