@@ -201,7 +201,7 @@ background-repeat: no-repeat;
 background-position: center;
 background-size: contain;
 background-image: url('data:image/svg+xml,%3csvg%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%20viewBox%3d%220%200%20235.1%20122.5%22%3e%3cpath%20fill%3d%22%23cc1229%22%20d%3d%22m146%20114-6%207-8-6-7%208-7-7-8%206-7-7-7%207-7-8-8%206-6-9-9%206-5-10-8%206-5-10-10%204-3-10-10%202-1-10-10%201V80L4%2077c5-6%206-12-4-15l9-7-6-9%2011-3-1-10%2010%201%202-10%2010%202%203-10%2010%204%204-9%209%204%205-9%209%205%206-8%208%206%206-8%208%206%207-7%208%207%207-7%207%207%208-6%206%208%208-6%206%208%209-5%205%209%2010-5%203%2010%2010-4%203%2010%2010-3%202%2010h10l-1%2010%2010%203c-4%206-6%2011%204%2014l-9%208%207%208-12%203%201%2010h-10l-2%2010-9-2-4%209-9-3-5%209-9-4-5%208-9-5-5%209-9-6Z%22%2f%3e%3c%2fsvg%3e');
-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   & p{
     margin:0;
     max-width: 70%;
@@ -333,6 +333,14 @@ background-color: var(--igwc-pink);
 		position: static;
 		& iframe{
 			height: 100vh;
+		}
+	}
+	div.sticker{
+	width: 8em;
+	height: 4em;
+	& p{
+		margin:0;
+		font-size: 80%;
 		}
 	}
 	.column{flex-basis: 100%;}
