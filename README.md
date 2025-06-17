@@ -4,9 +4,7 @@
 
 ### HIGH PRIORITY:
 
-- SEO set-up
-	- google search console
-- reset git post dev
+
 
 ### MEDIUM PRIORITY:
 
