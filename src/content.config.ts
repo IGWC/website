@@ -13,11 +13,12 @@ const pages = defineCollection({
   })
 });
 
-const endorsements = defineCollection({ 
-	loader: glob({ pattern: "[^_]*.md", base: "src/content/endorsements" }),
+const news = defineCollection({ 
+	loader: glob({ pattern: "[^_]*.md", base: "src/content/news" }),
 	schema: z.object({
     title: z.string(),
     description: z.string(),
+    date: z.date(),
   })
 });
 
@@ -41,4 +42,4 @@ export const collections = { pages, pieces, docs };
 
 
 
-export const collections = { pages, pieces, endorsements };
+export const collections = { pages, pieces, news };

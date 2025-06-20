@@ -22,6 +22,7 @@ pages.sort((a, b) => a.data.order - b.data.order);
   <nav>
   <ul>
 {pages.map((page) => page.data.order > 0 ? <li aria-current={pathname.startsWith(page.id, 1) ? 'page' : 'false'}><a href={'/' + page.id}>{page.data.title}</a></li> : "")}
+  <li aria-current={pathname.startsWith("news", 1) ? 'page' : 'false'}><a href="/news/">News</a></li>
   </ul>
   {stickers.map(sticker => sticker.data.order > 0 ? <div class:list={["sticker", 'rotate' + sticker.data.order]}><p><a href={sticker.data.url}>{sticker.data.text}</a></p></div> : "" )}
   </nav>

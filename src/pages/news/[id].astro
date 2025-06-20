@@ -1,0 +1,32 @@
+---
+import '/src/styles/news.css';
+import { getCollection, render } from 'astro:content';
+import MarkdownPostLayout from '/src/layouts/main.astro';
+
+export async function getStaticPaths() {
+  const news = await getCollection('news');
+  return news.map(story => ({
+    params: { id: story.id },
+    props: { story },
+  }));
+}
+const options = {
+  timeZone: "UTC",
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const { story } = Astro.props;
+const { Content } = await render(story);
+---
+
+<MarkdownPostLayout frontmatter={story.data}>
+	<div class="newsheader">
+		<h1>{story.data.title}</h1>
+		<p class="info"><span class="type">URL:</span> <a href={"/news/" + story.id}>{story.id}</a></p>
+		<p class="info"><span class="type">Date:</span> <span>{story.data.date.toLocaleDateString("en-US", options)}</span></p>
+	</div>
+	<Content />
+</MarkdownPostLayout>
