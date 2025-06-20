@@ -23,13 +23,5 @@ const { frontmatter } = Astro.props;
 		</article>
 		</main>
 		<Footer />
-		<script>
-		const actionElements = document.querySelectorAll('.action');
-  actionElements.forEach(element => {
-    const rotation = Math.floor(Math.random() * 20) - 10;
-    element.style.transform = `rotate(${rotation}deg)`;
-  });
-  </script>
-
 	</body>
 </html>

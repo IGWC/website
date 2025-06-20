@@ -42,8 +42,8 @@ font-feature-settings: "ss07", "ss08", "cv10";
 }
 :root{
 --igwc-red: #cc1229;
---igwc-pink: #fff7f7;
---pink-grain-composite: #f9f2f3;
+--igwc-pink: #fff0f1;
+--pink-grain-composite: #f9eded;
 --igwc-light-grey: #605c5c;
 --igwc-grey: #4c4a4a;
 }
@@ -75,7 +75,7 @@ width: 35%;
 }
 main{
 margin-top: 3rem;
-margin-left: calc(35% + 4rem);
+margin-left: calc(35% + 5rem);
   & h1,h2,h3{
     font-weight: 700;
     font-size: 100%;
@@ -86,7 +86,7 @@ margin-left: calc(35% + 4rem);
     border-bottom: solid 0.2rem;
   }
   h2{
-  margin: 1.5rem 0 0 0;
+		margin: 1.5rem 0 0 0;
   }
   & article{
     position: relative;
@@ -101,7 +101,6 @@ border-top: solid 0.2rem;
 font-family: "CommitMonoIGWC", monospace;
 font-size: 70%;
 line-height: 1.2;
-
   & p{
   margin-top: 1em;
   margin-bottom: 0;
@@ -117,9 +116,10 @@ text-shadow: rgba(255,255,255,0.6) 0px 0 10px;
 }
 img{
 max-width: 100%;
-border-radius: 0.5rem;
+border-radius: 0.75rem;
 width: 100%;
-height: auto;
+height: 60vh;
+object-fit: cover;
 }
 ul{
 padding-left: 1em;
@@ -179,7 +179,7 @@ nav {
   }
 }
 #banner p{
-background-color: #cc1229;
+background-color: var(--igwc-red);
 color: white;
 border-radius: 0.5rem;
 padding: 0.5rem;
@@ -234,7 +234,16 @@ position: absolute;
 bottom:-8rem;
 }
 .action{
+width: fit-content;
 margin: auto;
+background-color: var(--igwc-red); 
+color: white; 
+padding: 0.5rem 1rem; 
+font-weight: bold; 
+text-align: right; 
+border-radius: 0.75rem;
+filter: drop-shadow(2px 0px 1px var(--igwc-red));
+	& a:active{color:inherit;text-shadow: rgba(255,255,255,0.6) 0px 0 10px;}
 }
 .small{
 font-size: smaller;
@@ -258,8 +267,8 @@ line-height: 1.2;
 }
 
 #logo{
-fill: #cc1229;
-filter: drop-shadow(2px 0px 1px #cc1229);
+fill: var(--igwc-red);
+filter: drop-shadow(2px 0px 1px var(--igwc-red));
 }
 article:has(.embed){
 position: static;
@@ -305,6 +314,7 @@ background-color: var(--igwc-pink);
 	header, footer{
 	left: 1rem;
 	}
+	main{margin-left: calc(35% + 3rem)}
 	header{top:1rem}
 	footer{bottom:1rem}
 	.embed{

@@ -124,7 +124,7 @@ Over the next year, IGWC focused on building our membership and organizing capac
 
 We're not finished fighting for workers at IU. See what we're building now:
 
-<p class="sticker action"><a href="/organize">Organize!</a></p>
+<p class="action"><a href="/organize">Organize!</a></p>
 
 
 

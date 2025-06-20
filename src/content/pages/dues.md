@@ -21,4 +21,4 @@ Not a Member but want to contibute? Donate to our Campaign/Strike fund!
 
 Indiana University graduate workers are fighting for a living wage and a seat at the bargaining table. Your donation helps us to better organize graduate workers, run more events, and prepare for future action should the administration refuse to recognize our union.
 
-<p class="sticker action"><a href="/organize">Donate!</a></p>
+<p class="action"><a href="/organize">Donate!</a></p>
