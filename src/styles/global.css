@@ -61,7 +61,7 @@ header{
 position: fixed;
 top:2rem;
 left:2rem;
-width: 30rem;
+width: 35%;
 	& #subtitle{
 		font-family: "CommitMonoIGWC", monospace;
 		font-size: 75%;
@@ -75,7 +75,7 @@ width: 30rem;
 }
 main{
 margin-top: 3rem;
-margin-left: 34rem;
+margin-left: calc(35% + 4rem);
   & h1,h2,h3{
     font-weight: 700;
     font-size: 100%;
@@ -96,7 +96,7 @@ footer{
 position: fixed;
 bottom:2rem;
 left:2rem;
-width: 30rem;
+width: 35%;
 border-top: solid 0.2rem;
 font-family: "CommitMonoIGWC", monospace;
 font-size: 70%;
@@ -225,13 +225,13 @@ filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 .rotate1{
 transform: rotate(16deg);
 position: absolute;
-top: 0;
+top: 4rem;
 right: 0;
 }
 .rotate2{
 transform: rotate(-12deg);
 position: absolute;
-bottom:-5rem;
+bottom:-8rem;
 }
 .action{
 margin: auto;
@@ -284,12 +284,18 @@ background-color: var(--igwc-pink);
 	}
 }
 
-@media (max-height: 34rem) {
+@media (max-height: 40rem) {
 	body{
 	margin: 1rem;
 	}
 	header{top:1rem;left:1rem;}
 	footer{bottom:1rem;left:1rem;}
+	.rotate1{
+	top: 0rem;
+	}
+	.rotate2{
+	bottom:-6rem;
+	}
 }
 
 @media (max-width: 70rem) {
@@ -298,13 +304,9 @@ background-color: var(--igwc-pink);
 	}
 	header, footer{
 	left: 1rem;
-	width: 35%;
 	}
 	header{top:1rem}
 	footer{bottom:1rem}
-	main{
-	margin-left: calc(35% + 4rem);
-	}
 	.embed{
 		top:3rem;bottom:2rem;left:calc(35% + 4rem);right:1rem;
 	}
