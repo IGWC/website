@@ -178,13 +178,20 @@ nav {
     }
   }
 }
-#banner p{
-background-color: var(--igwc-red);
-color: white;
-border-radius: 0.5rem;
-padding: 0.5rem;
-margin: 1rem 0;
+
+.grid p {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+	& img{
+		width: calc(50% - 1em);
+		height: 100%;
+		margin-right: auto;
+	}
 }
+
 
 .sticker{
 font-weight: bold;
@@ -209,17 +216,20 @@ filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   & a:active{color:inherit;text-shadow: rgba(255,255,255,0.6) 0px 0 10px;}
 }
 
-.grid p {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		gap: 1em;
-	& img{
-		width: calc(50% - 1em);
-		height: 100%;
-		margin-right: auto;
-	}
+
+#banner p, .action{
+background-color: var(--igwc-red);
+color: white;
+border-radius: 0.75rem;
+padding: 0.5rem;
+margin: 1rem 0;
+font-weight: bold;
+filter: drop-shadow(2px 0px 1px var(--igwc-red));
+	& a:active{color:inherit;text-shadow: rgba(255,255,255,0.6) 0px 0 10px;}
+}
+.action{
+width: fit-content;
+margin: auto;
 }
 
 .rotate1{
@@ -233,18 +243,7 @@ transform: rotate(-12deg);
 position: absolute;
 bottom:-8rem;
 }
-.action{
-width: fit-content;
-margin: auto;
-background-color: var(--igwc-red); 
-color: white; 
-padding: 0.5rem 1rem; 
-font-weight: bold; 
-text-align: right; 
-border-radius: 0.75rem;
-filter: drop-shadow(2px 0px 1px var(--igwc-red));
-	& a:active{color:inherit;text-shadow: rgba(255,255,255,0.6) 0px 0 10px;}
-}
+
 .small{
 font-size: smaller;
 }
