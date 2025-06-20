@@ -12,7 +12,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
-  site: 'https://staging.indianagradworkers.org',
+  site: 'https://indianagradworkers.org',
   integrations: [react(), markdoc(), sitemap()]
 //  integrations: [react(), markdoc(), keystatic()]
 /* 
