@@ -61,10 +61,10 @@ header{
 position: fixed;
 top:2rem;
 left:2rem;
-width: 35%;
+width: 33%;
 	& #subtitle{
 		font-family: "CommitMonoIGWC", monospace;
-		font-size: 75%;
+		font-size: 70%;
 		margin: 0.5em 0;
 		text-transform: uppercase;
 		display: flex;
@@ -75,7 +75,7 @@ width: 35%;
 }
 main{
 margin-top: 3rem;
-margin-left: calc(35% + 5rem);
+margin-left: calc(33% + 5rem);
   & h1,h2,h3{
     font-weight: 700;
     font-size: 100%;
@@ -96,7 +96,7 @@ footer{
 position: fixed;
 bottom:2rem;
 left:2rem;
-width: 35%;
+width: 33%;
 border-top: solid 0.2rem;
 font-family: "CommitMonoIGWC", monospace;
 font-size: 70%;
@@ -312,11 +312,11 @@ background-color: var(--igwc-pink);
 	header, footer{
 	left: 1rem;
 	}
-	main{margin-left: calc(35% + 3rem)}
+	main{margin-left: calc(33% + 3rem)}
 	header{top:1rem}
 	footer{bottom:1rem}
 	.embed{
-		top:3rem;bottom:2rem;left:calc(35% + 4rem);right:1rem;
+		top:3rem;bottom:2rem;left:calc(33% + 4rem);right:1rem;
 	}
 }
 @media (max-width: 45rem) {

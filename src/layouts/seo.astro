@@ -3,6 +3,15 @@ import { Astro } from 'astro';
 const site = Astro.site;
 
 const { title, description } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "url": site,
+  "description": description,
+  "image": site + 'opengraph/preview.png'
+};
 ---
 
 <!-- Info -->
@@ -39,16 +48,7 @@ const { title, description } = Astro.props;
 <meta itemprop="thumbnailUrl" content={site + 'android-chrome-192x192.png'}>
 <meta itemprop="image" content={site + 'opengraph/preview.png'}>
 <!-- Additional Structured Data (JSON-LD) -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": {title},
-    "url": {site},
-    "description": {description},
-    "image": {site + 'opengraph/preview.png'}
-  }
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 <!-- Analytics -->
 <script defer src="https://stats.urls.loan/script.js" data-website-id="ce500173-1f17-4fff-aee8-2b85d157f996"></script>
 <!-- See "https://stats.urls.loan/share/HvOeji8WJPr8qWKz/indianagradworkers.org" for public analytics -->
