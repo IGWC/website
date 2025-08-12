@@ -1,7 +1,7 @@
 ---
 title: Sign a Union Card!
 description: Join the majority of graduate workers and fight for a better IU! Sign an IGWC union card to demand collective bargaining and a living wage.
-order: 11 #set to 0 to hide
+order: 0 #set to 0 to hide
 highlight: true #true/false
 ---
 
