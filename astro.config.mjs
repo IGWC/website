@@ -5,6 +5,7 @@ import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 // import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 // import keystatic from '@keystatic/astro';
 
 // https://astro.build/config
@@ -13,7 +14,7 @@ export default defineConfig({
     enabled: false
   },
   site: 'https://indianagradworkers.org',
-  integrations: [react(), markdoc(), sitemap()]
+  integrations: [react(), markdoc(), sitemap(), mdx()]
 //  integrations: [react(), markdoc(), keystatic()]
 /* 
   integrations: [react(), markdoc(), starlight({

@@ -9,13 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdoc": "^0.15.0",
+    "@astrojs/markdoc": "^0.15.2",
+    "@astrojs/mdx": "^4.3.3",
     "@astrojs/react": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.1",
-    "@astrojs/starlight": "^0.34.3",
+    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/starlight": "^0.35.2",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
-    "astro": "^5.9.2",
+    "astro": "^5.12.6",
     "dayjs": "^1.11.13",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

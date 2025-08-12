@@ -2,6 +2,7 @@
 title: Votes of No Confidence in Whitten’s Administration
 description: On Monday, February 5, 2024, the Indiana Graduate Workers Coalition (IGWC) passed a vote of no confidence in IU President Pamela Whitten’s Administration. IU Bloomington departments and organizations have joined IGWC in passing their own votes of no confidence in Whitten’s Administration.
 order: 0 #set to 0 to hide
+highlight: false #true/false
 ---
 
 # Votes of No Confidence in Whitten’s Administration

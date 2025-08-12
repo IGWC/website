@@ -7,4 +7,5 @@
 - "All power to the workers"
 - "An injury to one is an injury to all"
 - "Living Wage Now!"
+- "Dissertate, Agitate, Organize"
 ---

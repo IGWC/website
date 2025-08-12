@@ -5,16 +5,17 @@ import { docsSchema } from '@astrojs/starlight/schema';
 
 
 const pages = defineCollection({ 
-	loader: glob({ pattern: "[^_]*.md", base: "src/content/pages" }),
+	loader: glob({ pattern: "[^_]*.{md,mdx}", base: "src/content/pages" }),
 	schema: z.object({
     title: z.string(),
     description: z.string(),
     order: z.number(),
+    highlight: z.boolean(),
   })
 });
 
 const news = defineCollection({ 
-	loader: glob({ pattern: "[^_]*.md", base: "src/content/news" }),
+	loader: glob({ pattern: "[^_]*.{md,mdx}", base: "src/content/news" }),
 	schema: z.object({
     title: z.string(),
     description: z.string(),

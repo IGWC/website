@@ -2,16 +2,17 @@
 title: FAQs
 description: Learn about the Indiana Graduate Workers Coalition (IGWC) and our mission to improve working conditions for graduate workers at Indiana University. Get answers to frequently asked questions about unionization, collective bargaining, and workers' rights.
 order: 9 #set to 0 to hide
+highlight: false #true/false
 ---
 
-![<#caption#>](../../media/2024-09-14-ga-conversation.jpeg)
+<!-- ![<#caption#>](../../media/2024-09-14-ga-conversation.jpeg) -->
 
 # Frequently Asked Questions
 
-<details name="faq">
+<details>
 <summary>
 
-**What is a union?**
+What is a union?
 
 </summary>
 
@@ -20,10 +21,10 @@ A union is a member-led body with legally recognized negotiating power. A union 
 </details>
 
 
-<details name="faq">
+<details>
 <summary>
 
-**Why do graduate workers at IU need a union?**
+Why do graduate workers at IU need a union?
 
 </summary>
 
@@ -39,10 +40,10 @@ Since 2019, graduate workers have organized, petitioned, marched, and engaged in
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**What can we win with a union?**
+What can we win with a union?
 
 </summary>
 
@@ -53,10 +54,10 @@ By securing union recognition, we will finally have a voice in decisions across 
 **This is not an automatic process.** Right now, each graduate employee must negotiate over their own wages and working conditions for themselves within their department. Graduate workers have extremely limited power in this dynamic. Without a union, we are individuals against the entire university. With a union, we leverage our collective power to negotiate higher standards for all. We win by building a powerful organization of active graduate workers across campus. Our ability to win depends on how united we are as graduate workers and how strong our union is.
 
 </details>
-<details name="faq">
+<details>
 <summary>
 
-**How does our union help IU?**
+How does our union help IU?
 
 </summary>
 
@@ -70,10 +71,10 @@ The city of Bloomington and state of Indiana also suffer when one of its largest
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**Is is legal to have a union and strike in Indiana?**
+Is is legal to have a union and strike in Indiana?
 
 </summary>
 
@@ -89,10 +90,10 @@ IU claims that we are primarily students and not workers. However, graduate work
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**Can international graduate students join the union?**
+Can international graduate students join the union?
 
 </summary>
 
@@ -113,10 +114,10 @@ If you are an international student and you want to get involved but are concern
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**Can IU or my department punish me for participating in the union?**
+Can IU or my department punish me for participating in the union?
 
 </summary>
 
@@ -128,10 +129,10 @@ The most important way we protect ourselves and each other is by fighting togeth
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**Who negotiates for us as a union?**
+Who negotiates for us as a union?
 
 </summary>
 
@@ -141,10 +142,10 @@ The day-to-day running of our union and decision-making is all done by IU gradua
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**How will the union impact my relationships with my advisors?**
+How will the union impact my relationships with my advisors?
 
 </summary>
 
@@ -156,10 +157,10 @@ IU currently places the burden on departments to determine and allocate funding 
 
 
 
-<details name="faq">
+<details>
 <summary>
 
-**What will our union bargain for?**
+What will our union bargain for?
 
 </summary>
 
@@ -177,10 +178,10 @@ Once we win union recognition, union members will elect a bargaining committee t
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**Are we going on strike?**
+Are we going on strike?
 
 </summary>
 
@@ -192,10 +193,10 @@ After IU recognizes our union, per IU policy, we would meet regularly with IU to
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**How did the union decide to organize with the United Electrical Workers (UE)?**
+How did the union decide to organize with the United Electrical Workers (UE)?
 
 </summary>
 
@@ -207,10 +208,10 @@ Affiliation does not give UE or any external body control over our union. UE’s
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-**Do I have to pay union dues? How much are they?**
+Do I have to pay union dues? How much are they?
 
 </summary>
 
@@ -225,7 +226,7 @@ When we have formal union recognition, members will be asked to pay union dues s
 <!-- 
 ## Anti-Union Myths
 
-Myth: **Joining a union will put me at risk**
+Myth: Joining a union will put me at risk
 
 Union organizing and membership is a protected activity under the First Amendment of the Constitution, specifically the right to assemble and the right to free association. 
 

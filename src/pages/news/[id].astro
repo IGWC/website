@@ -28,5 +28,7 @@ const { Content } = await render(story);
 		<p class="info"><span class="type">URL:</span> <a href={"/news/" + story.id}>{story.id}</a></p>
 		<p class="info"><span class="type">Date:</span> <span>{story.data.date.toLocaleDateString("en-US", options)}</span></p>
 	</div>
+	<div class="text">
 	<Content />
+	</div>
 </MarkdownPostLayout>

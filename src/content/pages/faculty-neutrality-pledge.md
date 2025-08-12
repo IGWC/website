@@ -2,6 +2,7 @@
 title: Faculty Neutrality Pledge
 description: Join the majority of graduate workers and fight for a better IU! Sign an IGWC union card to demand collective bargaining and a living wage.
 order: 0 #set to 0 to hide
+highlight: false #true/false
 ---
 
 <p class="sticker" style="position:fixed;z-index: 10;bottom:1em;right: 1em;transform:rotate(-16deg)"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf1qjj5HVHPoSvQi5u1RcyA9UEfQUcxY5Apcf8KNQEL3omZnA/viewform">Add Your Name!</a></p>

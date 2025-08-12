@@ -15,16 +15,15 @@ pages.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <header>
-  <div id="title">
   <a href="/"><Logo /></a>
   <p id="subtitle"><span>Indiana Graduate Workers Coalition</span> <span>United Electrical Workers</span></p>
-  </div>
-  <nav>
-  <ul>
-{pages.map((page) => page.data.order > 0 ? <li><a class:list={[ 'page', { highlight: page.data.highlight } ]} aria-current={pathname.startsWith(page.id, 1) ? 'page' : 'false'} href={'/' + page.id}>{page.data.title}</a></li> : "")}
-<!--   <li class="page" aria-current={pathname.startsWith("news", 1) ? 'page' : 'false'}><a href="/news/">News</a></li> -->
-  </ul>
-  </nav>
   {banner.map(sticker => sticker.data.order > 0 ? <div id="banner"><p><a href={sticker.data.url}>{sticker.data.text}</a></p></div> : "" )
   }
+  <nav>
+  <ul>
+{pages.map((page) => page.data.order > 0 ? <li aria-current={pathname.startsWith(page.id, 1) ? 'page' : 'false'}><a href={'/' + page.id}>{page.data.title}</a></li> : "")}
+  <li aria-current={pathname.startsWith("news", 1) ? 'page' : 'false'}><a href="/news/">News</a></li>
+  </ul>
+  {stickers.map(sticker => sticker.data.order > 0 ? <div class:list={["sticker", 'rotate' + sticker.data.order]}><p><a href={sticker.data.url}>{sticker.data.text}</a></p></div> : "" )}
+  </nav>
 </header>

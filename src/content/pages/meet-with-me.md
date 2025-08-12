@@ -1,7 +1,8 @@
 ---
 title: Meet with an Organizer!
 description: Want to meet with someone to get more information about the IGWC? Want to hop into organizing your department? Fill out this form and an organizer will reach out to you to schedule a meeting!
-order: 0 #set to 0 to hide
+order: 10 #set to 0 to hide
+highlight: true #true/false
 ---
 
 <div class="embed" id="form">

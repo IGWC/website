@@ -2,30 +2,44 @@
 title: History
 description: Learn about the history of the Indiana Graduate Workers Coalition (IGWC), a union of graduate workers at Indiana University. Discover how IGWC-UE has fought for fair wages, affordable healthcare, and union recognition through strikes, petitions, and advocacy. Read about our major victories, including the elimination of graduate student fees and significant wage increases. 
 order: 2 #set to 0 to hide
+highlight: false #true/false
 ---
 
 <!-- include that our founding was by students of color, deeper history. queer. more detailed -->
 
-![<#caption#>](../../media/2020-01-28-feemarch-megaphone.jpeg)
+<!-- ![<#caption#>](../../media/2020-01-28-feemarch-megaphone.jpeg) -->
 
 # History
 
 In 2019, a small group of graduate students began having one-on-one meetings in departments. The minimum stipend for graduate workers in 2019 was less than $15K a year. More pressing than the abysmal wages, though, were the mandatory student fees totalling $1,435 paid *back* to the university. Between the low wages and the mandatory fees, graduate workers at IU were less $1,200 above the [poverty line in 2019](https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/prior-hhs-poverty-guidelines-federal-register-references/2019-poverty-guidelines). International students were forced to pay even more in fees—over $3000 a year. 
 
+<section>
+<div class="third">
+
 ## 2019 Townhall and Petition 
+
+In Fall 2019, we launched our end-the-fees campaign with a town hall attended by over 200 graduate workers. At that town hall, we began a petition to demand the end of the fees. By December, the petition had over 2,000 signatures. 
+</div>
+<div class="twothird">
 
 ![<#caption#>](../../media/2019-09-12-townhall-crowd.jpeg)
 
-In Fall 2019, we launched our end-the-fees campaign with a town hall attended by over 200 graduate workers. At that town hall, we began a petition to demand the end of the fees. By December, the petition had over 2,000 signatures. 
-
+</div>
+</section>
 
 ## 2020 Fee March
-
-![<#caption#>](../../media/2020-01-28-feemarch-crowd.jpeg)
 
 In January 2020, over 500 graduate workers marched to deliver the petition to the Vice Provost and engage in bargaining about the fees. The Vice Provost agreed to a follow-up meeting but did not respond to future requests. 
 
 After the Fee March, we hosted several large meetings before the pandemic interrupted our organizing for the semester. 
+
+<section>
+<div class="twothird">
+
+![<#caption#>](../../media/2020-01-28-feemarch-crowd.jpeg)
+
+</div>
+<div class="third">
 
 ## 2021 Fee Strike
 
@@ -34,6 +48,9 @@ In Spring 2021, now organizing as the Indiana Graduate Workers Coalition (IGWC),
 At the end of the Fee Strike, we voted to endorse unionization as the only solution to graduate employee issues. United Electrical Workers (UE) agreed to support our union drive and IGWC becomes IGWC-UE.
 
 That summer, the IGWC-UE gathered union cards from graduate employees. In December, we deliver 1,600 signed union cards—a supermajority of graduate workers in Bloomington—demanding a union election. 
+
+</div>
+</section>
 
 ## 2022 Strike
 
@@ -72,13 +89,25 @@ Following these concessions, our leadership recommended a "No" vote on the Septe
 
 --------
 
+## 2023
+
+<section>
+<div class="third">
+
 In January 2023, with inflation at a record high, IGWC-UE launched a Cost of Living Adjustment Petition, calling for 8% raises, commensurate with inflation, garnering over 1,000 signatures over the course of the semester.
 
 In March 2023, IGWC-UE delivered the Cost of Living Adjustment Petition with to the IU Administration. During a Bloomington Faculty Council (BFC) meeting, Provost Shrivastav rejects the petition as "too expensive." After public demonstrations against the Provost and buzz about another strike push, IU Administration were forced to announce a 3% wage increase for all returning graduate workers in July—the first all-department cost-of-living wage increase in over a decade.
 
+In Fall 2023, we launched another union campaign, collecting over 1,300 union cards from graduate employees to demand union recognition and a living wage.
+
+</div>
+
+<div class="twothird">
+
 ![<#caption#>](../../media/2023-09-28-carddrop-crowd.jpeg)
 
-In Fall 2023, we launched another union campaign, collecting over 1,300 union cards from graduate employees to demand union recognition and a living wage.
+</div>
+</section>
 
 ## Spring 2024
 
@@ -103,22 +132,39 @@ After collecting 800 strike pledges, 500 of which were from graduate workers wit
 
 </div>
 
-
 On April 16, 2024, the day before the first day of the IGWC three day strike, the IU Bloomington faculty [overwhelmingly passed votes of no confidence for IU President Pamela Whitten, Provost Rahul Shrivastav, and Vice Provost for Faculty and Academic Affairs Carrie Docherty](https://www.idsnews.com/article/2024/04/whitten-rebuked-iu-faculty-vote-no-confidence-in-whitten-shrivastav-docherty). Of 895 ballots, 672 (75%) expressed No Confidence in Docherty; of 879 ballots, 804 (91.5%) expressed No Confidence in Shrivastav; and of 888 ballots, 827 (93.1%) expressed No Confidence in Whitten.
 
---------
+<section>
+<div class="third">
 
 Shortly after our strike, the Palestinian Solidarity movement on campus established an encampment in Dunn Meadow. In response, President Whitten authorized the violent removal of the peaceful encampment. Indiana State Police in riot gear assaulted, arrested, and banned 33 IU students and faculty from campus, including several IGWC members and organizers. During the raid, the President also directly approved the use of a [Indiana State Police sniper on the roof of the Indiana Memorial Union](https://archive.org/details/indiana-university-palestinian-solidarity-encampment-police-scanner-archive). 
 
+In response to the brutal police response on Dunn Meadow, the IGWC called for the resignation of IU President and Provost. Over 500 IU community members ranging from graduate workers to students to faculty and staff joined the protest in one of the largest demonstrations in Bloomington since the 2022 strike. 
+
+</div>
+<div class="twothird">
+
 ![<#caption#>](../../media/2024-04-29-dunnrally-crowd2.jpeg)
 
-In response to the brutal police response on Dunn Meadow, the IGWC called for the resignation of IU President and Provost. Over 500 IU community members ranging from graduate workers to students to faculty and staff joined the protest in one of the largest demonstrations in Bloomington since the 2022 strike. 
+</div>
+</section>
 
 ## 2025 Anti-Visa Revocation
 
+<section>
+<div class="twothird">
+
 ![<#caption#>](../../media/2025-04-10-rally-speaker.jpeg)
 
-Over the next year, IGWC focused on building our membership and organizing capacity, but in April 2025, the Trump administration cancelled the SEVIS record for multiple students at IU, including several IU graduate workers and IGWC members. In response to that attack on our members, we mobilized an emergency action with a pathway to a strike. In a negotiation with IU administration, IGWC secured continued student status and a pathway to degree for those unjustly impacted by the DHS, as well as several other concessions to protect international workers. 
+</div>
+
+
+<div class="third">
+
+Over the next year, IGWC focused on building our membership and organizing capacity, but in April 2025, the Trump administration cancelled the SEVIS record for multiple students at IU, including several IU graduate workers and IGWC members. In response to that attack on our members, we mobilized an emergency action with a pathway to a strike. In a negotiation with IU administration, IGWC secured continued student status and a pathway to degree for those unjustly impacted by the DHS, as well as several other concessions to protect international workers.
+ 
+</div>
+</section>
 
 --------
 

@@ -2,6 +2,7 @@
 title: Non-retaliation Pledges from Departments
 description: Many IU departments and programs at IU have come forward expressing support and pledging not to retaliate against graduate workers for striking with the IGWC. 
 order: 0 #set to 0 to hide
+highlight: false #true/false
 ---
 
 # Non-retaliation Pledges from Departments

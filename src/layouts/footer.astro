@@ -1,15 +1,31 @@
 ---
+import { getCollection } from "astro:content";
 import {Content as Footer} from '/src/content/footer.md'
 import { execSync } from "child_process";
 const lastModified = new Date(execSync('git log -1 --pretty="format:%cI"', { encoding: 'utf-8' }));
 import {frontmatter as slogans} from '/src/content/slogans.md';
 const slogan = slogans[Math.floor(Math.random() * slogans.length)];
+
+const { pathname } = Astro.url;
+const pages = await getCollection("pages")
+pages.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <footer>
-  <p>IGWC &copy; {lastModified.getFullYear()} &mdash; “{slogan}”<br>
-  Updated: {lastModified.toDateString()} {lastModified.toLocaleTimeString("en-US", { hour12: false, timeZoneName: "short" })}</p>
-
   <Footer />
   
+  <p>IGWC &copy; {lastModified.getFullYear()} &mdash; “{slogan}”<br>
+  Updated: {lastModified.toDateString()} {lastModified.toLocaleTimeString("en-US", { hour12: false, timeZoneName: "short" })}</p>
+  
+  <p>&#x263a;</p>
+
+<!-- 
+  <div class="pages">
+    <ul>
+  {pages.map((page) => page.data.order > 0 ? <li><a href={'/' + page.id}>{page.data.title}</a></li> : "")}
+    <li class="page" aria-current={pathname.startsWith("news", 1) ? 'page' : 'false'}><a href="/news/">News</a></li>
+    </ul>
+  </div>
+ -->
+
 </footer>
