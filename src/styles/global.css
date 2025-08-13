@@ -225,6 +225,7 @@ main{
 			padding: 0.2em 0.5em 0.1em;
 			line-height: 1;
 			transition: 0.5s;
+			transition-property: color, background-color, text-shadow;
 			text-decoration: none;
 			color: var(--limestone);
 			background-color: var(--igwc);
