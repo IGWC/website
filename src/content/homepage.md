@@ -97,3 +97,4 @@ Want to stay in-the-loop with the IGWC at IU? Join our Newsletter!
 
 <p class="action deemphasize"><a href="/news">View our Newsletter Archive</a></p>
 <p class="action"><a href="https://list.iu.edu/sympa/subscribe/igwc-ue-news-l">Join our Newsletter!</a></p>
+
