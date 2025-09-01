@@ -10,9 +10,9 @@ export const server = {
 			firstName: z.string().min(1, { message: "First name is required." }),
 			lastName: z.string().min(1, { message: "Last name is required." }),
 
-			userID: z.string().min(1, { message: "IU Username is required." }).transform((val) => val.replace(/(@iu\.edu|@indiana\.edu)/i, '')),
+			userID: z.string().min(1, { message: "IU Username is required." }),
 			email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-			phone: z.string().min(9, { message: "Phone Number is required." }).transform(val => val.replace(/\D/g, '')),
+			phone: z.string().min(10, { message: "Enter your full phone number." }),
 			textOK: z.boolean().default(true).optional(),
 	
 			dept: z.string().min(3, { message: "Please select a department." }),
@@ -27,10 +27,10 @@ export const server = {
 				"hourly",
 			], { message: "Please select a contract type." }),
 			location: z.string().optional(),
-			year: z.string().min(4, { message: "A year in this century, we mean." }).max(4, { message: "Too big." }),
+			year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean."),
 			getInvolved: z.boolean().default(false).optional(),
 		}).superRefine((data, ctx) => {
-			if (data.selectDept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
+			if (data.dept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
 				ctx.addIssue({
 					code: z.ZodIssueCode.custom,
 					message: "Please specify your department.",
@@ -40,7 +40,7 @@ export const server = {
 		}),
 		handler: async (input) => {
 			try {
-				console.log("made it one more layer deep", input)
+				console.log(input)
 				await db.insert(IGWC).values(input).onConflictDoUpdate({ target: IGWC.userID, set: input });
 				return { success: true };
 			} catch (error) {

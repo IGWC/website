@@ -77,6 +77,10 @@ export function Card({depts}) {
 	const welcomeRef = React.useRef(null);
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
+		defaultValues: {
+        textOK: true,
+        getInvolved: false,
+    },
 	})
 	
 	const selectedDept = useWatch({
@@ -116,7 +120,7 @@ export function Card({depts}) {
 		{submissionSuccess ? (
 			<div ref={welcomeRef} className="red third mt-8">
 				<h2>Welcome to the Union!</h2>
-				<div class="basis-[calc(66%-3rem)] grow">
+				<div className="basis-[calc(66%-3rem)] grow">
 				<h3>Grad workers are now one card closer to a better IU!</h3>
 				<p>Want to do more?</p>
 				<ul>
@@ -204,7 +208,12 @@ export function Card({depts}) {
 						render={({ field }) => (
 							<FormItem className="basis-2/3 min-w-2xs flex mt-4 px-1 items-center">
 								<FormControl>
-									<Checkbox className="cursor-pointer" tabIndex={0} defaultChecked />
+									<Checkbox
+										className="cursor-pointer"
+										tabIndex={0}
+										checked={field.value} 
+										onCheckedChange={field.onChange} 
+									/>
 								</FormControl>
 								<FormLabel>Receive mass text messages about important events?</FormLabel>
 								<FormMessage />
@@ -416,7 +425,12 @@ export function Card({depts}) {
 					render={({ field }) => (
 						<FormItem className="basis-full flex flex-wrap items-center">
 							<FormControl>
-								<Checkbox className="cursor-pointer" tabIndex={0} />
+								<Checkbox
+									className="cursor-pointer"
+									tabIndex={0}
+									checked={field.value} 
+									onCheckedChange={field.onChange} 
+								/>
 							</FormControl>
 							<FormLabel className="font-headline-serif text-2xl">Get Involved!</FormLabel>
 							<FormDescription className="basis-full m-0">Our goal is to sign up a majority of graduate workers on union cards.<br/> Would you be willing to help sign up grad workers in your department?</FormDescription>
