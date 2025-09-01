@@ -41,8 +41,26 @@ export const server = {
 		}),
 		handler: async (input) => {
 			try {
-				console.log(input)
+				console.log(JSON.stringify(input))
 				await db.insert(IGWC).values(input).onConflictDoUpdate({ target: IGWC.userID, set: input });
+				const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxLCZjPAA9BHDRfgNxCEteQ3eT0_3MYMFvndatrAbYZP27SCVD-whgBLluQQxONXohJ/exec";
+				if (googleScriptUrl) {
+					
+					const response = await fetch(googleScriptUrl, {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(input),
+					});
+					
+					// Optional: Log the Google Script response for debugging.
+					if (!response.ok) {
+						console.error(`Google Script POST failed with status: ${response.status}`);
+					} else {
+						console.log("Successfully posted to Google Script!");
+					}
+				}
 				return { success: true };
 			} catch (error) {
 				console.log(error)
