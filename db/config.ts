@@ -7,15 +7,15 @@ const IGWC =  defineTable({
     lastName: column.text(),
     email: column.text(),
     phone: column.text(),
-    textOK: column.boolean({ default: false }),
+    textOK: column.boolean({ default: false, optional: true }),
     otherDept: column.text({ optional: true }),
     dept: column.text({ references: () => Departments.columns.deptCode }),
     subfield: column.text({ optional: true }),
     card: column.boolean({ default: true }),
-    contract: column.text(),
+    contract: column.text({ optional: true }),
     location: column.text({ optional: true }),
     year: column.text(),
-    getInvolved: column.boolean({ default: false }),
+    getInvolved: column.boolean({ default: false, optional: true }),
     organizer: column.text({ references: () => Departments.columns.deptCode, optional: true }),
   }
 });

@@ -43,7 +43,7 @@ const FormSchema = z.object({
   userID: z.string().min(1, { message: "IU Username is required." }),
   email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
   phone: z.string().min(10, { message: "Enter your full phone number." }),
-  textOK: z.boolean().default(false).optional(),
+  textOK: z.boolean().default(true).optional(),
   
   dept: z.string().min(3, { message: "Please select a department." }),
   otherDept: z.string().optional(),
