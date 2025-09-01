@@ -40,7 +40,7 @@ const FormSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required." }),
   lastName: z.string().min(1, { message: "Last name is required." }),
 
-  userID: z.string().min(1, { message: "IU Username is required." }),
+  userID: z.string().min(1, { message: "IU Username is required." }).transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
   email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
   phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
   textOK: z.boolean().default(true).optional(),
