@@ -21,7 +21,7 @@ We've already won significant material gains for graduate workers through our or
 </section>
 
 <section>
-<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary bg-foreground bg-[url('/grain.png')] bg-repeat rounded-lg">
+<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary-foreground bg-primary bg-[url('/grain.png')] bg-repeat rounded-lg">
 
 ## We won wage increases!
 
@@ -34,7 +34,7 @@ We've already won significant material gains for graduate workers through our or
 </div>
 </div>
 
-<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary bg-foreground bg-[url('/grain.png')] bg-repeat rounded-lg">
+<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary-foreground bg-primary bg-[url('/grain.png')] bg-repeat rounded-lg">
 
 ## We ensured international student's status!
 
@@ -44,7 +44,7 @@ We've already won significant material gains for graduate workers through our or
 
 </div>
 </div>
-<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary bg-foreground bg-[url('/grain.png')] bg-repeat rounded-lg">
+<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary-foreground bg-primary bg-[url('/grain.png')] bg-repeat rounded-lg">
 
 ## We eliminated fees, including international student fees!
 
@@ -55,7 +55,7 @@ We've already won significant material gains for graduate workers through our or
 
 </div>
 </div>
-<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary bg-foreground bg-[url('/grain.png')] bg-repeat rounded-lg">
+<div class="flex justify-between flex-wrap gap-x-8 p-8 text-primary-foreground bg-primary bg-[url('/grain.png')] bg-repeat rounded-lg">
 
 ## We won healthcare and other benefits!
 
