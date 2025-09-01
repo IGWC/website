@@ -43,7 +43,7 @@ export const server = {
 			try {
 				console.log(JSON.stringify(input))
 				await db.insert(IGWC).values(input).onConflictDoUpdate({ target: IGWC.userID, set: input });
-				const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxLCZjPAA9BHDRfgNxCEteQ3eT0_3MYMFvndatrAbYZP27SCVD-whgBLluQQxONXohJ/exec";
+				const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxk17aA6djx2svd4hGZSdMLJZvFkAgUT1SDI4o5JHwlaaWcLZD1AuHX1YzpOY_wV4he/exec";
 				if (googleScriptUrl) {
 					
 					const response = await fetch(googleScriptUrl, {
