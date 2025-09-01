@@ -20,6 +20,26 @@ const IGWC =  defineTable({
   }
 });
 
+const IU =  defineTable({
+  columns: {
+    userID: column.text({ primaryKey: true }),
+    firstName: column.text(),
+    lastName: column.text(),
+    email: column.text(),
+    phone: column.text(),
+    textOK: column.boolean({ optional: true }),
+    otherDept: column.text({ optional: true }),
+    dept: column.text({ references: () => Departments.columns.deptCode }),
+    subfield: column.text({ optional: true }),
+    card: column.boolean({ default: true }),
+    contract: column.text({ optional: true }),
+    location: column.text({ optional: true }),
+    year: column.text(),
+    getInvolved: column.boolean({ optional: true }),
+    organizer: column.text({ references: () => Departments.columns.deptCode, optional: true }),
+  }
+});
+
 
 const Departments = defineTable({
   columns: {
