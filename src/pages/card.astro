@@ -1,0 +1,22 @@
+---
+import Layout from '/src/layouts/main.astro';
+import { db, IGWC, Departments } from 'astro:db';
+
+import { Card } from '/src/layouts/components/forms/card';
+
+const depts = await db.select({
+  value: Departments.deptCode, 
+  label: Departments.deptName, 
+}).from(Departments);
+
+const igwc = await db.select({
+  id: IGWC.firstName,
+  dept: IGWC.dept,
+}).from(IGWC);
+
+---
+
+<Layout frontmatter="">
+  <h1>Sign a Union Card</h1>
+  <Card client:load depts={depts} />
+</Layout>

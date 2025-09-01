@@ -8,7 +8,7 @@ highlight: false #true/false
 # About
 
 <section>
-<div class="third">
+<div class="basis-1/3 grow min-w-[300px]">
 
 IGWC is a member-run local—the General Assembly, comprised of all IGWC members, is the primary decision-making body in the union. 
 
@@ -17,7 +17,7 @@ The General Assembly delegates organizing tasks to the Organizing Committee, whi
 Those Area Coordinators make up the Coordinating Committee, alongside several officers elected directly by the General Assembly: the Co-chairs of the Coordinating Committee, the Financial Officer, the Communications Officer, and the Grievance Officer. 
 
 </div>
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ![<#caption#>](../../media/2024-04-17-strike-sign.jpeg)
 
@@ -30,36 +30,36 @@ Those Area Coordinators make up the Coordinating Committee, alongside several of
 
 # Coordinating Committee
 
-<div class="columns">
-<div class="column">
+<div class="flex flex-wrap justify-between">
+<div class="basis-1/2">
 
-Dora Ahearn-Wood, <span class="fade">Area Coordinator</span>\
-S. Dinesh, <span class="fade">Area Coordinator</span>\
-Sam Duckworth, <span class="fade">Area Coordinator</span>\
-S. Dutta, <span class="fade">Area Coordinator</span>\
-Brian Hensley, <span class="fade">Area Coordinator</span>\
-Ashton Hoene, <span class="fade">Area Coordinator</span>\
-S. Kim, <span class="fade">Area Coordinator</span>\
-Madeleine Meldrum, <span class="fade">Area Coordinator</span>\
-A. Nambiar, <span class="fade">Area Coordinator</span>\
-Ian Spink, <span class="fade">Area Coordinator</span>
+Dora Ahearn-Wood, <span class="text-current/70">Area Coordinator</span>\
+S. Dinesh, <span class="text-current/70">Area Coordinator</span>\
+Sam Duckworth, <span class="text-current/70">Area Coordinator</span>\
+S. Dutta, <span class="text-current/70">Area Coordinator</span>\
+Brian Hensley, <span class="text-current/70">Area Coordinator</span>\
+Ashton Hoene, <span class="text-current/70">Area Coordinator</span>\
+S. Kim, <span class="text-current/70">Area Coordinator</span>\
+Madeleine Meldrum, <span class="text-current/70">Area Coordinator</span>\
+A. Nambiar, <span class="text-current/70">Area Coordinator</span>\
+Ian Spink, <span class="text-current/70">Area Coordinator</span>
 
-<span class="fade">[igwc@indianagrads.org](mailto:igwc@indianagrads.org)</span>
+<span class="text-current/70">[igwc@indianagrads.org](mailto:igwc@indianagrads.org)</span>
 
 </div>
-<div class="column">
+<div class="basis-1/2">
 
-Ann Campbell, <span class="fade">Co-chair</span>\
-Adri Cruz, <span class="fade">Co-chair\
+Ann Campbell, <span class="text-current/70">Co-chair</span>\
+Adri Cruz, <span class="text-current/70">Co-chair\
 [chairs@indianagrads.org](mailto:chairs@indianagrads.org)</span>
 
-Eli Beaton, <span class="fade">Communications Officer\
+Eli Beaton, <span class="text-current/70">Communications Officer\
 [comms@indianagrads.org](mailto:comms@indianagrads.org)</span>
 
-Mike McCarthy, <span class="fade">Financial Officer\
+Mike McCarthy, <span class="text-current/70">Financial Officer\
 [finance@indianagrads.org](mailto:finance@indianagrads.org)</span>
 
-Madeleine Meldrum, <span class="fade">Grievance Officer\
+Madeleine Meldrum, <span class="text-current/70">Grievance Officer\
 [grievance@indianagrads.org](mailto:grievance@indianagrads.org)</span>
 
 </div>
@@ -71,7 +71,7 @@ The IGWC is proud to be endorsed across the IU campus—by faculty and staff mem
 
 ## IU Campus Community
 
-<div class="autocolumn">
+<div class="columns-md mb-8">
 
 - [American Association of University Professors (AAUP) & Communications Workers of America (CWA)](/archives/Endorsement-from-AAUP-and-CWA.pdf)
 - [Bloomington Faculty Council](https://twitter.com/IndianaGrads/status/1514000676879282189/photo/1)
@@ -92,7 +92,7 @@ The IGWC is proud to be endorsed across the IU campus—by faculty and staff mem
 
 ## Political Leadership
 
-<div class="autocolumn">
+<div class="columns-md mb-8">
 
 - [State Senator Shelli Yoder & State Representative Matt Pierce](/archives/yoder-pierce-endorsement.jpg)
 - [Bloomington City Council](https://bloomington.in.gov/onboard/legislationFiles/download?legislationFile_id=5690)
@@ -108,7 +108,7 @@ The IGWC is proud to be endorsed across the IU campus—by faculty and staff mem
 
 ## Labor Leadership
 
-<div class="autocolumn">
+<div class="columns-md mb-8">
 
 - [Southern Indiana Area Labor Federation, AFL-CIO](/archives/AFL-CIO-endorsement.pdf)
 - [AFSCME Local #613](/archives/AFSCME-Local-613-endorsement.pdf) (Bloomington Transit Employees)
@@ -122,7 +122,7 @@ The IGWC is proud to be endorsed across the IU campus—by faculty and staff mem
 
 ## Professional Organizations
 
-<div class="autocolumn">
+<div class="columns-md mb-8">
 
 - [The American Academy of Religion](/archives/AAR-endorsement.jpeg)
 - [The American Folklore Society](https://americanfolkloresociety.org/afs-supports-grad-student-workers-rights/)
@@ -138,7 +138,7 @@ The IGWC is proud to be endorsed across the IU campus—by faculty and staff mem
 
 ## Other Graduate Worker Organizations
 
-<div class="autocolumn">
+<div class="columns-md mb-8">
 
 - [AAUP-AFT Local 6075—Wayne State University](https://twitter.com/aaupaft6075/status/1514385327128985604?s=21&t=7NPSrYsDsy0mofD8bVjq4Q)
 - [AAUP—University of Pennsylvania](https://twitter.com/aaup_penn/status/1514228348502921218?s=21&t=91ZUAhOMF8KsAU-4D5-5Xw)

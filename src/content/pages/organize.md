@@ -10,7 +10,7 @@ highlight: false #true/false
 
 <section>
 
-<div class="third">
+<div class="basis-1/3 grow min-w-[300px]">
 
 We’re able to win in hostile conditions because of our commitment to member-driven collective action, and that means we need you!
 
@@ -22,7 +22,7 @@ We’re able to win in hostile conditions because of our commitment to member-dr
 Just want more information? [Schedule a meeting with an organizer!](/meet-with-me)
 
 </div>
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ![<#caption#>](../../media/2022-04-26-strike-imupicket.jpeg)
 

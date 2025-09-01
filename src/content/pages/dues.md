@@ -8,7 +8,7 @@ highlight: false #true/false
 # Voluntary Dues
 
 <section>
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 
 Voluntary dues keep our union strong! Members' dues provide a reliable source of funding for covering costs associated with organizing, bargaining, and hosting social events that benefit organizing. In 2024, we were able to hire multiple of our own staff to support our organizing as a direct result of these dues! While IGWC has a strong reserve of hardship money, we also require funds for generalized expenses.
@@ -19,7 +19,7 @@ Please email the Financial Officer [finance@indianagrads.org](mailto:finance@ind
 
 </div>
 
-<div class="third">
+<div class="basis-1/3 grow min-w-[300px]">
 <script src="https://donorbox.org/widget.js" paypalExpress="false"></script> <iframe src="https://donorbox.org/embed/igwc-ue-voluntary-dues-ii?" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style="max-width: 100%; min-width: 250px; max-height:none!important" allow="payment"></iframe>
 </div>
 </section>
@@ -27,7 +27,7 @@ Please email the Financial Officer [finance@indianagrads.org](mailto:finance@ind
 # Donate to our Campaign/Strike fund!
 
 <section>
-<div class="third">
+<div class="basis-1/3 grow min-w-[300px]">
 
 Not a Member but want to contibute? Donate to our Campaign/Strike fund!
 
@@ -35,7 +35,7 @@ Indiana University graduate workers are fighting for a living wage and a seat at
 
 <p class="action"><a href="/organize">Donate!</a></p>
 </div>
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ![](../../media/2024-12-26-rally-button.jpeg)
 

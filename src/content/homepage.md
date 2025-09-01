@@ -5,19 +5,19 @@ description: Learn about the Indiana Graduate Workers Coalition (IGWC), a member
 
 # Indiana Graduate Workers Coalition (IGWC) is a member-run labor union representing over 1,700 graduate workers and students at Indiana University, Bloomington.
 
-<section class="split">
+<section>
 
-<div class="third vertical">
+<div class="basis-1/3 grow min-w-[300px] flex flex-col justify-start">
 
 Since 2019, we've fought for ([and won](/victories)) significantly better pay, better working conditions/benefits, and the end of exorbitant graduate student fees—all in a state without friendly labor laws. 
 
 We're able to win in hostile conditions because of our commitment to **member-driven collective action**, and that means we need you!
 
-<p class="action"><a href="organize">Join the union!</a></p>
+<p class="action mt-auto mx-auto mb-4"><a href="organize">Join the union!</a></p>
 
 </div>
 
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ![](../media/2024-04-17-strike-march.jpeg)
 
@@ -33,7 +33,7 @@ We're able to win in hostile conditions because of our commitment to **member-dr
 
 ## Our Degrees
 
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ### Protection of At-Risk Degree Programs
 
@@ -50,7 +50,7 @@ IU must provide living wage employment for graduate students to finish their deg
 
 ## Our Work
 
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ### Union Recognition
 
@@ -67,7 +67,7 @@ IU must provide a path to universal 12-month contracts for SAAs with a living wa
 
 ## Our Campus
 
-<div class="twothird">
+<div class="basis-[calc(66%-3rem)] grow">
 
 ### Legal Protection
 
@@ -86,8 +86,8 @@ IU must refuse to cooperate with federal immigration enforcement and must provid
 
 # Calendar
 
-<div class="embed">
-<iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FIndiana%2FIndianapolis&showPrint=0&showCalendars=0&title=IGWC%20Calendar&mode=MONTH&src=aW5kaWFuYWdyYWR3b3JrZXJzQGdtYWlsLmNvbQ&color=%23a30014" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div class="mt-4 bg-background bg-[url('/grain.png')] bg-repeat h-[85vh]">
+<iframe class="w-full h-full rounded-2xl bg-background mix-blend-multiply grayscale" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FIndiana%2FIndianapolis&showPrint=0&showCalendars=0&title=IGWC%20Calendar&mode=MONTH&src=aW5kaWFuYWdyYWR3b3JrZXJzQGdtYWlsLmNvbQ&color=%23a30014" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
 # Join our Newsletter!

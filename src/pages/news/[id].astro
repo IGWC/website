@@ -1,5 +1,4 @@
 ---
-import '/src/styles/news.css';
 import { getCollection, render } from 'astro:content';
 import MarkdownPostLayout from '/src/layouts/main.astro';
 
@@ -23,12 +22,12 @@ const { Content } = await render(story);
 ---
 
 <MarkdownPostLayout frontmatter={story.data}>
-	<div class="newsheader">
-		<h1>{story.data.title}</h1>
-		<p class="info"><span class="type">URL:</span> <a href={"/news/" + story.id}>{story.id}</a></p>
-		<p class="info"><span class="type">Date:</span> <span>{story.data.date.toLocaleDateString("en-US", options)}</span></p>
+	<div class="border-solid border-b-[0.1rem] border-foreground">
+		<h1 class="border-none">{story.data.title}</h1>
+		<p class="font-mono text-sm m-1 uppercase flex"><span class="basis-16">URL:</span> <a href={"/news/" + story.id}>{story.id}</a></p>
+		<p class="font-mono text-sm m-1 uppercase flex"><span class="basis-16">Date:</span> <span>{story.data.date.toLocaleDateString("en-US", options)}</span></p>
 	</div>
-	<div class="text">
+	<div class="max-w-3xl my-8">
 	<Content />
 	</div>
 </MarkdownPostLayout>

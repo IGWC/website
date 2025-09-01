@@ -1,6 +1,4 @@
 ---
-import '/src/styles/news.css';
-
 import { getCollection, render } from "astro:content";
 const news = await getCollection('news');
 news.sort((a, b) => b.data.date - a.data.date);
@@ -15,11 +13,11 @@ const options = {
 ---
 
   
-<div class="newsgrid">
+<div class="flex flex-wrap justify-center gap-4 mt-8">
 {news.map((story) => 
-  <a href={'/news/' + story.id} class="story">
-    <p class="title"><span class="underline">{story.data.title}</span></p>
-    <p class="info">{story.data.date.toLocaleDateString("en-US", options)}</p>
+  <a href={'/news/' + story.id} class="basis-[calc(50%-4rem)] min-w-3xs grow flex flex-col justify-between text-primary-foreground bg-primary no-underline p-4 rounded-lg">
+    <p class="font-headline-serif text-3xl flex justify-between gap-4"><span class="underline">{story.data.title}</span></p>
+    <p class="font-mono text-sm m-1 uppercase">{story.data.date.toLocaleDateString("en-US", options)}</p>
   </a>
 )}
 </div>

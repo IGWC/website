@@ -1,10 +1,5 @@
 # NOTES
 
-## Redesign Notes
-
-- Big footer! 100vh like https://www.normalcomputing.com
-- 
-
 ## To-do
 
 ### HIGH PRIORITY:

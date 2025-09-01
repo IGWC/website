@@ -5,6 +5,6 @@ order: 10 #set to 0 to hide
 highlight: true #true/false
 ---
 
-<div class="embed" id="form">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScX2xIwZxj5mbmW3LXbOSj7qo3qHBwuDPoYS36rskdRX9XRNA/viewform?embedded=true" width="800" height="1701" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<div class="mt-4 bg-background bg-[url('/grain.png')] bg-repeat h-[85vh]" id="form">
+<iframe class="w-full h-full rounded-2xl" src="https://docs.google.com/forms/d/e/1FAIpQLScX2xIwZxj5mbmW3LXbOSj7qo3qHBwuDPoYS36rskdRX9XRNA/viewform?embedded=true" width="800" height="1701" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>

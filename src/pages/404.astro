@@ -2,48 +2,7 @@
 import '/src/styles/global.css';
 ---
 
-<style>
-header{
-display: none;
-}
-.container{
-min-height: calc(100vh - 6rem);
-color: var(--limestone);
-background-color: var(--igwc);
-background-image: url("/grain.png");
-background-repeat: repeat; 
-border-radius: 1rem;
-padding: 2rem;
-margin: 1rem;
-font-size: 120%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-  & h1{
-  font-size: 30vw;
-  font-family: MonaSans, NotoEmoji, Arial;
-  border-bottom:none;
-  margin: 0;
-  line-height: 0.7;
-  }
-  & p{
-  font-family: "Libre Caslon Condensed", "Times New Roman", serif;
-  font-size: 200%;
-  text-align: center;
-  margin-bottom:0;
-  }
-  & img{
-  border-radius: 0.5rem;
-  margin-bottom: 4rem;
-  width: 25%;
-  image-rendering: pixelated;
-  }
-}
-</style>
-
-
-<div class="container">
-	<h1>404</h1>
-	<p>Page not found!<br><a href="/">Go Home.</a></p>
+<div class="min-h-[calc(100vh-2rem)] text-background bg-foreground bg-[url('/grain.png')] bg-repeat m-4 p-8 round rounded-2xl text-xl flex flex-col justify-center items-center">
+	<h1 class="text-[30vw] font-headline-sans leading-none">404</h1>
+	<p class="font-headline-serif text-3xl text-center">Page not found!<br><a href="/">Go Home.</a></p>
 </div>

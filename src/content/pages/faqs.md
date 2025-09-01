@@ -220,21 +220,3 @@ Union dues are a small percent (typically 1% to 2%) of an employee’s pay, whic
 When we have formal union recognition, members will be asked to pay union dues so that our time and energy can focus on fighting for better working conditions, instead of fundraising. Right now, we ask members to voluntarily pay dues that are 1.4% of their monthly pay. Please become a [voluntary dues paying member](/dues)!
 
 </details>
-
-
-
-<!-- 
-## Anti-Union Myths
-
-Myth: Joining a union will put me at risk
-
-Union organizing and membership is a protected activity under the First Amendment of the Constitution, specifically the right to assemble and the right to free association. 
-
-
-
-
-
------
-
-<p class="monospace">Credit to <a href="https://cornellgradunion.org/faq2">UE Local 300 at Cornell</a> and <a href="https://www.princetongsu.org/">Princeton GSU</a> for their excellent FAQ pages.</p>
- -->

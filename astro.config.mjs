@@ -6,23 +6,24 @@ import markdoc from '@astrojs/markdoc';
 // import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
-// import keystatic from '@keystatic/astro';
+import db from '@astrojs/db';
+
+import tailwindcss from '@tailwindcss/vite';
+
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
     enabled: false
   },
+
   site: 'https://indianagradworkers.org',
-  integrations: [react(), markdoc(), sitemap(), mdx()]
-//  integrations: [react(), markdoc(), keystatic()]
-/* 
-  integrations: [react(), markdoc(), starlight({
-      title: 'Institutional Knowledge',
-      logo: {
-                src: '/src/media/logo-red.svg',
-                replacesTitle: true,
-            },
-    }), sitemap()]
- */
+  integrations: [react(), markdoc(), sitemap(), mdx(), db()],
+
+  vite: {
+    plugins: [tailwindcss()]
+  },
+
+  adapter: vercel(),
 });
