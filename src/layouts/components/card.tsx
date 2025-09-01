@@ -42,7 +42,8 @@ const FormSchema = z.object({
 
   userID: z.string().min(1, { message: "IU Username is required." }),
   email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-  phone: z.string().min(10, { message: "Enter your full phone number." }),
+  phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." })
+  .regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
   textOK: z.boolean().default(true).optional(),
   
   dept: z.string().min(3, { message: "Please select a department." }),
@@ -55,6 +56,7 @@ const FormSchema = z.object({
     "saa-assisstant",
     "fellowship",
     "hourly",
+    "none",
   ], { message: "Please select a contract type." }),
   location: z.string().optional(),
   year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean."),
@@ -193,7 +195,7 @@ export function Card({depts}) {
 					name="phone"
 					render={({ field }) => (
 						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Phone Number</FormLabel>
+							<FormLabel className="font-headline-serif text-2xl">US Phone Number</FormLabel>
 							<FormControl>
 								<Input type="tel" autoComplete="tel" placeholder="Phone Number" {...field} />
 							</FormControl>
@@ -379,6 +381,14 @@ export function Card({depts}) {
 										</FormControl>
 										<FormLabel className="font-normal block">
 											<span className="font-bold">Hourly:</span> You work as an hourly employee
+										</FormLabel>
+									</FormItem>
+									<FormItem className="flex items-center gap-3">
+										<FormControl>
+											<RadioGroupItem value="none" />
+										</FormControl>
+										<FormLabel className="font-normal block">
+											<span className="font-bold">Not Employed by IU:</span> You are a graduate student but you are not employed by the university
 										</FormLabel>
 									</FormItem>
 								</RadioGroup>

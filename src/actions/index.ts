@@ -12,7 +12,8 @@ export const server = {
 
 			userID: z.string().min(1, { message: "IU Username is required." }),
 			email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-			phone: z.string().min(10, { message: "Enter your full phone number." }),
+			phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." })
+			.regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
 			textOK: z.boolean().default(true).optional(),
 	
 			dept: z.string().min(3, { message: "Please select a department." }),
@@ -25,6 +26,7 @@ export const server = {
 				"saa-assisstant",
 				"fellowship",
 				"hourly",
+				"none",
 			], { message: "Please select a contract type." }),
 			location: z.string().optional(),
 			year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean."),
