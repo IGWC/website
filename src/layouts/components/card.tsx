@@ -138,6 +138,7 @@ export function Card({depts}) {
 				<div>
 					<h3 className="basis-full">IGWC Card</h3>
 					<p className="basis-full">I hereby request and accept membership in the Indiana Graduate Workers Coalition (IGWC). I authorize the IGWC to represent me and negotiate on my behalf all wages, benefits, and working conditions for SAA positions as the exclusive bargaining representative of graduate employees at IU.</p>
+					<p><a href="/#what-are-we-fighting-for">Read about our current campaign.</a></p>
 				<Separator />
 				</div>
 				<FormField

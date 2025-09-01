@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "/src/layouts/components/ui/carousel"
+import { Image } from 'astro:assets';
 
 export function PhotoGrid({images}) {
   return (
@@ -15,7 +16,7 @@ export function PhotoGrid({images}) {
       <CarouselContent>
         {images.map((image, index) => (
           <CarouselItem className="h-[80vh] flex items-center justify-center" key={index}>
-              <img className="h-full" src={image} />
+              <Image className="h-full" src={image} />
           </CarouselItem>
         ))}
       </CarouselContent>
