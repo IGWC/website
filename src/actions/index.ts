@@ -12,8 +12,7 @@ export const server = {
 
 			userID: z.string().min(1, { message: "IU Username is required." }),
 			email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-			phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." })
-			.regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
+			phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
 			textOK: z.boolean().default(true).optional(),
 	
 			dept: z.string().min(3, { message: "Please select a department." }),

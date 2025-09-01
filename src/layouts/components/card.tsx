@@ -42,8 +42,7 @@ const FormSchema = z.object({
 
   userID: z.string().min(1, { message: "IU Username is required." }),
   email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-  phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." })
-  .regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
+  phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
   textOK: z.boolean().default(true).optional(),
   
   dept: z.string().min(3, { message: "Please select a department." }),
@@ -76,6 +75,7 @@ export function Card({depts}) {
 	const [open, setOpen] = React.useState(false)
 	const [submissionSuccess, setSubmissionSuccess] = React.useState(false);
 	const [isSubmitting, setIsSubmitting] = React.useState(false);
+	const [userFirstName, setUserFirstName] = React.useState('');
 	const welcomeRef = React.useRef(null);
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
@@ -108,6 +108,7 @@ export function Card({depts}) {
 		try {
 			setIsSubmitting(true);
 			const result = await actions.unionCard(data); 
+			setUserFirstName(data.firstName); 
 			setSubmissionSuccess(true); 
 		} catch (error) {
 			console.error("Failed to submit form:", error);
@@ -121,7 +122,7 @@ export function Card({depts}) {
 		<Form {...form}>
 		{submissionSuccess ? (
 			<div ref={welcomeRef} className="red third mt-8">
-				<h2>Welcome to the Union!</h2>
+				<h2>Welcome to the Union{userFirstName ? `, ${userFirstName}` : ''}!</h2>
 				<div className="basis-[calc(66%-3rem)] grow">
 				<h3>Grad workers are now one card closer to a better IU!</h3>
 				<p>Want to do more?</p>
@@ -134,7 +135,11 @@ export function Card({depts}) {
 			</div>
 		) : (
 			<form onSubmit={form.handleSubmit(onSubmit)} className="text-secondary bg-white bg-[url('/grain.png')] bg-repeat rounded-lg drop-shadow-[2px_0px_4px_white] p-4 max-w-3xl mx-auto my-8 flex flex-wrap justify-between gap-8">
-				
+				<div>
+					<h3 className="basis-full">IGWC Card</h3>
+					<p className="basis-full">I hereby request and accept membership in the Indiana Graduate Workers Coalition (IGWC). I authorize the IGWC to represent me and negotiate on my behalf all wages, benefits, and working conditions for SAA positions as the exclusive bargaining representative of graduate employees at IU.</p>
+				<Separator />
+				</div>
 				<FormField
 					control={form.control}
 					name="firstName"
