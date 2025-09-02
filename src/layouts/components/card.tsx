@@ -52,7 +52,7 @@ const FormSchema = z.object({
   contract: z.enum([
     "saa-instructional",
     "saa-research",
-    "saa-assisstant",
+    "saa-assistant",
     "fellowship",
     "hourly",
     "none",
@@ -367,10 +367,10 @@ export function Card({depts}) {
 									</FormItem>
 									<FormItem className="flex items-center gap-3">
 										<FormControl>
-											<RadioGroupItem value="saa-assisstant" />
+											<RadioGroupItem value="saa-assistant" />
 										</FormControl>
 										<FormLabel className="font-normal block">
-											<span className="font-bold">Graduate Assisstant SAA:</span> You work at a journal or some other campus institution, but receive tuition remission
+											<span className="font-bold">Graduate Assistant SAA:</span> You work at a journal or some other campus institution, but receive tuition remission
 										</FormLabel>
 									</FormItem>
 									<FormItem className="flex items-center gap-3">

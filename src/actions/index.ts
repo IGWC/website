@@ -22,7 +22,7 @@ export const server = {
 			contract: z.enum([
 				"saa-instructional",
 				"saa-research",
-				"saa-assisstant",
+				"saa-assistant",
 				"fellowship",
 				"hourly",
 				"none",
