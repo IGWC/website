@@ -1,5 +1,5 @@
 ---
-title: What do we mean by Our University? Part 1: Our Degrees and Secured Funding
+title: What do we mean by Our University? Part 1, Our Degrees and Secured Funding
 description: <##>
 date: 2025-09-17
 ---
