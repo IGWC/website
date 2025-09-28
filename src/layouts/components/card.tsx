@@ -37,37 +37,37 @@ import {
 } from "/src/layouts/components/ui/popover"
 
 const FormSchema = z.object({
-  firstName: z.string().min(1, { message: "First name is required." }),
-  lastName: z.string().min(1, { message: "Last name is required." }),
+	firstName: z.string().min(1, { message: "First name is required." }).trim(),
+	lastName: z.string().min(1, { message: "Last name is required." }).trim(),
 
-  userID: z.string().toLowerCase().min(1, { message: "IU Username is required." }).transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
-  email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-  phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
-  textOK: z.boolean().default(true).optional(),
-  
-  dept: z.string().min(3, { message: "Please select a department." }),
-  otherDept: z.string().optional(),
-  subfield: z.string().optional(),
-  card: z.boolean().default(true),
-  contract: z.enum([
-    "saa-instructional",
-    "saa-research",
-    "saa-assistant",
-    "fellowship",
-    "hourly",
-    "none",
-  ], { message: "Please select a contract type." }),
-  location: z.string().optional(),
-  year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean."),
-  getInvolved: z.boolean().default(false).optional(),
+	userID: z.string().toLowerCase().min(1, { message: "IU Username is required." }).trim().transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
+	email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }).trim(),
+	phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }).trim(),
+	textOK: z.boolean().default(true).optional(),
+
+	dept: z.string().min(3, { message: "Please select a department." }),
+	otherDept: z.string().optional(),
+	subfield: z.string().optional(),
+	card: z.boolean().default(true),
+	contract: z.enum([
+		"saa-instructional",
+		"saa-research",
+		"saa-assistant",
+		"fellowship",
+		"hourly",
+		"none",
+	], { message: "Please select a contract type." }),
+	location: z.string().optional(),
+	year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean.").trim(),
+	getInvolved: z.boolean().default(false).optional(),
 }).superRefine((data, ctx) => {
-  if (data.dept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
-    ctx.addIssue({
-      code: z.ZodIssueCode.custom,
-      message: "Please specify your department.",
-      path: ["otherDept"],
-    });
-  }
+	if (data.dept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
+		ctx.addIssue({
+			code: z.ZodIssueCode.custom,
+			message: "Please specify your department.",
+			path: ["otherDept"],
+		});
+	}
 });
 
 

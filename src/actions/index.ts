@@ -7,12 +7,12 @@ import { db, IGWC } from "astro:db";
 export const server = {
 	unionCard: defineAction({
 		input: z.object({
-			firstName: z.string().min(1, { message: "First name is required." }),
-			lastName: z.string().min(1, { message: "Last name is required." }),
+			firstName: z.string().min(1, { message: "First name is required." }).trim(),
+			lastName: z.string().min(1, { message: "Last name is required." }).trim(),
 
-			userID: z.string().toLowerCase().min(1, { message: "IU Username is required." }).transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
-			email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }),
-			phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }),
+			userID: z.string().toLowerCase().min(1, { message: "IU Username is required." }).trim().transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
+			email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }).trim(),
+			phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }).trim(),
 			textOK: z.boolean().default(true).optional(),
 	
 			dept: z.string().min(3, { message: "Please select a department." }),
@@ -28,7 +28,7 @@ export const server = {
 				"none",
 			], { message: "Please select a contract type." }),
 			location: z.string().optional(),
-			year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean."),
+			year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean.").trim(),
 			getInvolved: z.boolean().default(false).optional(),
 		}).superRefine((data, ctx) => {
 			if (data.dept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
@@ -42,28 +42,21 @@ export const server = {
 		handler: async (input) => {
 			try {
 				console.log(JSON.stringify(input))
-				await db.insert(IGWC).values(input).onConflictDoUpdate({ target: IGWC.userID, set: input });
 				const googleScriptUrl = "https://script.google.com/macros/s/AKfycby2oEQbkHixO7im5Ya2gOAUOATPWiypcHR9ZQlHz2adC77MZetEj5jGw_e7m_E9HLPqqQ/exec";
-				if (googleScriptUrl) {
-					
-					const response = await fetch(googleScriptUrl, {
+
+				const requests = [
+					await db.insert(IGWC).values(input).onConflictDoUpdate({ target: IGWC.userID, set: input }),
+					fetch(googleScriptUrl, {
 						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-						},
+						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify(input),
-					});
-					
-					// Optional: Log the Google Script response for debugging.
-					if (!response.ok) {
-						console.error(`Google Script POST failed with status: ${response.status}`);
-					} else {
-						console.log("Successfully posted to Google Script!");
-					}
-				}
+					}),
+				]
+				await Promise.all(requests);
+				console.log("All requests (DB insert and Google Script POSTs) successfully completed!");
 				return { success: true };
 			} catch (error) {
-				console.log(error)
+				console.error("An error occurred during concurrent requests:", error);
 				return { success: false };
 			}
 		}
