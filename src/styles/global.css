@@ -149,7 +149,7 @@ font-feature-settings: "ss07", "ss08", "cv10";
 		@apply border-solid border-b-[0.1rem] border-foreground;
 	}
 	a{
-		@apply underline decoration-[0.1em] break-all;
+		@apply underline decoration-[0.1em];
 	}
 	header{
 		@apply flex flex-wrap gap-x-[2em] m-8;
@@ -281,7 +281,7 @@ font-feature-settings: "ss07", "ss08", "cv10";
 		}
 	}
 	footer{
-		@apply text-white bg-foreground bg-[url("/grain.png")] bg-repeat rounded-2xl min-h-[calc(100vh-2rem)] font-headline-sans text-5xl leading-none p-8 m-4 space-y-8;
+		@apply text-white bg-foreground bg-[url("/grain.png")] bg-repeat rounded-2xl min-h-[calc(100vh-2rem)] font-headline-sans lg:text-5xl md:text-4xl text-3xl leading-none p-8 m-4 space-y-8;
 		svg{
 			@apply size-[1em] align-middle fill-current contents;
 		}
