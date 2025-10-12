@@ -44,23 +44,23 @@ Madeleine Meldrum, <span class="text-current/70">Area Coordinator</span>\
 A. Nambiar, <span class="text-current/70">Area Coordinator</span>\
 Ian Spink, <span class="text-current/70">Area Coordinator</span>
 
-<span class="text-current/70">[igwc@indianagrads.org](mailto:igwc@indianagrads.org)</span>
+<span class="text-current/70">[igwc@indianagradworkers.org](mailto:igwc@indianagradworkers.org)</span>
 
 </div>
 <div class="basis-1/2">
 
 Ann Campbell, <span class="text-current/70">Co-chair</span>\
 Adri Cruz, <span class="text-current/70">Co-chair\
-[chairs@indianagrads.org](mailto:chairs@indianagrads.org)</span>
+[chairs@indianagradworkers.org](mailto:chairs@indianagradworkers.org)</span>
 
 Eli Beaton, <span class="text-current/70">Communications Officer\
-[comms@indianagrads.org](mailto:comms@indianagrads.org)</span>
+[comms@indianagradworkers.org](mailto:comms@indianagradworkers.org)</span>
 
 Mike McCarthy, <span class="text-current/70">Financial Officer\
-[finance@indianagrads.org](mailto:finance@indianagrads.org)</span>
+[finance@indianagradworkers.org](mailto:finance@indianagradworkers.org)</span>
 
 Madeleine Meldrum, <span class="text-current/70">Grievance Officer\
-[grievance@indianagrads.org](mailto:grievance@indianagrads.org)</span>
+[grievance@indianagradworkers.org](mailto:grievance@indianagradworkers.org)</span>
 
 </div>
 </div>
