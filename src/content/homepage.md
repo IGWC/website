@@ -52,7 +52,7 @@ IU must provide living wage employment for graduate students to finish their deg
 
 <div class="basis-[calc(66%-3rem)] grow">
 
-### Union Recognition
+### Collective Bargaining and Union Recognition
 
 IU must recognize the IGWC as the collective bargaining representative for graduate workers.
 
