@@ -258,7 +258,7 @@ font-feature-settings: "ss07", "ss08", "cv10";
 		summary{
 			@apply flex justify-between items-center cursor-pointer list-none font-headline-serif font-normal text-3xl pe-4 leading-[1.2];
 			p{
-				@apply inline;
+/* 				@apply inline; */
 			}
 			&::after{
 				@apply content-[">"] duration-400 transform-[rotate(90deg)]
