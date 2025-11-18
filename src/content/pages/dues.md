@@ -17,10 +17,12 @@ The General Assembly set the voluntary dues recommendation at $32 per month. Thi
 
 Please email the Financial Officer [finance@indianagrads.org](mailto:finance@indianagrads.org) with any questions.
 
+![](../../media/2024-12-26-rally-button.jpeg)
+
 </div>
 
 <div class="basis-1/3 grow min-w-[300px]">
-<script src="https://donorbox.org/widget.js" paypalExpress="false"></script> <iframe src="https://donorbox.org/embed/igwc-ue-voluntary-dues-ii?" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style="max-width: 100%; min-width: 250px; max-height:none!important" allow="payment"></iframe>
+<script type="module" src="https://donorbox.org/widgets.js" async></script><dbox-widget campaign="igwc-ue-voluntary-dues-ii" type="donation_form" enable-auto-scroll="true"></dbox-widget>
 </div>
 </section>
 
@@ -29,15 +31,14 @@ Please email the Financial Officer [finance@indianagrads.org](mailto:finance@ind
 <section>
 <div class="basis-1/3 grow min-w-[300px]">
 
-Not a Member but want to contibute? Donate to our Campaign/Strike fund!
+<script type="module" src="https://donorbox.org/widgets.js" async></script><dbox-widget campaign="igwc-campaign-fund" type="donation_form" enable-auto-scroll="true"></dbox-widget>
 
-Indiana University graduate workers are fighting for a living wage and a seat at the bargaining table. Your donation helps us to better organize graduate workers, run more events, and prepare for future action should the administration refuse to recognize our union.
-
-<p class="action"><a href="/organize">Donate!</a></p>
 </div>
 <div class="basis-[calc(66%-3rem)] grow">
 
-![](../../media/2024-12-26-rally-button.jpeg)
+Not a Member but want to contibute? Donate to our Campaign/Strike fund!
+
+Indiana University graduate workers are fighting for a living wage and a seat at the bargaining table. Your donation helps us to better organize graduate workers, run more events, and prepare for future action should the administration refuse to recognize our union.
 
 </div>
 
