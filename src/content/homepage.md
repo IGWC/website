@@ -71,7 +71,7 @@ IU must provide a path to universal 12-month contracts for SAAs with a living wa
 
 ### Legal Protection
 
-In addition to maintaining enrollment, IU must ensure that international students receive financial support to finish their degrees regardless of their student or visa status
+In addition to maintaining enrollment, IU must ensure that international students receive financial support to finish their degrees regardless of their student or visa status.
 
 ### Sanctuary Campus
 
