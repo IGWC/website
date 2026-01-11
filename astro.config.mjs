@@ -48,7 +48,8 @@ export default defineConfig({
 		"/fairness-for-international-students": "/platform#fairness-for-international-students",
 		"/protect-and-improve-benefits": "/platform#expanded-medical--parental-benefits",
 		"/living-wage-annual-raises.html": "/platform#a-living-wage",
-		"/donate": "/dues#donate-to-our-campaignstrike-fund"
+		"/donate": "/dues#donate-to-our-campaignstrike-fund",
+		"/field-report": "/archives/field-report-2026-01.pdf",
   },
 
   adapter: vercel(),
