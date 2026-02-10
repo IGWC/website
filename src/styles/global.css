@@ -137,7 +137,7 @@ font-feature-settings: "ss07", "ss08", "cv10";
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground font-body leading-[1.4] bg-[url("/grain.png")] bg-repeat;
+		@apply max-w-7xl mx-auto bg-background text-foreground font-body leading-[1.4] bg-[url("/grain.png")] bg-repeat;
 	}
 	ul{
 		@apply p-0 my-4;
