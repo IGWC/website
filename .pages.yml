@@ -1,0 +1,25 @@
+media:
+  input: /src/media
+  output: /src/media
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/content/pages
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+      - name: order
+        type: number
+        description: What position is this in the naviation menu? Set to 0 to hide.
+        required: true
+      - name: highlight
+        type: boolean
+        description: Fill in the button in the navigation menu.
+        required: true
+      - name: body
+        type: rich-text
