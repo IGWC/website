@@ -16,21 +16,25 @@ const pages = defineCollection({
 
 const news = defineCollection({ 
 	loader: glob({ pattern: "[^_]*.{md,mdx}", base: "src/content/news" }),
+/* 
 	schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.date(),
   })
+ */
 });
 
 const pieces = defineCollection({ 
 	loader: glob({ pattern: ["*.md", "**/*.md"], base: "src/content/pieces" }),
+/* 
 	schema: z.object({
     text: z.string(),
     url: z.string(),
     type: z.string(),
     order: z.number(),
   })
+ */
 });
 
 /* 
