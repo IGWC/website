@@ -22,4 +22,4 @@ content:
         description: Fill in the button in the navigation menu.
         required: true
       - name: body
-        type: code
+        type: rich-text
