@@ -8,15 +8,19 @@ content:
     path: src/content/news
     fields:
       - name: title
+        label: Title
         type: string
         required: true
       - name: description
+        label: Description
         type: string
         required: true
       - name: date
+        label: Date
         type: date
         required: true
       - name: listserv
+        label: sd
         type: select
         options:
           values:
