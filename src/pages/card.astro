@@ -13,11 +13,9 @@ const igwc = await db.select({
   id: IGWC.firstName,
   dept: IGWC.dept,
 }).from(IGWC);
-
 ---
 
 <Layout frontmatter="">
   <h1>Sign a Union Card</h1>
-<!--   <p>Currently in maintenance. Will return soon 🙂</p> -->
   <Card client:load depts={depts} />
 </Layout>

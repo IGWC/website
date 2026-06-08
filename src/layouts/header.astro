@@ -3,8 +3,6 @@ import { getCollection } from "astro:content";
 import Logo from '../media/logo.svg';
 
 const pieces = await getCollection('pieces');
-const stickers = pieces.filter(piece => piece.data.type === 'sticker');
-stickers.sort((a, b) => a.data.order - b.data.order);
 
 const banner = pieces.filter(piece => piece.data.type === 'banner');
 

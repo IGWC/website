@@ -1,0 +1,13 @@
+services:
+  astro-website:
+    build: .
+    container_name: igwc-website
+    ports:
+      - ":4324" 
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

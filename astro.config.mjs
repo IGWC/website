@@ -10,9 +10,7 @@ import db from '@astrojs/db';
 
 import tailwindcss from '@tailwindcss/vite';
 
-// import vercel from '@astrojs/vercel';
-
-import cloudflare from "@astrojs/cloudflare";
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,8 +22,9 @@ export default defineConfig({
   integrations: [react(), markdoc(), sitemap(), mdx(), db()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
+
   redirects: {
         "/end-the-fees": "/victories",
         "/living-wage-annual-raises": "/victories",
@@ -54,5 +53,7 @@ export default defineConfig({
         "/field-report": "/archives/field-report-2026-01.pdf",
   },
 
-  adapter: cloudflare(),
+  adapter: node({
+    mode: "standalone",
+  }),
 });
