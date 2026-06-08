@@ -20,7 +20,7 @@ content:
         type: date
         required: true
       - name: listserv
-        label: sd
+        label: Email List
         type: select
         options:
           values:
