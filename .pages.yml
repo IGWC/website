@@ -1,6 +1,6 @@
 media:
-  input: /src/media
-  output: /src/media
+  input: src/media
+  output: src/media
 content:
   - name: pages
     label: Pages
