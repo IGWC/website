@@ -24,6 +24,6 @@ content:
               label: Member Email List
             - name: igwc-ue-news-l
               label: Newsletter
-        description: Select which footer (with social media and unsubscribe links) will be appended to the newsletter
+        description: Select which footer (with social media and unsubscribe links) will be appended to the newsletter when sent as an email
       - name: body
         type: rich-text
