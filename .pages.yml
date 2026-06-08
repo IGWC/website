@@ -30,4 +30,5 @@ content:
               label: Newsletter
         description: Select which footer (with social media and unsubscribe links) will be appended to the newsletter when sent as an email
       - name: body
+        label: 
         type: rich-text
