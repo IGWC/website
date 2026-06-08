@@ -2,10 +2,10 @@ media:
   input: src/media
   output: src/media
 content:
-  - name: pages
-    label: Pages
+  - name: news
+    label: News
     type: collection
-    path: src/content/pages
+    path: src/content/news
     fields:
       - name: title
         type: string
@@ -13,12 +13,17 @@ content:
       - name: description
         type: string
         required: true
-      - name: order
-        type: number
-        description: What position is this in the naviation menu? Set to 0 to hide.
+      - name: date
+        type: date
         required: true
-      - name: highlight
-        type: boolean
+      - name: listserv
+        type: select
+        options:
+          values:
+            - name: igwc-ue-l
+              label: Member Email List
+            - name: igwc-ue-news-l
+              label: Newsletter
         description: Fill in the button in the navigation menu.
         required: true
       - name: body
