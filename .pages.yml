@@ -6,6 +6,7 @@ content:
     label: News
     type: collection
     path: src/content/news
+    filename: "{primary}.md"
     fields:
       - name: title
         label: Title
