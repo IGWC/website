@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import {Content as Footer} from '/src/content/footer.md'
 import { execSync } from "child_process";
-const lastModified = new Date(execSync('git log -1 --pretty="format:%cI"', { encoding: 'utf-8' }));
+//const lastModified = new Date(execSync('git log -1 --pretty="format:%cI"', { encoding: 'utf-8' }));
 import {frontmatter as slogans} from '/src/content/slogans.md';
 const slogan = slogans[Math.floor(Math.random() * slogans.length)];
 
@@ -14,8 +14,10 @@ pages.sort((a, b) => a.data.order - b.data.order);
 <footer>
   <Footer />
   
-  <p>IGWC &copy; {lastModified.getFullYear()} &mdash; “{slogan}”<br>
+  <!-- 
+<p>IGWC &copy; {lastModified.getFullYear()} &mdash; “{slogan}”<br>
   Updated: {lastModified.toDateString()} {lastModified.toLocaleTimeString("en-US", { hour12: false, timeZoneName: "short" })}</p>
+ -->
 
   
   <p>&#x263a;</p>
