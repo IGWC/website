@@ -25,6 +25,5 @@ content:
             - name: igwc-ue-news-l
               label: Newsletter
         description: Select which footer (with social media and unsubscribe links) will be appended to the newsletter
-        required: true
       - name: body
         type: rich-text
