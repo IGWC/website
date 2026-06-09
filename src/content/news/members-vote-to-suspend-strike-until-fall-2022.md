@@ -2,6 +2,7 @@
 title: Members Vote to Suspend Strike Until Fall 2022
 description: <##>
 date: 2022-05-10
+listserv: igwc-ue-news-l
 ---
 
 Congratulations on wrapping up four weeks of historic and productive striking! Our hard work and unity have secured us many victories, including 625 Faculty Members voted YES TO UNION RECOGNITION. Hence, we are well-positioned to secure more victories moving into the summer and fall.
@@ -30,7 +31,7 @@ The faculty have responded to our strike with the first Special Meeting of Bloom
 
 The faculty have sent a strong message to the Board of Trustees. It’s time for the Board to respond and recognize the will of the faculty. We won this victory through our strike and our unity.
 
-We recommend a suspension of the strike. The strike will stop over the summer and resume in the fall after another vote of union members. 
+We recommend a suspension of the strike. The strike will stop over the summer and resume in the fall after another vote of union members.
 
 The thinking behind the decision to suspend the strike is twofold:
 
@@ -47,4 +48,4 @@ As always, we hope the Administration will talk with the IGWC-UE. We hope that p
 
 This strike has changed Indiana University. Each one of us is more courageous now than we were four weeks ago. We are more unified now than we were four weeks ago.
 
-IU Administrators will always know that we can strike. They will have to account for that when they want to ignore us or put us low on their priority list. Our goals of union recognition, a living wage, and ending the fees are ambitious. We knew we wouldn’t win them all at once. But we will never go back to the years in which graduate employees can just be ignored. We are here and we have our union. We are an immovable force. We really are unstoppable. 
+IU Administrators will always know that we can strike. They will have to account for that when they want to ignore us or put us low on their priority list. Our goals of union recognition, a living wage, and ending the fees are ambitious. We knew we wouldn’t win them all at once. But we will never go back to the years in which graduate employees can just be ignored. We are here and we have our union. We are an immovable force. We really are unstoppable.

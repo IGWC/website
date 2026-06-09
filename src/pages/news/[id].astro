@@ -3,12 +3,17 @@ import { getCollection, render } from 'astro:content';
 import MarkdownPostLayout from '/src/layouts/main.astro';
 
 export async function getStaticPaths() {
-  const news = await getCollection('news');
+  // Filter the collection so Astro only builds pages for these specific stories
+  const news = await getCollection('news', ({ data }) => {
+    return data.listserv === 'igwc-ue-news-l';
+  });
+  
   return news.map(story => ({
     params: { id: story.id },
     props: { story },
   }));
 }
+
 const options = {
   timeZone: "UTC",
   weekday: "long",
@@ -27,7 +32,20 @@ const { Content } = await render(story);
 		<p class="font-mono text-sm m-1 uppercase flex"><span class="basis-16">URL:</span> <a href={"/news/" + story.id}>{story.id}</a></p>
 		<p class="font-mono text-sm m-1 uppercase flex"><span class="basis-16">Date:</span> <span>{story.data.date.toLocaleDateString("en-US", options)}</span></p>
 	</div>
-	<div class="max-w-3xl my-8">
+	<div class="container max-w-3xl my-8">
 	<Content />
 	</div>
 </MarkdownPostLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const paragraphs = document.querySelectorAll('.container p');
+    paragraphs.forEach(p => {
+      if (p.children.length === 1 && p.children[0].tagName === 'A') {
+        if (p.textContent.trim() === p.children[0].textContent.trim()) {
+          p.classList.add('action');
+        }
+      }
+    });
+  });
+</script>

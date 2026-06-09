@@ -2,9 +2,10 @@
 title: IU Administration Undermines Union Gains with Inequitable Wage Distributions
 description: <##>
 date: 2023-07-26
+listserv: igwc-ue-news-l
 ---
 
-While our organizing did push the University to give grad workers a 3% raise, the admin applied it in a wildly unequal way. IGWC-UE Coordinating Committee sent a letter demanding these inequities be addressed. You may read the full letter copied below. 
+While our organizing did push the University to give grad workers a 3% raise, the admin applied it in a wildly unequal way. IGWC-UE Coordinating Committee sent a letter demanding these inequities be addressed. You may read the full letter copied below.
 
 Come join us at the next** General Assembly on August 1st at 3:30 p.m.** to help build our capacity to keep fighting for grad workers and discuss our upcoming leadership elections! The GA will be held at the **Monroe County Public Library Room 1C (and also via [Zoom](/zoom))**. Please [RSVP here](https://forms.gle/4nxGjUhQY4FyR94o9).
 
@@ -24,6 +25,6 @@ Concerning the recently announced raises, we applaud the principle of an annual 
 
 We look forward to your response.
 
-Regards, 
+Regards,
 
 The Indiana Graduate Workers Coalition - United Electrical Workers

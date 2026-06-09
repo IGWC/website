@@ -2,6 +2,7 @@
 title: Whitten accepts new salary of $900,000 while cutting funds across campus
 description: <##>
 date: 2025-03-04
+listserv: igwc-ue-news-l
 ---
 
 Recently, the IU Board of Trustees renewed President Whitten's contract for 5 more years with a new starting salary of **$900,000** a year—a 28% raise.

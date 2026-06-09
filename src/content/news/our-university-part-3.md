@@ -2,6 +2,7 @@
 title: What do we mean by Our University? Part 3, As IU Administration Increases Their Censorship and Assault on Free Speech, Union Recognition Becomes Ever More Important
 description: <##>
 date: 2025-10-20
+listserv: igwc-ue-news-l
 ---
 
 This week, IU administration continued their battle against free speech on campus by [firing the head of the Indiana Daily Student paper](https://www.idsnews.com/article/2025/10/indiana-university-daily-student-print-paper-censorship-fired) and [cutting all future print editions](https://www.idsnews.com/article/2025/10/ids-print-indiana-university-daily-student-fired-newspaper) after the IDS questioned admin's attempts to censor its news content.

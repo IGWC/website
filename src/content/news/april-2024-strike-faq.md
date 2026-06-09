@@ -2,6 +2,7 @@
 title: April 2024 Strike FAQ
 description: <##>
 date: 2024-04-15
+listserv: igwc-ue-news-l
 ---
 
 <div class="news-embed">

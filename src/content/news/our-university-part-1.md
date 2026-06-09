@@ -2,6 +2,7 @@
 title: What do we mean by Our University? Part 1, Our Degrees and Secured Funding
 description: <##>
 date: 2025-09-17
+listserv: igwc-ue-news-l
 ---
 
 How long does it take to finish your degree? For [almost every graduate student at IU since 2006, the answer is about 6 years](https://tableau.bi.iu.edu/t/prd/views/GraduateandProfessionalTimetoDegree/DoctoralResearch/d6e6bd20-df57-49e9-b10d-cfd6c2b1e583/DoctoralTimetoDegree). Balancing classes, research, writing, and our labor for the university means that it takes time to produce high-quality academic work.

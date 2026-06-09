@@ -2,9 +2,10 @@
 title: Indiana University Board of Trustees & Administration Reject Dialogue Over Graduate Worker Concerns
 description: <##>
 date: 2022-02-02
+listserv: igwc-ue-news-l
 ---
 
-On February 1, Interim Provost and Executive Vice President John S. Applegate informed IGWC-UE that [the Indiana University administration and Board of Trustees are unwilling to engage in discussion](/archives/Applegate-Letter_Feb-2022.pdf) about improving the lives and working conditions of Graduate Workers at IU. 
+On February 1, Interim Provost and Executive Vice President John S. Applegate informed IGWC-UE that [the Indiana University administration and Board of Trustees are unwilling to engage in discussion](/archives/Applegate-Letter_Feb-2022.pdf) about improving the lives and working conditions of Graduate Workers at IU.
 
 **We are disappointed that the IU Board of Trustees and Administration have chosen this pathway.** Across the country, Graduate Workers have faced similar obstacles and have overcome them to win unionization and its benefits. Graduate Workers at the University of Iowa, University of Illinois, the University of Michigan, and the University of Wisconsin all contended with administrations that initially refused to engage in dialogue. Each of these Graduate Worker unions overcame claims similar to those voiced by Interim Provost Applegate, to win massive wage increases, elimination of fees, and annual raises. Like our colleagues at other universities, **we will continue this fight until we will win. [Help us win!](https://docs.google.com/forms/d/e/1FAIpQLSc4VHqX-2AMCpMJCrUeotYXH5A7dEwWo1nK41j6gLCltG3KIQ/viewform)**
 
@@ -16,9 +17,9 @@ The IU administration claims that we are not workers. In reality, **Graduate Wor
 
 Provost Applegate claims that IU has “been responsive to the concerns and needs” of Graduate Workers. In reality, the IU Administration has ignored our increasingly dire economic conditions. **Graduate Workers at IU are struggling.** Indiana University’s [own estimates](/archives/COAS-Graduate-Task-Force-Report-2019.pdf) show that **Graduate Workers’ wages fall well below the cost of living in Bloomington.** Empirical data demonstrate that many Graduate Workers are forced to choose between making rent and covering other financial necessities, such as food, medical treatment, and childcare. To compensate for inadequate wages, many Graduate Workers must balance multiple side jobs, diverting time and energy away from our work and research. **Graduate Workers who are first-generation, caregivers, or from minoritized backgrounds are disproportionately affected.**
 
-We call on the IU Board of Trustees and administration to **recognize and come into good-faith coordination with the IGWC-UE to affirm a pathway toward unionization.** We remain enthusiastic about building a meaningful relationship and engaging in productive discussion. When the Indiana University Board of Trustees and Administration support Graduate Workers, they also support the IU faculty and fellow staff with whom we work, the students we teach and mentor, and the state and broader community that Indiana University serves. 
+We call on the IU Board of Trustees and administration to **recognize and come into good-faith coordination with the IGWC-UE to affirm a pathway toward unionization.** We remain enthusiastic about building a meaningful relationship and engaging in productive discussion. When the Indiana University Board of Trustees and Administration support Graduate Workers, they also support the IU faculty and fellow staff with whom we work, the students we teach and mentor, and the state and broader community that Indiana University serves.
 
-Graduate unions around the country have demonstrated that when we persist, we win. Now, more than ever, we remain resolute in our efforts to secure **dignified, equitable, and accessible graduate life** at Indiana University. 
+Graduate unions around the country have demonstrated that when we persist, we win. Now, more than ever, we remain resolute in our efforts to secure **dignified, equitable, and accessible graduate life** at Indiana University.
 
 We need all hands on deck to win our fight for unionization. [Join us!](https://docs.google.com/forms/d/e/1FAIpQLSc4VHqX-2AMCpMJCrUeotYXH5A7dEwWo1nK41j6gLCltG3KIQ/viewform)
 

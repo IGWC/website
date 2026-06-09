@@ -2,6 +2,7 @@
 title: Strike FAQs for Undergraduate Students
 description: <##>
 date: 2024-04-15
+listserv: igwc-ue-news-l
 ---
 
 <div class="news-embed">

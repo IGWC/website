@@ -2,6 +2,7 @@
 title: IGWC Protests against Visa Revocations; Meeting Pushes IU to Affirm Student Status
 description: <##>
 date: 2025-04-15
+listserv: igwc-ue-news-l
 ---
 
 Last Thursday, over 300 graduate workers, staff, faculty, and community members protested [the recent revocation of visas at IU](https://www.idsnews.com/article/2025/04/student-visa-canceled-indiana-university), demanding that IU honor its commitment to these students and ensure them a pathway to degree.

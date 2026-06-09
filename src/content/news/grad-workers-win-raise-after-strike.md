@@ -2,6 +2,7 @@
 title: Grad Workers win raise after strike, but Admins pocket more money than ever
 description: <##>
 date: 2025-01-16
+listserv: igwc-ue-news-l
 ---
 
 IU [recently announced](https://news.iu.edu/live/news/43363-iu-bloomington-increases-minimum-stipends-expands) that the minimum stipend for graduate workers will rise from $23,000 to $24,000, following the [3-day IGWC strike last spring](https://www.idsnews.com/article/2024/04/caigwcstrikecoverage041724).

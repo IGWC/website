@@ -2,6 +2,7 @@
 title: IGWC-UE Writes to IU Admin Expressing Concerns About COVID-19
 description: <##>
 date: 2022-01-19
+listserv: igwc-ue-news-l
 ---
 
 The Indiana Graduate Workers Coalition - United Electrical, Radio and Machine Workers of America (IGWC-UE) has written President Whitten, Provost Applegate, Dr. Carroll, and select Vice Provosts and Vice Presidents, to [share a letter expressing our concerns about Indiana University’s Spring 2022 policies](/archives/COVID-19-Spring-2022-Letter.pdf).

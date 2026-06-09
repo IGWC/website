@@ -2,6 +2,7 @@
 title: Over 800 Grad Workers Sign Union Cards on Day One of the Union Drive
 description: <##>
 date: 2023-09-29
+listserv: igwc-ue-news-l
 ---
 
 Graduate students at Indiana University are showing their support for unionization and a living wage by signing union cards at extraordinary rates. In just twenty-four hours, over 800 graduate students signed union cards. [See full press release here](/archives/800-Grad-Workers-Sign-Union-Cards-9282023.pdf).
