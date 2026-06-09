@@ -3,7 +3,7 @@ media:
   output: src/media
 content:
   - name: news
-    label: News
+    label: Newsletter
     type: collection
     path: src/content/news
     filename: "{primary}.md"
