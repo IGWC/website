@@ -16,13 +16,13 @@ const pages = defineCollection({
 
 const news = defineCollection({ 
 	loader: glob({ pattern: "[^_]*.{md,mdx}", base: "src/content/news" }),
-/* 
 	schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.date(),
+    listserv: z.string(),
   })
- */
+
 });
 
 const pieces = defineCollection({ 

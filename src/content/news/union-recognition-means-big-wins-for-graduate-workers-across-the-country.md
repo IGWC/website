@@ -2,6 +2,7 @@
 title: Union Recognition Means Big Wins for Graduate Workers Across the Country!
 description: <##>
 date: 2023-10-20
+listserv: igwc-ue-news-l
 ---
 
 Join over 1,200 of your fellow graduate workers in our campaign for union recognition and a living wage.

@@ -2,6 +2,7 @@
 title: Our Campaign to Fight for Degrees/Programs and Improve Conditions for Graduate Workers
 description: <##>
 date: 2025-07-23
+listserv: igwc-ue-news-l
 ---
 
 In the face of funding cuts at the university and federal level, the increasing economic strain on workers across IU, and the attacks on international students and other vulnerable student groups, it's become clear that workers across IU need a say in how the university operates. People like Whitten, Braun, and the Board of Trustees see IU as a place to enrich themselves at the direct expense of students, faculty, and staff. They've forgotten that the real work of the university is in the classrooms, archives, and labs.

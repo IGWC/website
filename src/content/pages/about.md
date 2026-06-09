@@ -10,11 +10,11 @@ highlight: false #true/false
 <section>
 <div class="basis-1/3 grow min-w-[300px]">
 
-IGWC is a member-run local—the General Assembly, comprised of all IGWC members, is the primary decision-making body in the union. 
+IGWC is a member-run local—the General Assembly, comprised of all IGWC members, is the primary decision-making body in the union.
 
 The General Assembly delegates organizing tasks to the Organizing Committee, which meets weekly and oversees day-to-day organizing operations. The Organizing Committee is comprised of all Department Organizers and open to all members. The Organizing Committee nominates Area Coordinators to support organizing in various departments.
 
-Those Area Coordinators make up the Coordinating Committee, alongside several officers elected directly by the General Assembly: the Co-chairs of the Coordinating Committee, the Financial Officer, the Communications Officer, and the Grievance Officer. 
+Those Area Coordinators make up the Coordinating Committee, alongside several officers elected directly by the General Assembly: the Co-chairs of the Coordinating Committee, the Financial Officer, the Communications Officer, and the Grievance Officer.
 
 </div>
 <div class="basis-[calc(66%-3rem)] grow">
@@ -34,14 +34,19 @@ Those Area Coordinators make up the Coordinating Committee, alongside several of
 <div class="basis-1/2">
 
 Dora Ahearn-Wood, <span class="text-current/70">Area Coordinator</span>\
-S. Dinesh, <span class="text-current/70">Area Coordinator</span>\
+Madi Becker, <span class="text-current/70">Area Coordinator</span>\
+Margaret Carpenter, <span class="text-current/70">Area Coordinator</span>\
+Sreehari Dinesh, <span class="text-current/70">Area Coordinator</span>\
 Sam Duckworth, <span class="text-current/70">Area Coordinator</span>\
-S. Dutta, <span class="text-current/70">Area Coordinator</span>\
-Brian Hensley, <span class="text-current/70">Area Coordinator</span>\
-Ashton Hoene, <span class="text-current/70">Area Coordinator</span>\
-S. Kim, <span class="text-current/70">Area Coordinator</span>\
-Madeleine Meldrum, <span class="text-current/70">Area Coordinator</span>\
-A. Nambiar, <span class="text-current/70">Area Coordinator</span>\
+Jesse Hannan, <span class="text-current/70">Area Coordinator</span>\
+Matthew Jackson, <span class="text-current/70">Area Coordinator</span>\
+Jesse Lloyd, <span class="text-current/70">Area Coordinator</span>\
+Kylie May, <span class="text-current/70">Area Coordinator</span>\
+Ashish Nambiar, <span class="text-current/70">Area Coordinator</span>\
+Doğa Özcan, <span class="text-current/70">Area Coordinator</span>
+Aarathi Parameswaran, <span class="text-current/70">Area Coordinator</span>\
+Olivia Philippon, <span class="text-current/70">Area Coordinator</span>\
+Ethan Rahman, <span class="text-current/70">Area Coordinator</span>\
 Ian Spink, <span class="text-current/70">Area Coordinator</span>
 
 <span class="text-current/70">[igwc@indianagradworkers.org](mailto:igwc@indianagradworkers.org)</span>
@@ -49,17 +54,17 @@ Ian Spink, <span class="text-current/70">Area Coordinator</span>
 </div>
 <div class="basis-1/2">
 
-Ann Campbell, <span class="text-current/70">Co-chair</span>\
+Eli Beaton, <span class="text-current/70">Co-chair</span>\
 Adri Cruz, <span class="text-current/70">Co-chair\
 [chairs@indianagradworkers.org](mailto:chairs@indianagradworkers.org)</span>
 
-Eli Beaton, <span class="text-current/70">Communications Officer\
+Bryce Greene, <span class="text-current/70">Communications Officer\
 [comms@indianagradworkers.org](mailto:comms@indianagradworkers.org)</span>
 
-Mike McCarthy, <span class="text-current/70">Financial Officer\
+Chris Bowers, <span class="text-current/70">Financial Officer\
 [finance@indianagradworkers.org](mailto:finance@indianagradworkers.org)</span>
 
-Madeleine Meldrum, <span class="text-current/70">Grievance Officer\
+Matthew Jackson, <span class="text-current/70">Grievance Officer\
 [grievance@indianagradworkers.org](mailto:grievance@indianagradworkers.org)</span>
 
 </div>

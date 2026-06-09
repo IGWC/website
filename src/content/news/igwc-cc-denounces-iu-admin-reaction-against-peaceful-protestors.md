@@ -2,13 +2,14 @@
 title: IGWC Coordinating Committee Denounces IU Administration’s Reaction Against Peaceful Protestors
 description: <##>
 date: 2024-08-25
+listserv: igwc-ue-news-l
 ---
 
-Late in the evening of Sunday, August 25, a peaceful candlelight vigil outside the Sample Gates to mourn the loss of free speech on our campus was met with repression by IU administrators and police. Student and faculty participants were charged with personal misconduct for expressive activity on campus between the hours of 11 p.m. and 6 a.m. The free expression policy was passed by the Board of Trustees in the middle of the summer break to avoid passing this unpopular rule while most students were on campus. The policy is overbroad and already the subject of a lawsuit by the American Civil Liberties Union. 
+Late in the evening of Sunday, August 25, a peaceful candlelight vigil outside the Sample Gates to mourn the loss of free speech on our campus was met with repression by IU administrators and police. Student and faculty participants were charged with personal misconduct for expressive activity on campus between the hours of 11 p.m. and 6 a.m. The free expression policy was passed by the Board of Trustees in the middle of the summer break to avoid passing this unpopular rule while most students were on campus. The policy is overbroad and already the subject of a lawsuit by the American Civil Liberties Union.
 
 **Students are back on campus. Graduate workers are back on campus. And the vigils will continue. The Coordinating Committee of the IGWC invites members and students to attend these vigils, which will be held weekly in collaboration with other campus partners every Sunday at 11 p.m. until our rights are restored to us.**
 
-The university administration continues to threaten our right for free speech and expression, not only by limiting and targeting our protest rights with the expressive activity policy, but also in our workplace: the classroom, through the new “intellectual diversity” law, SEA202. This law does not provide intellectual diversity, but rather subjects instructors – including graduate workers – to unfair scrutiny on a political basis. Our freedom of speech is under threat both inside and outside the classroom. 
+The university administration continues to threaten our right for free speech and expression, not only by limiting and targeting our protest rights with the expressive activity policy, but also in our workplace: the classroom, through the new “intellectual diversity” law, SEA202. This law does not provide intellectual diversity, but rather subjects instructors – including graduate workers – to unfair scrutiny on a political basis. Our freedom of speech is under threat both inside and outside the classroom.
 
 **Our administration will not protect the educational mission of IU.** They care only about the policing of speech, the creation of a climate of fear, and the disciplining of graduate workers and student activists. We as graduate workers have organized not only to ensure ourselves a living wage, but also to provide our students the best education we possibly can. The free expression policy and SEA 202 severely limit our ability to educate our students. We will continue to fight for our students’ education.
 

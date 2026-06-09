@@ -2,11 +2,12 @@
 title: IGWC Coordinating Committee Denounces IU Administration’s Violence Against Peaceful Protestors
 description: <##>
 date: 2024-04-25
+listserv: igwc-ue-news-l
 ---
 
 ## Urgent Statement on the Escalation at Dunn Meadow
 
-The Coordinating Committee of the Indiana Graduate Workers Coalition (IGWC) stands indignantly against the brutality exercised upon peaceful demonstrators at Dunn Meadow today, April 25th, by the administration of the President Pamela Whitten. Inviting Indiana State Police on the Indiana University campus to attack a peaceful protest is a violation of the most basic principles of academic freedom. This is not merely an instance of policy misstep but a glaring revelation of systemic rot—an administration forsaken by trust, ousted by its faculty, and now, a perpetrator of aggression against its own students. 
+The Coordinating Committee of the Indiana Graduate Workers Coalition (IGWC) stands indignantly against the brutality exercised upon peaceful demonstrators at Dunn Meadow today, April 25th, by the administration of the President Pamela Whitten. Inviting Indiana State Police on the Indiana University campus to attack a peaceful protest is a violation of the most basic principles of academic freedom. This is not merely an instance of policy misstep but a glaring revelation of systemic rot—an administration forsaken by trust, ousted by its faculty, and now, a perpetrator of aggression against its own students.
 
 Among those violently arrested were some of our own IGWC student organizers who were peacefully assembled on Indiana University property.
 
@@ -25,15 +26,15 @@ We demand the following immediate actions from Indiana University’s administra
 3. An immediate halt to the use of police force against peaceful demonstrators.
 4. The resignation of the three administrators for whom the faculty and graduate students have no confidence: President Pamela Whitten, Provost Rahul Shrivastav, and Vice Provost Carrie Docherty.
 5. The end of the Crane partnership.
-6. Financial divestment from Israel and adherence to BDS (Boycott, Divestment, Sanctions). 
+6. Financial divestment from Israel and adherence to BDS (Boycott, Divestment, Sanctions).
 
 We reiterate that the disdain shown by the university administration towards peaceful demonstrators is precisely why we stand firm in our vote of no confidence. An institution that chooses violence over dialogue and force over freedom is one that betrays its mission and its people.
 
 We call upon our community allies, academic comrades, and guardians of civil liberties to join us in condemning these actions and supporting our non-negotiable right to peaceful protest. We will not be silenced, we will not be intimidated, and we will continue to stand for justice.
 
-Our spirit is unbreakable; our cause is righteous. We will not be muted; we will not falter. 
+Our spirit is unbreakable; our cause is righteous. We will not be muted; we will not falter.
 
-Signed, 
+Signed,
 
 The IGWC Coordinating Committee
 

@@ -2,6 +2,7 @@
 title: Can a Grad Worker Union even Win?
 description: <##>
 date: 2025-09-11
+listserv: igwc-ue-news-l
 ---
 
 We'll keep this one short: **yes**.

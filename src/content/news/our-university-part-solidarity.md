@@ -2,6 +2,7 @@
 title: Solidarity Means Taking Action
 description: <##>
 date: 2025-10-01
+listserv: igwc-ue-news-l
 ---
 
 On Friday, September 19, faculty and graduate students in the Jewish Studies Faculty–Graduate Student Colloquium walked out in solidarity with a student after she was harassed and barred from attending.

@@ -2,6 +2,7 @@
 title: Indiana University Grad Workers Endorse Strike. Faculty To Vote “No Confidence” In President And Provost
 description: <##>
 date: 2024-04-14
+listserv: igwc-ue-news-l
 ---
 
 The Indiana Graduate Workers Coalition (IGWC) [endorsed a call for a three-day strike at its general membership meeting on Sunday, April 14](/archives/Resolution-to-Endorse-a-Strike-Yes-Vote-April-14.pdf). All 1,300 union members will now vote on whether to strike for three days, Wednesday through Friday, April 17-19.

@@ -2,6 +2,7 @@
 title: IU Grad Workers Vote “No Confidence” in IU President Pamela Whitten; Endorse a Process to Explore Strike Readiness
 description: <##>
 date: 2024-02-04
+listserv: igwc-ue-news-l
 ---
 
 On Sunday, February 4, the Indiana Graduate Workers Coalition (IGWC) lodged a [vote of no confidence in IU President Pamela Whitten](/archives/No-Confidence-Resolution_Feb-4-GMM.pdf) at the union’s general membership meeting and in a subsequent online vote. Graduate workers also endorsed a resolution on strike assessment and education to explore whether IGWC members would pursue a strike as a strategy to win their demands.
@@ -22,11 +23,11 @@ Katharina Schmid-Schmidsfelden, an international student and graduate worker in 
 
 “We have zero faith in President Whitten’s ability to lead our university,” said Schmid-Schmidsfelden. “The Bloomington Faculty Council voted back in 2022 for the administration to allow us a pathway to unionization, but the administration hasn’t even listened to the faculty. In fact, they are ignoring more and more voices everyday.”
 
-The vote of no confidence also cites the recent suspension of Professor Abdulkader Sinno and the cancellation of IU alumna Samia Halaby’s exhibition as evidence that the Whitten administration is not only acting against the best interests of the university but is also suppressing fundamental rights. 
+The vote of no confidence also cites the recent suspension of Professor Abdulkader Sinno and the cancellation of IU alumna Samia Halaby’s exhibition as evidence that the Whitten administration is not only acting against the best interests of the university but is also suppressing fundamental rights.
 
-“It’s clear to our membership that the university leadership is threatened by those who exercise freedom of speech, as in the case of artist Samia Halaby or Professor Sinno, or those who exercise their democratic right to form a union, like us,” said Adri Cruz, a graduate worker in the Department of Physics. “We hope that other undergraduate, graduate, and faculty organizations will join us and publish their own votes of no confidence in President Whitten. Practically everyone at IU is angered with this administration, and if we band together, they will be compelled to listen.” 
+“It’s clear to our membership that the university leadership is threatened by those who exercise freedom of speech, as in the case of artist Samia Halaby or Professor Sinno, or those who exercise their democratic right to form a union, like us,” said Adri Cruz, a graduate worker in the Department of Physics. “We hope that other undergraduate, graduate, and faculty organizations will join us and publish their own votes of no confidence in President Whitten. Practically everyone at IU is angered with this administration, and if we band together, they will be compelled to listen.”
 
-The general membership meeting also concluded with discussion on other collective actions the IGWC might take in response to the administration’s failure to answer the union’s demands. 
+The general membership meeting also concluded with discussion on other collective actions the IGWC might take in response to the administration’s failure to answer the union’s demands.
 
 “Whatever collective action we take, we only do it together after we have a majority consensus among our members,” said Anne Kavalerchik, a graduate worker in the Departments of Sociology and Informatics. “Our members are considering sit-ins, rallies, and even a strike. Everything’s on the table right now.”
 

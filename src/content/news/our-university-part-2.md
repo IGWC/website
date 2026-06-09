@@ -2,6 +2,7 @@
 title: What do we mean by Our University? Part 2, Our Degrees and Protecting At-Risk Degree Programs
 description: <##>
 date: 2025-09-23
+listserv: igwc-ue-news-l
 ---
 
 In July, the Indiana Commission on Higher Education released a list of voluntary degree/program eliminations in compliance with [Indiana law HEA-1001](https://www.in.gov/che/files/HEA1001-Voluntary-Early-Actions-and-Commitments_UPDATED_7.10.25.pdf), the state budget bill that mandated the elimination of "low enrollment" degrees and programs in addition to subjecting classrooms and research to more scrutiny from the conservative legislature. Programs across the university in sciences, social sciences, and humanities are directly threatened by these consolidations/eliminations.
@@ -14,7 +15,7 @@ If the reputation of the university is built on it's unique degree offerings (ev
 
 IU must take measures to protect degree programs and associated departments at risk of dissolution under HEA-1001-2025 through negotiations with elected bargaining representatives for the graduate workers, students, faculty, and staff impacted.
 
-Workers have a right to negotiate the conditions of their work, but that is only possible through collective action, starting with signing a union card!   
+Workers have a right to negotiate the conditions of their work, but that is only possible through collective action, starting with signing a union card!
 Even if you've signed a union card in past semesters, be sure to sign this new card!
 
 

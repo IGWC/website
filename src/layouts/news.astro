@@ -1,6 +1,11 @@
 ---
 import { getCollection, render } from "astro:content";
-const news = await getCollection('news');
+
+// Filter the collection directly during the fetch
+const news = await getCollection('news', ({ data }) => {
+  return data.listserv === 'igwc-ue-news-l';
+});
+
 news.sort((a, b) => b.data.date - a.data.date);
 
 const options = {
@@ -12,7 +17,6 @@ const options = {
 };
 ---
 
-  
 <div class="flex flex-wrap justify-center gap-4 mt-8">
 {news.map((story) => 
   <a href={'/news/' + story.id} class="basis-[calc(50%-4rem)] min-w-3xs grow flex flex-col justify-between text-primary-foreground bg-primary no-underline p-4 rounded-lg">
