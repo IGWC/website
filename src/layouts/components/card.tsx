@@ -325,7 +325,7 @@ export function Card({depts}) {
 					name="subfield"
 					render={({ field }) => (
 						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Subfield <span class="text-current/40">(Optional)</span></FormLabel>
+							<FormLabel className="font-headline-serif text-2xl">Subfield or Lab<span class="text-current/40">(Optional)</span></FormLabel>
 							<FormDescription className="my-0">
 							 For example, your lab if you are in the sciences, or whether you are in literature or linguistics in the languages.
 							</FormDescription>
