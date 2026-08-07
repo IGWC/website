@@ -119,7 +119,7 @@ Graduate workers who are IGWC members vote on our platform and actions and elect
 
 International students have the right to freely express their views on issues concerning their employment at IU without fear for their visa status. This right is guaranteed by university policy and the laws and constitution of the United States.
 
-[IU’s policy on academic freedom reads](https://policies.iu.edu/policies/aca-32-academic-freedom/index.html): “Academic freedom includes the freedom to express views on matters having to do with the university and its policies, and on issues of public interest generally.” The [US Department of State](https://travel.state.gov/content/dam/visas/LegalRightsandProtections/Wilberforce/Documents/Wilberforce%20Pamphlet%20ENGLISH.pdf): “With few exceptions, you have the right to join together with your coworkers to ask your employer to improve your wages or working conditions.” And that “you have this right regardless of your immigration status. Your employer cannot take action against you for asserting your rights.”
+[IU’s policy on academic freedom reads](https://policies.iu.edu/policies/aca-32-academic-freedom/index.html): “Academic freedom includes the freedom to express views on matters having to do with the university and its policies, and on issues of public interest generally.” The [US Department of State](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/wilberforce-english.html): “With few exceptions, you have the right to join together with your coworkers to ask your employer to improve your wages or working conditions.” And that “you have this right regardless of your immigration status. Your employer cannot take action against you for asserting your rights.”
 
 The United States Constitution guarantees certain rights to everyone staying in the country. Non-US citizens in the United States (such as international scholars and students) have the right to the same constitutional protections as US citizens. All employees (both citizen and non-citizen) are protected against discrimination on the grounds of race, religion, and national origin in their workplace.
 
@@ -171,7 +171,10 @@ The IGWC has been active since 2020. While the IU Administration has used tactic
 
 Union dues are a small percent (typically 1% to 2%) of an employee’s pay, which fund the cost of organizing materials and activities. This small amount is overwhelmingly offset by the increases in pay and benefits that unionization secures.
 
-When we have formal union recognition, members will be asked to pay union dues so that our time and energy can focus on fighting for better working conditions, instead of fundraising. Right now, we ask members to voluntarily pay dues that are 1.6% of their monthly pay. Please become a voluntary dues paying member!
+When we have formal union recognition, members will be asked to pay union dues so that our time and energy can focus on fighting for better working conditions, instead of fundraising. Right now, we ask members to voluntarily pay dues that are 1.6% of their monthly pay.
+
+<p class="action"><a href="/dues" class="text-foreground bg-background">Become a voluntary dues paying member!</a></p>
+
 
 </details>
 
