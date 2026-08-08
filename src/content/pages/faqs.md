@@ -140,7 +140,7 @@ If you are an international student and you want to get involved but are concern
 
 **MYTH:** *Unionizing will negatively impact my relationship with my department and/or advisor.*
 
-**FACT:** Research finds that “[union-represented graduate student employees report higher levels of personal and professional support](https://nugradworkers.org/wp-content/uploads/2016/10/rogers_-_effects_of_unionization_on_graduate_student_employees.pdf)” than their non-unionized peers.
+**FACT:** Research finds that “[union-represented graduate student employees report higher levels of personal and professional support](/archives/ROGERS-EFFECTSUNIONIZATIONGRADUATE-2013.pdf)” than their non-unionized peers.
 
 </div>
 </summary>
