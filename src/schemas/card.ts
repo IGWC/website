@@ -23,7 +23,7 @@ export const unionCardSchema = z.object({
         "hourly",
         "none",
     ]),
-    teaching: z.boolean().default(false).optional(),
+    teaching: z.boolean().default(false),
     location: z.string().optional(),
     year: z
         .string()
