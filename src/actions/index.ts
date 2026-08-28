@@ -8,9 +8,13 @@ export const server = {
 
     handler: async (input) => {
       try {
+        const row = { ...input,
+            card: true,
+            teaching: input.contract === "saa" && (input.teaching ?? false),
+         };
         const [submission] = await db
           .insert(IGWCSubmissions)
-          .values(input)
+          .values(row)
           .returning();
 
         console.log(
