@@ -3,11 +3,37 @@ import { z } from "astro/zod";
 const currentYear = new Date().getFullYear();
 
 export const unionCardSchema = z.object({
-    firstName: z.string().trim().min(1, { message: "First name is required." }),
-    lastName: z.string().trim().min(1, { message: "Last name is required. Enter first name again if you have no last name." }),
+    firstName: z.string().trim().min(1, { message: "First name is required." }).max(100, { message: "First name must be at most 100 characters." }),
+    lastName: z.string().trim().min(1, { message: "Last name is required. Enter first name again if you have no last name." }).max(
+        100, { message: "Last name must be at most 100 characters." }
+    ),
 
-    userID: z.string().trim().toLowerCase().min(1, { message: "IU Username is required." }).transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
-    email: z.email({ message: "Invalid email address." }).min(1, { message: "Email is required." }).trim(),
+    userID: z.string().trim().toLowerCase().transform(value =>
+        value.replace(/(@iu\.edu|@indiana\.edu)$/i, "")
+    ).pipe(
+        z.string().min(3, { message: "User ID must be at least 3 characters." }).max(8, { message: "User ID must be at most 8 characters." })
+    ),
+    email: z.string()
+            .trim()
+            .pipe(
+                z.email({
+                    message: "Please enter a valid email address.",
+                })
+            ).refine(
+                (email) => {
+                    const domain = email.split("@")[1].toLowerCase();
+
+                    const blockedDomains = [
+                        "iu.edu",
+                        "indiana.edu",
+                    ];
+
+                    return !blockedDomains.includes(domain);
+                },
+                {
+                    message: "Please use a non-IU email address.",
+                }
+            ),
     phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }).trim(),
     textOK: z.boolean().default(true).optional(),
 
@@ -50,6 +76,13 @@ export const unionCardSchema = z.object({
             code: z.ZodIssueCode.custom,
             message: "Please specify your additional department.",
             path: ["additionalOtherDept"],
+        });
+    }
+    if (data.additionalDept && data.additionalDept === data.dept) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: "Additional department must be different from the primary department.",
+            path: ["additionalDept"],
         });
     }
 });

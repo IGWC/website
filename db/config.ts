@@ -10,18 +10,18 @@ const IGWCSubmissions =  defineTable({
     lastName: column.text(),
     email: column.text(),
     phone: column.text(),
-    textOK: column.boolean({ optional: true }),
+    textOK: column.boolean({ default: false }),
     otherDept: column.text({ optional: true }),
     dept: column.text({ references: () => Departments.columns.deptCode }),
     subfield: column.text({ optional: true }),
     card: column.boolean({ default: true }),
     contract: column.text({ optional: true }),
-    location: column.text({ optional: true }),
+    location: column.text({ enum: ["saa", "fellowship", "hourly", "none"]}),
     year: column.text(),
-    getInvolved: column.boolean({ optional: true }),
+    getInvolved: column.boolean({ default: false }),
     additionalDept: column.text({ references: () => Departments.columns.deptCode, optional: true }),
     additionalOtherDept: column.text({ optional: true }),
-    teaching: column.boolean({ optional: false }),
+    teaching: column.boolean({ default: false }),
   }
 });
 

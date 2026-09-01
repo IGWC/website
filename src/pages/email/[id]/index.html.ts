@@ -25,8 +25,12 @@ async function processMarkdownImages(markdown: string, siteOrigin: string) {
 
     // 2. Resolve the relative markdown path to a project-root relative path
     // Assuming your 'news' collection markdown files live directly in 'src/content/news'
-    const absolutePath = path.resolve(srcPath);
-    const rootRelativePath = '/' + path.relative(process.cwd(), absolutePath);
+    const absolutePath = path.resolve(
+        process.cwd(),
+        'src/content/news',
+        srcPath
+    );
+    const rootRelativePath = '/' + path.relative(process.cwd(), absolutePath).split(path.sep).join('/');
 
     // 3. Check if the image exists in our globbed media folder
     if (imageImports[rootRelativePath]) {
@@ -63,15 +67,14 @@ export async function GET({ props, url }: APIContext) {
   let body = email.body;
 
   if (email.data.listserv) {
-    try {
-      const footerId = `${email.data.listserv}-footer`;
-      const footerPiece = await getEntry('pieces', footerId);
-      
-      if (footerPiece) {
-        body += `\n\n${footerPiece.body}`;
-      }
-    } catch (error) {
-      console.error(`Failed to load footer piece for listserv: ${email.data.listserv}`, error);
+
+    const footerId = `${email.data.listserv}-footer`;
+    const footerPiece = await getEntry('pieces', footerId);
+    
+    if (!footerPiece) {
+    throw new Error('Missing required email footer: ${footerId}');
+    }
+    body += `\n\n${footerPiece.body}`;
     }
   }
 

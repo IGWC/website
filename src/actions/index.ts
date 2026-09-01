@@ -10,7 +10,11 @@ export const server = {
       try {
         const row = { ...input,
             card: true,
-            teaching: input.contract === "saa" && (input.teaching ?? false),
+            teaching: input.contract === "saa" && input.teaching,
+            otherDept: 
+                input.dept === "other" ? input.otherDept?.trim() : undefined,
+            additionalOtherDept: 
+                input.additionalDept === "other" ? input.additionalOtherDept?.trim() : undefined,
          };
         const [submission] = await db
           .insert(IGWCSubmissions)
@@ -24,7 +28,9 @@ export const server = {
 
         return { success: true };
       } catch (error) {
-        console.error("Failed to store submission:", error);
+        console.error("Union card submission failed:", {
+            type: error instanceof Error ? error.name : "UnknownError",
+        })
         return { success: false };
       }
     },

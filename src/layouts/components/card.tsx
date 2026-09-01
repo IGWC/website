@@ -40,15 +40,22 @@ import {
     type UnionCardInput
 } from "/src/schemas/card.ts"
 
+type DepartmentOption = {
+    value: string;
+    label: string;
+    subfield: string | null;
+};
 
+type CardProps = {
+    depts: DepartmentOption[];
+};
 
-
-export function Card({depts}) {
+export function Card({depts} : CardProps) {
 	const [open, setOpen] = React.useState(false)
 	const [submissionSuccess, setSubmissionSuccess] = React.useState(false);
 	const [isSubmitting, setIsSubmitting] = React.useState(false);
 	const [userFirstName, setUserFirstName] = React.useState('');
-	const welcomeRef = React.useRef(null);
+	const welcomeRef = React.useRef<HTMLDivElement>(null);
 	const form = useForm<UnionCardInput>({
 		resolver: zodResolver(unionCardSchema),
 		defaultValues: {
@@ -63,6 +70,11 @@ export function Card({depts}) {
 		control: form.control,
 		name: "dept",
 	})
+
+    const additionalDeptOptions = 
+        React.useMemo(() => depts.filter(
+            (dept) => dept.value !== selectedDept
+        ), [depts, selectedDept]);
 
     const selectedAdditionalDept = useWatch({
         control: form.control,
@@ -94,6 +106,17 @@ export function Card({depts}) {
 			});
 		}
 	}, [submissionSuccess]);
+
+    React.useEffect(() => {
+        const additionalDept = form.getValues("additionalDept");
+
+        if (selectedDept && additionalDept === selectedDept) {
+            form.setValue("additionalDept", undefined, {
+                shouldValidate: true,
+                shouldDirty: true,
+            });
+        }
+    }, [selectedDept, form]);
 
 	const onSubmit = async (form_data: UnionCardInput) => {
 		try {
@@ -274,7 +297,7 @@ export function Card({depts}) {
 														value={dept.label}
 														key={dept.value}
 														onSelect={() => {
-															form.setValue("dept", dept.value)
+															field.onChange(dept.value)
 															setOpen(false)
 														}}
 														className="text-card-foreground"
@@ -322,7 +345,7 @@ export function Card({depts}) {
 					name="subfield"
 					render={({ field }) => (
 						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Subfield or Lab<span class="text-current/40">(Optional)</span></FormLabel>
+							<FormLabel className="font-headline-serif text-2xl">Subfield or Lab<span className="text-current/40">(Optional)</span></FormLabel>
 							<FormDescription className="my-0">
 							 For example, your lab if you are in the sciences, or whether you are in literature or linguistics in the languages.
 							</FormDescription>
@@ -342,12 +365,12 @@ export function Card({depts}) {
                         + Add another department
                     </Button>
                     ) : (
-                    <div className="basis-full flex flex-col gap-4">
+                    <div className="basis-full flex flex-wrap justify-between items-start gap-8">
                         <FormField
                         control={form.control}
                         name="additionalDept"
                         render={({ field }) => (
-                            <FormItem className="basis-full flex flex-col min-w-2xs">
+                            <FormItem className="flex-1 flex flex-col min-w-2xs">
                             <FormLabel className="font-headline-serif text-2xl">
                                 Additional Department
                             </FormLabel>
@@ -369,7 +392,7 @@ export function Card({depts}) {
                                     )}
                                     >
                                     {field.value
-                                        ? depts.find(
+                                        ? additionalDeptOptions.find(
                                             (department) => department.value === field.value
                                         )?.label
                                         : "Select Department"}
@@ -387,10 +410,11 @@ export function Card({depts}) {
                                     <CommandEmpty>No departments found.</CommandEmpty>
 
                                     <CommandGroup>
-                                        {depts.map((department) => (
+                                        {additionalDeptOptions.map((department) => (
                                         <CommandItem
                                             key={department.value}
                                             value={department.label}
+                                            className="text-card-foreground"
                                             onSelect={() => {
                                             field.onChange(department.value);
                                             setAdditionalDeptOpen(false);
@@ -401,6 +425,7 @@ export function Card({depts}) {
                                             <Check
                                             className={cn(
                                                 "ml-auto",
+                                                "text-card-foreground",
                                                 department.value === field.value
                                                 ? "opacity-100"
                                                 : "opacity-0"
@@ -422,6 +447,7 @@ export function Card({depts}) {
                         <Button
                         type="button"
                         variant="outline"
+                        className="shrink-0"
                         onClick={() => {
                             form.setValue("additionalDept", undefined);
                             form.setValue("additionalOtherDept", undefined);
@@ -430,22 +456,23 @@ export function Card({depts}) {
                         >
                         Remove additional department
                         </Button>
+
+                        {selectedAdditionalDept === "other" && (
+                            <FormField
+                                control={form.control}
+                                name="additionalOtherDept"
+                                render={({ field }) => (
+                                    <FormItem className="basis-2/3 min-w-2xs">
+                                        <FormLabel className="font-headline-serif text-2xl">Specify Other Department</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="What Department are you in?" {...field} />
+                                        </FormControl>
+                                        <FormMessage className="m-0" />
+                                    </FormItem>
+                                )}
+                            />
+                        )}
                     </div>
-                    )}
-                    {selectedAdditionalDept === "other" && (
-                        <FormField
-                            control={form.control}
-                            name="additionalOtherDept"
-                            render={({ field }) => (
-                                <FormItem className="basis-2/3 min-w-2xs">
-                                    <FormLabel className="font-headline-serif text-2xl">Specify Other Department</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="What Department are you in?" {...field} />
-                                    </FormControl>
-                                    <FormMessage className="m-0" />
-                                </FormItem>
-                            )}
-                        />
                     )}
 				<Separator />
 				<FormField
@@ -527,7 +554,7 @@ export function Card({depts}) {
 					name="location"
 					render={({ field }) => (
 						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Office Building/Room Number <span class="text-current/40">(Optional)</span></FormLabel>
+							<FormLabel className="font-headline-serif text-2xl">Office Building/Room Number <span className="text-current/40">(Optional)</span></FormLabel>
 							<FormControl>
 								<Input placeholder="Wells 113" {...field} />
 							</FormControl>

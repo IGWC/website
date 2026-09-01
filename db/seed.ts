@@ -1,7 +1,18 @@
-import { db, IGWCSubmissions } from 'astro:db';
+import { db, Departments, IGWCSubmissions } from 'astro:db';
 
 // https://astro.build/db/seed
 export default async function seed() {
+    await db.insert(Departments).values([
+    { deptCode: "HIST", deptName: "History" },
+    { deptCode: "PHIL", deptName: "Philosophy" },
+    { deptCode: "MATH", deptName: "Mathematics" },
+    { deptCode: "CS", deptName: "Computer Science" },
+    { deptCode: "BIO", deptName: "Biology" },
+    { deptCode: "CHEM", deptName: "Chemistry" },
+    { deptCode: "PHYS", deptName: "Physics" },
+    { deptCode: "ENG", deptName: "English" },
+    { deptCode: "other", deptName: "Other" },
+  ]);
 	await db.insert(IGWCSubmissions).values([
     {
     userID: "vhalibut",
