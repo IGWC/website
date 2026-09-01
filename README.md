@@ -24,7 +24,7 @@ That link would show up as a button on both the website and email.
 
 5. Save the entry. This will commit the changes to the Github and automatically update the website after about a minute!
 
-6. Visit the page you just made and make sure everything looks correct. `Newsletters` will be available at `https://indianagradworkers.org/news/{URL}` and rendered as email-formatted HTML at `https://indianagradworkers.org/email/{URL}`. `Member List` emails are only rendered as email-formatted HTML at `https://indianagradworkers.org/news/{URL}`.
+6. Visit the page you just made and make sure everything looks correct. `Newsletters` will be available at `https://indianagradworkers.org/news/{URL}` and rendered as email-formatted HTML at `https://indianagradworkers.org/email/{URL}`. `Member List` emails are only rendered as email-formatted HTML at `https://indianagradworkers.org/email/{URL}`.
 
 7. Log in to [IU Listserv](https://list.iu.edu/sympa/my) and find the right email list: `igwc-ue-l@list.iu.edu` is the Member List, and `igwc-ue-news-l@list.iu.edu` is the Newsletter
 
