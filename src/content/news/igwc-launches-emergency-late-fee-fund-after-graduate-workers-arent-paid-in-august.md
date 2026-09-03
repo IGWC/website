@@ -9,11 +9,13 @@ description: IGWC launched an Emergency Late Fee Fund after graduate workers
 date: 2026-09-03
 listserv: igwc-ue-news-l
 ---
+# IGWC Launches Emergency Late Fee Fund after Graduate Workers aren't paid in August
+
 ## Request aid at [igwc.work/aid](https://igwc.work/aid), or [Donate to Support Graduate Workers](https://indianagradworkers.org/aid)
 
 This week, many graduate workers were surprised to learn we would not be receiving a stipend in the month of August. August is always a difficult month financially for graduate workers on 10-month contracts, but typically IU pay schedule means that graduate workers are paid **before** September rent and bills are due. This year, however, the first pay-day for 10-month contracts was September 4. Those several days may seem inconsequential to admin making payroll decisions, but to grad workers making far below the living wage, that delay means late fees and added financial burden. 
 
-We've heard stories from graduate workers about the way those several days compounded late fees, caused bank overdrafts, and forced graduate workers to take out loans from family or friends to make ends meet. 
+We've heard stories from graduate workers about the way those several days compounded late fees, caused bank overdrafts, forced graduate workers to take out loans from family or friends to make ends meet, and caused grad workers to scramble to cover basic necessities like food and medications. What is clear is that when IU pays so far below the living wage, even minor disruptions have devastating impacts. A living wage isn't "nice to have"; it's a necessity. 
 
 IGWC has launched a fund to cover as much of these late fees on rent and bills as possible, funded through a combination of donations (donate directly at [indianagradworkers.org/aid](https://indianagradworkers.org/aid)) and [voluntary dues](https://indianagradworkers.org/dues). It's a matter of solidarity.
 
