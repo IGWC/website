@@ -60,7 +60,8 @@ export async function getStaticPaths() {
 
 export async function GET({ props, url }: APIContext) {
   const { email } = props;
-  let body = email.body;
+  const titleH1 = email.data.title ? `# ${email.data.title}\n\n` : '';
+  let body = titleH1 + email.body;
 
   if (email.data.listserv) {
     try {
@@ -82,7 +83,7 @@ export async function GET({ props, url }: APIContext) {
   const frontmatterString = `---\n${JSON.stringify(email.data)}\n---\n`;
   
   const regex = /^(\[[^\]]+\]\([^)]+\))\s*$/gm;
-  const modifiedMarkdown = body.replace(regex, '$1{button}');
+  const modifiedMarkdown = body.replace(regex, '$1{button}\n');
   
   const rawMarkdownContent = frontmatterString + modifiedMarkdown;
 
