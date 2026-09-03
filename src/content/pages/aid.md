@@ -15,11 +15,11 @@ highlight: false #true/false
 </div>
 <div class="basis-[calc(66%-3rem)] grow">
 
-This week, IU Graduate Workers were surprised to learn we would not be receiving a stipend in the month of August. Our first paycheck will instead arrive September 4 – several days after the end of the month, when many of us owe rent, credit card payments, and other bills.
-
-These few days may seem inconsequential to the administrators making payroll decisions, but to grad workers still struggling to get by on far less than a living wage, the delay means late fees and added stress.
-
-IGWC is launching a mutual aid fund to help ease this sudden, unwarranted financial burden, and to show the university admin that we will take care of each other even when they neglect us.
+  This week, many graduate workers were surprised to learn we would not be receiving a stipend in the month of August. August is always a difficult month financially for graduate workers on 10-month contracts, but typically the IU pay schedule means that graduate workers are paid **before** September rent and bills are due. This year, however, the first pay-day for 10-month contracts was September 4. 
+  
+  Those several days may seem inconsequential to admin making payroll decisions, but to grad workers making far below the living wage, that delay means late fees and added financial burden.We've heard stories from graduate workers about the way those several days compounded late fees, caused bank overdrafts, forced graduate workers to take out loans from family or friends to make ends meet, and caused grad workers to scramble to cover basic necessities like food and medications. What is clear is that when IU pays so far below the living wage, even minor disruptions have devastating impacts. A living wage isn't "nice to have"; it's a necessity.
+  
+  IGWC has launched a fund to cover as much of these late fees on rent and bills as possible, funded through a combination of donations and [voluntary dues](https://indianagradworkers.org/dues). It's a matter of solidarity.
 
 </div>
 </section>
