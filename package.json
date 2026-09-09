@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "test": "node --test src/actions/card-delivery.test.mjs",
     "dev": "astro dev",
     "build": "astro build --remote",
     "preview": "astro preview",

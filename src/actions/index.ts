@@ -1,8 +1,33 @@
 import { ActionError, defineAction, isActionError } from "astro:actions";
-import { db, IGWC, IGWCSubmissions, Departments, eq } from "astro:db";
+import { db, IGWC, IGWCSubmissions, Departments, eq, gt, asc } from "astro:db";
 import { getSecret } from "astro:env/server";
 import { unionCardSchema } from "../schemas/card";
 import type { UnionCardInput } from "../schemas/card";
+import { createCardDelivery } from "./card-delivery.mjs";
+
+const cardDelivery = (() => {
+  // Enable only in the deployed Node process; keep disabled during builds and development.
+  if (process.env.IGWC_CARD_DELIVERY_ENABLED !== "true") return null;
+  try {
+    const worker = createCardDelivery({
+      loadSubmissions: (afterId: number, limit: number) => db.select().from(IGWCSubmissions)
+        .where(gt(IGWCSubmissions.submissionID, afterId))
+        .orderBy(asc(IGWCSubmissions.submissionID)).limit(limit),
+      directory: process.env.IGWC_CARD_PROGRESS_DIR,
+      afterId: process.env.IGWC_CARD_SYNC_AFTER_ID?.trim()
+        ? Number(process.env.IGWC_CARD_SYNC_AFTER_ID) : undefined,
+      term: process.env.IGWC_CARD_TERM,
+      legacyUrl: process.env.IGWC_CARD_LEGACY_URL,
+      backendUrl: process.env.IGWC_CARD_BACKEND_URL,
+      websiteToken: process.env.IGWC_CARD_WEBSITE_TOKEN,
+    });
+    worker.start();
+    return worker;
+  } catch {
+    console.error("IGWC card delivery: configuration invalid; submissions remain in Turso.");
+    return null;
+  }
+})();
 
 function toLegacySubmission(
   input: UnionCardInput,
@@ -175,6 +200,11 @@ export const server = {
           "Stored submission:",
           submission.submissionID
         );
+
+        // The new database retries from Turso independently of the existing compatibility writes.
+        void cardDelivery?.drain().catch(() => {
+          console.error("IGWC card delivery: pending; submissions remain in Turso.");
+        });
 
         const legacyRow = toLegacySubmission(
           input,
