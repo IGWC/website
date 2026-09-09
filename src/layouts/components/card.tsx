@@ -305,20 +305,28 @@ export function Card({depts} : CardProps) {
 						</FormItem>
 					)}
 				/>
-				<div>
-				<FormField
-					control={form.control}
-					name="phone"
-					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Phone Number</FormLabel>
-							<FormControl>
-								<Input type="tel" autoComplete="tel" placeholder="Phone Number" {...field} />
-							</FormControl>
-							<FormMessage className="m-0" />
-						</FormItem>
-					)}
-				/>
+				<div className="basis-full">
+					<FormField
+						control={form.control}
+						name="phone"
+						render={({ field }) => (
+							<FormItem className="w-2/3 min-w-2xs max-w-full">
+								<FormLabel className="font-headline-serif text-2xl">Phone Number</FormLabel>
+								<FormControl>
+									<PhoneNumberInput
+										defaultCountry="US"
+										placeholder="Enter phone number"
+										limitMaxLength
+										{...field}
+										value={(field.value || undefined) as PhoneValue | undefined}
+										onChange={(value) => field.onChange(value ?? "")}
+										onCountryChange={setSelectedPhoneCountry}
+									/>
+								</FormControl>
+								<FormMessage className="m-0" />
+							</FormItem>
+						)}
+					/>
 
 					<FormField
 						control={form.control}
