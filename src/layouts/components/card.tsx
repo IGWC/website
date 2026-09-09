@@ -255,7 +255,7 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="firstName"
 					render={({ field }) => (
-						<FormItem className="basis-[calc(50%-1rem)] min-w-2xs grow">
+						<FormItem className="basis-full min-w-0 grow sm:basis-[calc(50%-1rem)]">
 							<FormLabel className="font-headline-serif text-2xl">First Name</FormLabel>
 							<FormControl>
 								<Input autoComplete="given-name" placeholder="Preferred First Name" {...field} />
@@ -268,7 +268,7 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="lastName"
 					render={({ field }) => (
-						<FormItem className="basis-[calc(50%-1rem)] min-w-2xs grow">
+						<FormItem className="basis-full min-w-0 grow sm:basis-[calc(50%-1rem)]">
 							<FormLabel className="font-headline-serif text-2xl">Last Name</FormLabel>
 							<FormControl>
 								<Input autoComplete="family-name" placeholder="Last Name" {...field} />
@@ -282,7 +282,7 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="userID"
 					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
+						<FormItem className="basis-full min-w-0 sm:basis-2/3">
 							<FormLabel className="font-headline-serif text-2xl">IU Username</FormLabel>
 							<FormControl>
 								<Input placeholder="IU Username" {...field} />
@@ -296,7 +296,7 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="email"
 					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
+						<FormItem className="basis-full min-w-0 sm:basis-2/3">
 							<FormLabel className="font-headline-serif text-2xl">Non-IU Email</FormLabel>
 							<FormControl>
 								<Input type="email" autoComplete="email" placeholder="Non-IU Email" {...field} />
@@ -310,7 +310,7 @@ export function Card({depts} : CardProps) {
 						control={form.control}
 						name="phone"
 						render={({ field }) => (
-							<FormItem className="w-2/3 min-w-2xs max-w-full">
+							<FormItem className="w-full min-w-0 sm:w-2/3">
 								<FormLabel className="font-headline-serif text-2xl">Phone Number</FormLabel>
 								<FormControl>
 									<PhoneNumberInput
@@ -332,7 +332,7 @@ export function Card({depts} : CardProps) {
 						control={form.control}
 						name="textOK"
 						render={({ field }) => (
-						<FormItem className="basis-full min-w-2xs flex mt-4 px-1 items-center">
+						<FormItem className="basis-full min-w-0 flex mt-4 px-1 items-center">
 								<FormControl>
 									<Checkbox
 										className="cursor-pointer"
@@ -354,23 +354,23 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="dept"
 					render={({ field }) => (
-						<FormItem className="basis-full flex flex-col min-w-2xs">
+						<FormItem className="basis-full flex flex-col min-w-0">
 							<FormLabel className="font-headline-serif text-2xl">Department</FormLabel>
 							<FormDescription>
 								What department are you enrolled in? Select "Other" if you don't see it.
 							</FormDescription>
-								<div className="flex flex-wrap items-center justify-between gap-4">
+							<div className="flex flex-col gap-3 sm:flex-row sm:items-center">
 									<Popover open={open} onOpenChange={setOpen}>
 										<PopoverTrigger asChild>
 											<FormControl>
 												<Button
 													variant="outline"
-	                                            type="button"
+											type="button"
 													role="combobox"
 													aria-expanded={open}
 													tabIndex={0} 
 													className={cn(
-														"min-w-[250px] max-w-fit justify-between bg-white",
+											"w-full justify-between bg-white sm:w-auto sm:min-w-[250px]",
 														!field.value && "text-muted-foreground"
 													)}
 												>
@@ -383,7 +383,7 @@ export function Card({depts} : CardProps) {
 												</Button>
 											</FormControl>
 										</PopoverTrigger>
-										<PopoverContent className="min-w-[250px] max-w-fit p-0">
+										<PopoverContent className="w-[var(--radix-popover-trigger-width)] max-w-[calc(100vw-2rem)] p-0">
 											<Command>
 												<CommandInput
 													placeholder="Search Departments..."
@@ -423,7 +423,7 @@ export function Card({depts} : CardProps) {
 										<Button
 											type="button"
 											variant="outline"
-											className="ml-auto shrink-0"
+											className="w-full sm:ml-auto sm:w-auto sm:shrink-0"
 											onClick={() => setShowAdditionalDept(true)}
 										>
 											+ Add another department
@@ -440,7 +440,7 @@ export function Card({depts} : CardProps) {
                         control={form.control}
                         name="subfield"
                         render={({ field }) => (
-                        <FormItem className="basis-2/3 min-w-2xs">
+                        <FormItem className="basis-full min-w-0 sm:basis-2/3">
 	                            <FormLabel className="font-headline-serif text-2xl">
 	                            {selectedSubfieldLabel}
                             </FormLabel>
@@ -471,12 +471,12 @@ export function Card({depts} : CardProps) {
                         control={form.control}
                         name="additionalDept"
                         render={({ field }) => (
-                            <FormItem className="flex-1 flex flex-col min-w-2xs">
+                            <FormItem className="flex-1 flex flex-col min-w-0">
                             <FormLabel className="font-headline-serif text-2xl">
                                 Additional Department
                             </FormLabel>
 
-	                            <div className="flex flex-wrap items-center justify-between gap-4">
+                                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
 	                            <Popover
 	                                open={additionalDeptOpen}
 	                                onOpenChange={setAdditionalDeptOpen}
@@ -489,7 +489,7 @@ export function Card({depts} : CardProps) {
                                     role="combobox"
                                     aria-expanded={additionalDeptOpen}
                                     className={cn(
-                                        "min-w-[250px] max-w-fit justify-between bg-white",
+                                        "w-full justify-between bg-white sm:w-auto sm:min-w-[250px]",
                                         !field.value && "text-muted-foreground"
                                     )}
                                     >
@@ -504,7 +504,7 @@ export function Card({depts} : CardProps) {
                                 </FormControl>
                                 </PopoverTrigger>
 
-                                <PopoverContent className="min-w-[250px] max-w-fit p-0">
+                                <PopoverContent className="w-[var(--radix-popover-trigger-width)] max-w-[calc(100vw-2rem)] p-0">
                                 <Command>
                                     <CommandInput placeholder="Search Departments..." />
 
@@ -544,7 +544,7 @@ export function Card({depts} : CardProps) {
 	                            <Button
 	                            type="button"
 	                            variant="outline"
-	                            className="ml-auto shrink-0"
+	                            className="w-full sm:ml-auto sm:w-auto sm:shrink-0"
 	                            onClick={() => {
 	                                form.setValue("additionalDept", undefined);
 	                                form.setValue("additionalSubfield", undefined);
@@ -565,7 +565,7 @@ export function Card({depts} : CardProps) {
 	                                control={form.control}
 	                                name="additionalSubfield"
 	                                render={({ field }) => (
-	                                    <FormItem className="basis-2/3 min-w-2xs">
+	                                    <FormItem className="basis-full min-w-0 sm:basis-2/3">
 	                                        <FormLabel className="font-headline-serif text-2xl">
 	                                            {selectedAdditionalSubfieldLabel}
 	                                        </FormLabel>
@@ -670,7 +670,7 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="year"
 					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
+						<FormItem className="basis-full min-w-0 sm:basis-2/3">
 							<FormLabel className="font-headline-serif text-2xl">Year Entered</FormLabel>
 							<FormDescription>What year did you enter your program at IU?</FormDescription>
 							<FormControl>
@@ -713,7 +713,7 @@ export function Card({depts} : CardProps) {
                         {submissionError}
                     </p>
                 )}
-				<Button className="cursor-pointer font-headline-serif text-2xl py-6 px-6 mx-auto" type="submit" tabIndex={0} disabled={isSubmitting} aria-busy={isSubmitting} >
+				<Button className="w-full cursor-pointer px-6 py-6 font-headline-serif text-2xl sm:mx-auto sm:w-auto" type="submit" tabIndex={0} disabled={isSubmitting} aria-busy={isSubmitting} >
                     {isSubmitting ? "Signing..." : "Sign the Card!"}
                 </Button>
 			</form>
