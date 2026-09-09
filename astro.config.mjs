@@ -51,6 +51,87 @@ export default defineConfig({
         "/living-wage-annual-raises.html": "/platform#a-living-wage",
         "/donate": "/dues#donate-to-our-campaignstrike-fund",
         "/field-report": "/archives/field-report-2026-01.pdf",
+        "/zoom": {
+            destination: "https://zoom.us/j/7255062711",
+            status: 302
+        },
+        "/discord": {
+            status: 302,
+            destination: "https://discord.gg/6MhNvUfWED"
+        },
+        "/qr": {
+            status: 302,
+            destination: "/qr-code",
+        },
+        "/oc": {
+            status: 302,
+            destination: "https://docs.google.com/document/d/1H6xvDxkO_vjFWhnfxyJq-hxBpb2H_hP7mtzH_INyg3Y/edit",
+        },
+        "/do": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSfP0yv2bQRAX175ACAx75K0r9otxta-cVQZa9vi1Q-9uwU1nA/viewform",
+        },
+        "/general-assembly": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSebKZ6chdCdmq3Tl7lDgaOanzrP2I_NW1uvFork6OxzCm-Rjw/viewform",
+        },
+        "/ga-sign-in": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSdhhU0aSoKGI9H-s-tNGjMAuPH1uZEcL6oXqXU_O12242kyFA/viewform",
+        },
+        "/ga-vote": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSdvZVN7v-qNHAESRzG4IjPNQq5CuWi2xaUs5vxVcOn23IlAHw/viewform",
+        },
+        "/nominations": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSctm47YO7epAKCPCHlfrmYMKQGvNVKZrJCtx1e-4QWkPdSjnA/viewform",
+        },
+        "/election": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSeAixJw7ZXgXf7y1o2wvyaTM2Np6fL8hpcF-IGwIVR2VucT2g/viewform",
+        },
+        "/oc-sign-in": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSfYoVZOhx8D0ksaCoJwq0US13EGYhaTHArtHZCkDt2aMHX4bA/viewform",
+        },
+        "/expressive-activity": {
+            status: 302,
+            destination: "https://www.indianagradworkers.org/all-updates/igwc-cc-denounces-iu-admin-reaction-against-peaceful-protestors",
+        },
+        "/rally": {
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLScmZNS7tI1uWCSwOrBGS5J-bi-kQJG6mkYplTZnuRzxiC79cg/viewform",
+            status: 302
+        },
+        "/gmm": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSfpr9DmgoNtrJLVJMxrNM2OYVv-qSBGu-EQBab-cwWfpr3QcA/viewform",
+        },
+        "/gmm-sign-in": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSeoJ4cjUCYThMnwcCtfQF_VQra2cCKL-IZxdr6rb2ce3Z3DkA/viewform",
+        },
+        "/student-gov": {
+            status: 302,
+            destination: "https://beinvolved.indiana.edu/submitter/election/start/672571",
+        },
+        "/tax-workshop": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSeYv4iUD7Wyhqpo_k0TZK58mR3meaQuPuxgNENCI5o0e-y34w/viewform",
+        },
+        "/petition": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSfr1l0Ck17B1JBpvBIQV2nISmFoW0Y3pegeaFGQSQLdRlkmMQ/viewform",
+        },
+        "/labor-spring": {
+            status: 302,
+            destination: "https://docs.google.com/forms/d/e/1FAIpQLSeOsK6p16WT8z--rhtwl9Ey0_sAJNRMIuIkAYspbcE7QrkcaA/viewform",
+        },
+        "/international-resources": {
+            status: 302,
+            destination: "https://linktr.ee/btownrights4intlstudents",
+        }
+
   },
 
   adapter: node({

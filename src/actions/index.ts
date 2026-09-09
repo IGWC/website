@@ -1,64 +1,132 @@
-// src/actions/actions.ts
-import { defineAction } from "astro:actions";
-import { z } from 'astro:schema';
-import { db, IGWC } from "astro:db";
-//import { FormSchema } from "/src/layouts/components/forms/card.tsx"
+import { ActionError, defineAction, isActionError } from "astro:actions";
+import { db, IGWCSubmissions, Departments, eq } from "astro:db";
+import { unionCardSchema } from "../schemas/card";
+
+const findDepartment = async (deptCode: string) => {
+  const [department] = await db.select({
+    deptCode: Departments.deptCode,
+    subfieldLabel: Departments.subfieldLabel,
+  }).from(Departments).where(eq(Departments.deptCode, deptCode)).limit(1);
+
+  return department;
+};
+
+const normalizeOptionalText = (value?: string) => {
+  const normalized = value?.trim();
+  return normalized ? normalized : undefined;
+};
 
 export const server = {
-	unionCard: defineAction({
-		input: z.object({
-			firstName: z.string().min(1, { message: "First name is required." }).trim(),
-			lastName: z.string().min(1, { message: "Last name is required." }).trim(),
+  unionCard: defineAction({
+    input: unionCardSchema,
 
-			userID: z.string().toLowerCase().min(1, { message: "IU Username is required." }).trim().transform((val) => {return val.replace(/(@iu\.edu|@indiana\.edu)$/i, '');}),
-			email: z.string().email({ message: "Invalid email address." }).min(1, { message: "Email is required." }).trim(),
-			phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }).trim(),
-			textOK: z.boolean().default(true).optional(),
-	
-			dept: z.string().min(3, { message: "Please select a department." }),
-			otherDept: z.string().optional(),
-			subfield: z.string().optional(),
-			card: z.boolean().default(true),
-			contract: z.enum([
-				"saa-instructional",
-				"saa-research",
-				"saa-assistant",
-				"fellowship",
-				"hourly",
-				"none",
-			], { message: "Please select a contract type." }),
-			location: z.string().optional(),
-			year: z.string().min(4, { message: "Too small." }).max(4, { message: "Too big." }).startsWith('20', "A year in this century, we mean.").trim(),
-			getInvolved: z.boolean().default(false).optional(),
-		}).superRefine((data, ctx) => {
-			if (data.dept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
-				ctx.addIssue({
-					code: z.ZodIssueCode.custom,
-					message: "Please specify your department.",
-					path: ["otherDept"],
-				});
-			}
-		}),
-		handler: async (input) => {
-			try {
-				console.log(JSON.stringify(input))
-				const googleScriptUrl = "https://script.google.com/macros/s/AKfycby2oEQbkHixO7im5Ya2gOAUOATPWiypcHR9ZQlHz2adC77MZetEj5jGw_e7m_E9HLPqqQ/exec";
+    handler: async (input) => {
+      try {
+        const [department, additionalDepartment] = await Promise.all([
+          findDepartment(input.dept),
+          input.additionalDept
+            ? findDepartment(input.additionalDept)
+            : Promise.resolve(undefined),
+        ]);
 
-				const requests = [
-					await db.insert(IGWC).values(input).onConflictDoUpdate({ target: IGWC.userID, set: input }),
-					fetch(googleScriptUrl, {
-						method: 'POST',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify(input),
-					}),
-				]
-				await Promise.all(requests);
-				console.log("All requests (DB insert and Google Script POSTs) successfully completed!");
-				return { success: true };
-			} catch (error) {
-				console.error("An error occurred during concurrent requests:", error);
-				return { success: false };
-			}
-		}
-	}),
+        if (!department) {
+          throw new ActionError({
+            code: "BAD_REQUEST",
+            message: "Please select a valid department.",
+          });
+        }
+
+        if (input.additionalDept && !additionalDepartment) {
+          throw new ActionError({
+            code: "BAD_REQUEST",
+            message: "Please select a valid additional department.",
+          });
+        }
+
+        if (input.additionalDept === input.dept) {
+          throw new ActionError({
+            code: "BAD_REQUEST",
+            message: "Additional department must be different from the primary department.",
+          });
+        }
+
+        const acceptsSubfield =
+          department.deptCode === "other" || Boolean(department.subfieldLabel?.trim());
+        const subfield = acceptsSubfield
+          ? normalizeOptionalText(input.subfield)
+          : undefined;
+
+        if (acceptsSubfield && !subfield) {
+          throw new ActionError({
+            code: "BAD_REQUEST",
+            message: department.subfieldLabel?.trim()
+              ? `${department.subfieldLabel.trim()} is required.`
+              : "Please specify your department.",
+          });
+        }
+
+        const acceptsAdditionalSubfield = Boolean(
+          additionalDepartment && (
+            additionalDepartment.deptCode === "other" ||
+            additionalDepartment.subfieldLabel?.trim()
+          )
+        );
+        const additionalSubfield = acceptsAdditionalSubfield
+          ? normalizeOptionalText(input.additionalSubfield)
+          : undefined;
+
+        if (acceptsAdditionalSubfield && !additionalSubfield) {
+          throw new ActionError({
+            code: "BAD_REQUEST",
+            message: additionalDepartment?.subfieldLabel?.trim()
+              ? `${additionalDepartment.subfieldLabel.trim()} is required.`
+              : "Please specify your additional department.",
+          });
+        }
+
+        const row = {
+          userID: input.userID,
+          firstName: input.firstName,
+          lastName: input.lastName,
+          email: input.email,
+          phone: input.phone,
+          textOK: input.textOK ?? true,
+          dept: department.deptCode,
+          subfield,
+          card: true,
+          contract: input.contract,
+          year: input.year,
+          getInvolved: input.getInvolved ?? false,
+          additionalDept: additionalDepartment?.deptCode,
+          additionalSubfield,
+          teaching: input.contract === "saa" && input.teaching,
+        };
+
+        const [submission] = await db
+          .insert(IGWCSubmissions)
+          .values(row)
+          .returning();
+
+        console.log(
+          "Stored submission:",
+          submission.submissionID
+        );
+
+        return { success: true };
+      } catch (error) {
+        if (isActionError(error)) {
+          throw error;
+        }
+
+        console.error("Union card submission failed:", {
+            type: error instanceof Error ? error.name : "UnknownError",
+        });
+
+        throw new ActionError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "We couldn't submit your card. Please try again.",
+        });
+      }
+    },
+  }),
 };

@@ -1,6 +1,11 @@
 ---
-import { Astro } from 'astro';
-const site = Astro.site;
+const site = Astro.site ?? Astro.url;
+const canonical = new URL(Astro.url.pathname, site);
+const preview = new URL("/opengraph/preview.png", site);
+const thumbnail = new URL(
+  "/favicon/android-chrome-192x192.png",
+  site,
+);
 
 const { title, description } = Astro.props;
 
@@ -23,7 +28,7 @@ const schema = {
 <meta charset="utf-8">
 <meta http-equiv="Content-Language" content="en-US">
 <meta name="viewport" content="width=device-width">
-<link rel="canonical" href={site}>
+<link rel="canonical" href={canonical.href}>
 <!-- Icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -32,19 +37,19 @@ const schema = {
 <link rel="sitemap" href="/sitemap-index.xml">
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content={site}>
+<meta property="og:url" content={canonical.href}>
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:image" content={site + 'opengraph/preview.png'}>
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content={site}>
+<meta property="twitter:url" content={canonical.href}>
 <meta property="twitter:title" content={title}>
 <meta property="twitter:description" content={description}>
 <meta property="twitter:image" content={site + 'opengraph/preview.png'}>
 <!-- Schema -->
 <meta itemprop="name" content={title}>
-<meta itemprop="url" content={site}>
+<meta itemprop="url" content={canonical.href}>
 <meta itemprop="thumbnailUrl" content={site + 'android-chrome-192x192.png'}>
 <meta itemprop="image" content={site + 'opengraph/preview.png'}>
 <!-- Additional Structured Data (JSON-LD) -->
