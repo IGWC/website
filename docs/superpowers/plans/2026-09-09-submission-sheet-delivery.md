@@ -43,8 +43,10 @@
 
 ### Task 3: Review and activation handoff
 
-- [ ] Review the complete changes against the constraints and test output; resolve important findings.
-- [ ] Prepare the website change for review with build/test results and the backend-first activation order.
+- [x] Review the complete changes against the constraints and test output; resolve important findings.
+- [x] Prepare the website change for review with build/test results and the backend-first activation order.
 - [ ] Ask for server activation approval only after the implementation is concrete and reviewable.
 
 Verification: website Node tests pass (6). Local Astro build passes using a temporary SQLite database. Built-server smoke check passes: GET /card initializes polling, a local action saves one synthetic native row, both mocked endpoints receive the saved ID/date and expected v2 fields, and logs exclude credentials/contact details. Sender review found no important issues; its old-queue handoff clarification was incorporated.
+
+Integrated review is complete. The companion receiver passes lint/typecheck, 81 Node tests, 833 Vitest tests, and both builds. Review caught and fixed same-second submission ordering after organizer edits and tightened international phone validation. Scoped re-review is clean. Website draft PR: https://github.com/IGWC/website/pull/2. Server activation remains pending approval because merging to main triggers deployment.
