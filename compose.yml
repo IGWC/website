@@ -8,9 +8,17 @@ services:
     container_name: igwc-website
 
     environment:
+      IGWC_CARD_PROGRESS_DIR: /var/lib/igwc/card-delivery-v2
       ASTRO_DB_REMOTE_URL: ${ASTRO_DB_REMOTE_URL:?ASTRO_DB_REMOTE_URL is required}
       ASTRO_DB_APP_TOKEN: ${ASTRO_DB_APP_TOKEN:?ASTRO_DB_APP_TOKEN is required}
       GOOGLE_SHEETS_WEBHOOK_URL: ${GOOGLE_SHEETS_WEBHOOK_URL:?GOOGLE_SHEETS_WEBHOOK_URL is required}
+
+    env_file:
+      - path: ../data/card-delivery.env
+        required: false
+
+    volumes:
+      - ../data/card-delivery-v2:/var/lib/igwc/card-delivery-v2
 
     ports:
       - ":4324"
