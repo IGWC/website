@@ -3,7 +3,6 @@ import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { useForm, useWatch } from "react-hook-form"
-import { z } from "zod"
 import { actions } from "astro:actions";
 
 
@@ -22,6 +21,11 @@ import { Input } from "/src/layouts/components/ui/input"
 import { Checkbox } from "/src/layouts/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "/src/layouts/components/ui/radio-group"
 import {
+	PhoneNumberInput,
+	type PhoneCountry,
+	type PhoneValue,
+} from "/src/layouts/components/phone-number-input"
+import {
 	Form,
 	FormControl,
 	FormDescription,
@@ -37,13 +41,15 @@ import {
 } from "/src/layouts/components/ui/popover"
 import {
     unionCardSchema,
+    type UnionCardFormValues,
     type UnionCardInput
 } from "/src/schemas/card.ts"
 
 type DepartmentOption = {
     value: string;
     label: string;
-    subfield: string | null;
+    subfieldLabel: string | null;
+    subfieldHelpText: string | null;
 };
 
 type CardProps = {
@@ -55,10 +61,44 @@ export function Card({depts} : CardProps) {
 	const [submissionSuccess, setSubmissionSuccess] = React.useState(false);
 	const [isSubmitting, setIsSubmitting] = React.useState(false);
 	const [userFirstName, setUserFirstName] = React.useState('');
+	const [selectedPhoneCountry, setSelectedPhoneCountry] = React.useState<PhoneCountry | undefined>("US");
 	const welcomeRef = React.useRef<HTMLDivElement>(null);
-	const form = useForm<UnionCardInput>({
-		resolver: zodResolver(unionCardSchema),
+	const formSchema = React.useMemo(
+		() => unionCardSchema.superRefine((data, ctx) => {
+			const department = depts.find((dept) => dept.value === data.dept);
+			if (department?.subfieldLabel?.trim() && !data.subfield) {
+				ctx.addIssue({
+					code: "custom",
+					message: `${department.subfieldLabel.trim()} is required.`,
+					path: ["subfield"],
+				});
+			}
+
+			const additionalDepartment = depts.find(
+				(dept) => dept.value === data.additionalDept
+			);
+			if (
+				additionalDepartment?.subfieldLabel?.trim() &&
+				!data.additionalSubfield
+			) {
+				ctx.addIssue({
+					code: "custom",
+					message: `${additionalDepartment.subfieldLabel.trim()} is required.`,
+					path: ["additionalSubfield"],
+				});
+			}
+		}),
+		[depts]
+	);
+	const form = useForm<UnionCardFormValues, unknown, UnionCardInput>({
+		resolver: zodResolver(formSchema),
 		defaultValues: {
+            firstName: "",
+            lastName: "",
+            userID: "",
+            email: "",
+            phone: "",
+            year: "",
             teaching: false,
             textOK: true,
             getInvolved: false,
@@ -71,6 +111,25 @@ export function Card({depts} : CardProps) {
 		name: "dept",
 	})
 
+    const selectedDepartment = React.useMemo(
+        () => depts.find((dept) => dept.value === selectedDept),
+        [depts, selectedDept]
+    )
+
+    const selectedSubfieldLabel =
+        selectedDepartment?.subfieldLabel?.trim() ||
+        (selectedDept === "other" ? "Other department" : undefined);
+    const selectedSubfieldHelpText =
+        selectedDepartment?.subfieldHelpText?.trim() ||
+        (selectedDept === "other" ? "Please specify your department." : undefined);
+
+    React.useEffect(() => {
+        form.setValue("subfield", undefined, {
+            shouldValidate: true,
+            shouldDirty: true,
+        });
+    }, [selectedDept, form]);
+
     const additionalDeptOptions = 
         React.useMemo(() => depts.filter(
             (dept) => dept.value !== selectedDept
@@ -80,6 +139,27 @@ export function Card({depts} : CardProps) {
         control: form.control,
         name: "additionalDept",
     });
+
+    const selectedAdditionalDepartment = React.useMemo(
+        () => depts.find((dept) => dept.value === selectedAdditionalDept),
+        [depts, selectedAdditionalDept]
+    );
+
+    const selectedAdditionalSubfieldLabel =
+        selectedAdditionalDepartment?.subfieldLabel?.trim() ||
+        (selectedAdditionalDept === "other" ? "Other department" : undefined);
+    const selectedAdditionalSubfieldHelpText =
+        selectedAdditionalDepartment?.subfieldHelpText?.trim() ||
+        (selectedAdditionalDept === "other"
+            ? "Please specify your additional department."
+            : undefined);
+
+    React.useEffect(() => {
+        form.setValue("additionalSubfield", undefined, {
+            shouldValidate: true,
+            shouldDirty: true,
+        });
+    }, [selectedAdditionalDept, form]);
 
     const selectedContract = useWatch({
         control: form.control,
@@ -115,6 +195,10 @@ export function Card({depts} : CardProps) {
                 shouldValidate: true,
                 shouldDirty: true,
             });
+            form.setValue("additionalSubfield", undefined, {
+                shouldValidate: true,
+                shouldDirty: true,
+            });
         }
     }, [selectedDept, form]);
 
@@ -122,7 +206,14 @@ export function Card({depts} : CardProps) {
 		try {
             setSubmissionError(null);
 			setIsSubmitting(true);
-			const { data, error} = await actions.unionCard(form_data); 
+			const storedPhone =
+				selectedPhoneCountry === "US"
+					? form_data.phone.replace(/^\+1/, "")
+					: form_data.phone;
+			const { data, error} = await actions.unionCard({
+				...form_data,
+				phone: storedPhone,
+			}); 
 			if (error || !data?.success) {
                 setSubmissionError("We couldn't submit your card. Please try again.");
                 return;
@@ -214,26 +305,34 @@ export function Card({depts} : CardProps) {
 						</FormItem>
 					)}
 				/>
-				<div>
-				<FormField
-					control={form.control}
-					name="phone"
-					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">US Phone Number</FormLabel>
-							<FormControl>
-								<Input type="tel" autoComplete="tel" placeholder="Phone Number" {...field} />
-							</FormControl>
-							<FormMessage className="m-0" />
-						</FormItem>
-					)}
-				/>
+				<div className="basis-full">
+					<FormField
+						control={form.control}
+						name="phone"
+						render={({ field }) => (
+							<FormItem className="w-2/3 min-w-2xs max-w-full">
+								<FormLabel className="font-headline-serif text-2xl">Phone Number</FormLabel>
+								<FormControl>
+									<PhoneNumberInput
+										defaultCountry="US"
+										placeholder="Enter phone number"
+										limitMaxLength
+										{...field}
+										value={(field.value || undefined) as PhoneValue | undefined}
+										onChange={(value) => field.onChange(value ?? "")}
+										onCountryChange={setSelectedPhoneCountry}
+									/>
+								</FormControl>
+								<FormMessage className="m-0" />
+							</FormItem>
+						)}
+					/>
 
 					<FormField
 						control={form.control}
 						name="textOK"
 						render={({ field }) => (
-							<FormItem className="basis-2/3 min-w-2xs flex mt-4 px-1 items-center">
+						<FormItem className="basis-full min-w-2xs flex mt-4 px-1 items-center">
 								<FormControl>
 									<Checkbox
 										className="cursor-pointer"
@@ -260,112 +359,114 @@ export function Card({depts} : CardProps) {
 							<FormDescription className="my-0">
 								What department are you enrolled in? Select "Other" if you don't see it.
 							</FormDescription>
-							<Popover open={open} onOpenChange={setOpen}>
-								<PopoverTrigger asChild>
-									<FormControl>
+								<div className="flex flex-wrap items-center justify-between gap-4">
+									<Popover open={open} onOpenChange={setOpen}>
+										<PopoverTrigger asChild>
+											<FormControl>
+												<Button
+													variant="outline"
+	                                            type="button"
+													role="combobox"
+													aria-expanded={open}
+													tabIndex={0} 
+													className={cn(
+														"min-w-[250px] max-w-fit justify-between bg-white",
+														!field.value && "text-muted-foreground"
+													)}
+												>
+													{field.value
+														? depts.find(
+																(dept) => dept.value === field.value
+															)?.label
+														: "Select Department"}
+													<ChevronsUpDown className="opacity-50" />
+												</Button>
+											</FormControl>
+										</PopoverTrigger>
+										<PopoverContent className="min-w-[250px] max-w-fit p-0">
+											<Command>
+												<CommandInput
+													placeholder="Search Departments..."
+													className="h-9"
+												/>
+												<CommandList>
+													<CommandEmpty>No departments found.</CommandEmpty>
+													<CommandGroup>
+														{depts.map((dept) => (
+															<CommandItem
+																value={dept.label}
+																key={dept.value}
+																onSelect={() => {
+																	field.onChange(dept.value)
+																	setOpen(false)
+																}}
+																className="text-card-foreground"
+															>
+																{dept.label}
+																<Check
+																	className={cn(
+																		"ml-auto",
+																		"text-card-foreground",
+																		dept.value === field.value
+																			? "opacity-100"
+																			: "opacity-0"
+																	)}
+																/>
+															</CommandItem>
+														))}
+													</CommandGroup>
+												</CommandList>
+											</Command>
+										</PopoverContent>
+									</Popover>
+									{!showAdditionalDept && (
 										<Button
+											type="button"
 											variant="outline"
-                                            type="button"
-											role="combobox"
-											aria-expanded={open}
-											tabIndex={0} 
-											className={cn(
-												"min-w-[250px] max-w-fit justify-between bg-white",
-												!field.value && "text-muted-foreground"
-											)}
+											className="ml-auto shrink-0"
+											onClick={() => setShowAdditionalDept(true)}
 										>
-											{field.value
-												? depts.find(
-														(dept) => dept.value === field.value
-													)?.label
-												: "Select Department"}
-											<ChevronsUpDown className="opacity-50" />
+											+ Add another department
 										</Button>
-									</FormControl>
-								</PopoverTrigger>
-								<PopoverContent className="min-w-[250px] max-w-fit p-0">
-									<Command>
-										<CommandInput
-											placeholder="Search Departments..."
-											className="h-9"
-										/>
-										<CommandList>
-											<CommandEmpty>No departments found.</CommandEmpty>
-											<CommandGroup>
-												{depts.map((dept) => (
-													<CommandItem
-														value={dept.label}
-														key={dept.value}
-														onSelect={() => {
-															field.onChange(dept.value)
-															setOpen(false)
-														}}
-														className="text-card-foreground"
-													>
-														{dept.label}
-														<Check
-															className={cn(
-																"ml-auto",
-																"text-card-foreground",
-																dept.value === field.value
-																	? "opacity-100"
-																	: "opacity-0"
-															)}
-														/>
-													</CommandItem>
-												))}
-											</CommandGroup>
-										</CommandList>
-									</Command>
-								</PopoverContent>
-							</Popover>
+									)}
+								</div>
 							<FormMessage className="m-0" />
 						</FormItem>
 					)}
 				/>
 			
-				{selectedDept === "other" && (
-					<FormField
-						control={form.control}
-						name="otherDept"
-						render={({ field }) => (
-							<FormItem className="basis-2/3 min-w-2xs">
-								<FormLabel className="font-headline-serif text-2xl">Specify Other Department</FormLabel>
-								<FormControl>
-									<Input placeholder="What Department are you in?" {...field} />
-								</FormControl>
-								<FormMessage className="m-0" />
-							</FormItem>
-						)}
-					/>
-				)}
-				
-				<FormField
-					control={form.control}
-					name="subfield"
-					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Subfield or Lab<span className="text-current/40">(Optional)</span></FormLabel>
-							<FormDescription className="my-0">
-							 For example, your lab if you are in the sciences, or whether you are in literature or linguistics in the languages.
-							</FormDescription>
-							<FormControl>
-								<Input placeholder="Subfield" {...field} />
-							</FormControl>
-							<FormMessage className="m-0" />
-						</FormItem>
-					)}
-				/>
-                {!showAdditionalDept ? (
-                    <Button
-                        type="button"
-                        variant="outline"
-                        onClick={() => setShowAdditionalDept(true)}
-                    >
-                        + Add another department
-                    </Button>
-                    ) : (
-                    <div className="basis-full flex flex-wrap justify-between items-start gap-8">
+					{selectedSubfieldLabel && (
+                    <FormField
+                        control={form.control}
+                        name="subfield"
+                        render={({ field }) => (
+                        <FormItem className="basis-2/3 min-w-2xs">
+	                            <FormLabel className="font-headline-serif text-2xl">
+	                            {selectedSubfieldLabel}
+                            </FormLabel>
+
+	                            {selectedSubfieldHelpText && (
+	                            <FormDescription className="my-0">
+	                                {selectedSubfieldHelpText}
+                            </FormDescription>
+                            )}
+
+                            <FormControl>
+	                            <Input
+	                                placeholder={`Enter ${selectedSubfieldLabel.toLowerCase()}`}
+	                                aria-required="true"
+	                                {...field}
+	                                value={field.value ?? ""}
+	                            />
+                            </FormControl>
+
+                            <FormMessage className="m-0" />
+                        </FormItem>
+                        )}
+                    />
+                )}
+	                {showAdditionalDept && (
+	                    <div className="basis-full flex flex-wrap justify-between items-start gap-8">
                         <FormField
                         control={form.control}
                         name="additionalDept"
@@ -375,10 +476,11 @@ export function Card({depts} : CardProps) {
                                 Additional Department
                             </FormLabel>
 
-                            <Popover
-                                open={additionalDeptOpen}
-                                onOpenChange={setAdditionalDeptOpen}
-                            >
+	                            <div className="flex flex-wrap items-center justify-between gap-4">
+	                            <Popover
+	                                open={additionalDeptOpen}
+	                                onOpenChange={setAdditionalDeptOpen}
+	                            >
                                 <PopoverTrigger asChild>
                                 <FormControl>
                                     <Button
@@ -437,39 +539,54 @@ export function Card({depts} : CardProps) {
                                     </CommandList>
                                 </Command>
                                 </PopoverContent>
-                            </Popover>
+	                            </Popover>
 
-                            <FormMessage />
-                            </FormItem>
+	                            <Button
+	                            type="button"
+	                            variant="outline"
+	                            className="ml-auto shrink-0"
+	                            onClick={() => {
+	                                form.setValue("additionalDept", undefined);
+	                                form.setValue("additionalSubfield", undefined);
+	                                setShowAdditionalDept(false);
+	                            }}
+	                            >
+	                            Remove additional department
+	                            </Button>
+	                            </div>
+
+	                            <FormMessage />
+	                            </FormItem>
                         )}
                         />
 
-                        <Button
-                        type="button"
-                        variant="outline"
-                        className="shrink-0"
-                        onClick={() => {
-                            form.setValue("additionalDept", undefined);
-                            form.setValue("additionalOtherDept", undefined);
-                            setShowAdditionalDept(false);
-                        }}
-                        >
-                        Remove additional department
-                        </Button>
+	                        {selectedAdditionalSubfieldLabel && (
+	                            <FormField
+	                                control={form.control}
+	                                name="additionalSubfield"
+	                                render={({ field }) => (
+	                                    <FormItem className="basis-2/3 min-w-2xs">
+	                                        <FormLabel className="font-headline-serif text-2xl">
+	                                            {selectedAdditionalSubfieldLabel}
+	                                        </FormLabel>
 
-                        {selectedAdditionalDept === "other" && (
-                            <FormField
-                                control={form.control}
-                                name="additionalOtherDept"
-                                render={({ field }) => (
-                                    <FormItem className="basis-2/3 min-w-2xs">
-                                        <FormLabel className="font-headline-serif text-2xl">Specify Other Department</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="What Department are you in?" {...field} />
-                                        </FormControl>
+	                                        {selectedAdditionalSubfieldHelpText && (
+	                                            <FormDescription className="my-0">
+	                                                {selectedAdditionalSubfieldHelpText}
+	                                            </FormDescription>
+	                                        )}
+
+	                                        <FormControl>
+	                                            <Input
+	                                                placeholder={`Enter ${selectedAdditionalSubfieldLabel.toLowerCase()}`}
+	                                                aria-required="true"
+	                                                {...field}
+	                                                value={field.value ?? ""}
+	                                            />
+	                                        </FormControl>
                                         <FormMessage className="m-0" />
                                     </FormItem>
-                                )}
+	                    )}
                             />
                         )}
                     </div>
@@ -544,21 +661,6 @@ export function Card({depts} : CardProps) {
                                     )}
                                 />
                             )}
-							<FormMessage className="m-0" />
-						</FormItem>
-					)}
-				/>
-
-				<FormField
-					control={form.control}
-					name="location"
-					render={({ field }) => (
-						<FormItem className="basis-2/3 min-w-2xs">
-							<FormLabel className="font-headline-serif text-2xl">Office Building/Room Number <span className="text-current/40">(Optional)</span></FormLabel>
-							<FormControl>
-								<Input placeholder="Wells 113" {...field} />
-							</FormControl>
-							<FormDescription className="m-0">What building/room is your office or lab, if you have one?</FormDescription>
 							<FormMessage className="m-0" />
 						</FormItem>
 					)}

@@ -7,8 +7,9 @@ import { Card } from '/src/layouts/components/card';
 const depts = await db.select({
   value: Departments.deptCode, 
   label: Departments.deptName,
-  subfield: Departments.subDept,
-}).from(Departments);
+  subfieldLabel: Departments.subfieldLabel,
+  subfieldHelpText: Departments.subfieldHelpText
+}).from(Departments).orderBy(Departments.deptName);
 
 ---
 

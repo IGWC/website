@@ -76,7 +76,7 @@ export async function GET({ props, url }: APIContext) {
     }
     body += `\n\n${footerPiece.body}`;
     }
-  }
+  
 
   // --- FIX APPLIED HERE ---
   // Process all images inside the aggregated markdown body before compiling

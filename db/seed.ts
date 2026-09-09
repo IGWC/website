@@ -6,12 +6,12 @@ export default async function seed() {
     { deptCode: "HIST", deptName: "History" },
     { deptCode: "PHIL", deptName: "Philosophy" },
     { deptCode: "MATH", deptName: "Mathematics" },
-    { deptCode: "CS", deptName: "Computer Science" },
+    { deptCode: "CSCI", deptName: "Computer Science" },
     { deptCode: "BIO", deptName: "Biology" },
-    { deptCode: "CHEM", deptName: "Chemistry" },
+    { deptCode: "CHEM", deptName: "Chemistry", subfieldLabel: "Research group", subfieldHelpText: "Which research group are you a part of?" },
     { deptCode: "PHYS", deptName: "Physics" },
     { deptCode: "ENG", deptName: "English" },
-    { deptCode: "other", deptName: "Other" },
+    { deptCode: "other", deptName: "Other", subfieldLabel: "Other department", subfieldHelpText: "Please specify your department." },
   ]);
 	await db.insert(IGWCSubmissions).values([
     {

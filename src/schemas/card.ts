@@ -1,6 +1,15 @@
 import { z } from "astro/zod";
+import { isPossiblePhoneNumber } from "react-phone-number-input";
 
-const currentYear = new Date().getFullYear();
+function isAcceptedPhoneNumber(value: string): boolean {
+    const normalized = value.trim();
+
+    if (/^\d{10}$/.test(normalized)) {
+        return isPossiblePhoneNumber(`+1${normalized}`);
+    }
+
+    return /^\+[1-9]\d{6,14}$/.test(normalized) && isPossiblePhoneNumber(normalized);
+}
 
 export const unionCardSchema = z.object({
     firstName: z.string().trim().min(1, { message: "First name is required." }).max(100, { message: "First name must be at most 100 characters." }),
@@ -11,37 +20,63 @@ export const unionCardSchema = z.object({
     userID: z.string().trim().toLowerCase().transform(value =>
         value.replace(/(@iu\.edu|@indiana\.edu)$/i, "")
     ).pipe(
-        z.string().min(3, { message: "User ID must be at least 3 characters." }).max(8, { message: "User ID must be at most 8 characters." })
+        z.string()
+            .min(3, { message: "User ID must be at least 3 characters." })
+            .max(8, { message: "User ID must be at most 8 characters." })
+            .regex(/^[a-z0-9]+$/, { message: "User ID may contain only letters and numbers." })
     ),
     email: z.string()
             .trim()
+            .max(254, { message: "Email address must be at most 254 characters." })
             .pipe(
                 z.email({
                     message: "Please enter a valid email address.",
                 })
             ).refine(
                 (email) => {
-                    const domain = email.split("@")[1].toLowerCase();
-
+                    const domain = email.split("@")[1]?.toLowerCase() ?? "";
                     const blockedDomains = [
                         "iu.edu",
                         "indiana.edu",
                     ];
 
-                    return !blockedDomains.includes(domain);
+                    return !blockedDomains.some(
+                        (blockedDomain) =>
+                            domain === blockedDomain || domain.endsWith(`.${blockedDomain}`)
+                    );
                 },
                 {
                     message: "Please use a non-IU email address.",
                 }
             ),
-    phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }).trim(),
+    phone: z.string()
+        .trim()
+        .min(1, { message: "Phone number is required." })
+        .max(16, { message: "Phone number is too long." })
+        .refine(isAcceptedPhoneNumber, {
+            message: "Please enter a valid phone number.",
+        }),
     textOK: z.boolean().default(true).optional(),
 
-    dept: z.string().min(3, { message: "Please select a department." }),
-    otherDept: z.string().optional(),
-    subfield: z.string().optional(),
-    additionalDept: z.string().optional(),
-    additionalOtherDept: z.string().optional(),
+    dept: z.string()
+        .trim()
+        .min(1, { message: "Please select a department." })
+        .max(100, { message: "Department code must be at most 100 characters." }),
+    subfield: z.string()
+        .trim()
+        .max(150, { message: "Subfield must be at most 150 characters." })
+        .transform((value) => value || undefined)
+        .optional(),
+    additionalDept: z.string()
+        .trim()
+        .max(100, { message: "Department code must be at most 100 characters." })
+        .transform((value) => value || undefined)
+        .optional(),
+    additionalSubfield: z.string()
+        .trim()
+        .max(150, { message: "Additional subfield must be at most 150 characters." })
+        .transform((value) => value || undefined)
+        .optional(),
     card: z.boolean().default(true),
     contract: z.enum([
         "saa",
@@ -50,7 +85,6 @@ export const unionCardSchema = z.object({
         "none",
     ]),
     teaching: z.boolean().default(false),
-    location: z.string().optional(),
     year: z
         .string()
         .trim()
@@ -58,24 +92,24 @@ export const unionCardSchema = z.object({
         .refine(
             (value) => {
                 const year = Number(value);
-                return year >= 2000 && year <= currentYear;
+                return year >= 2000 && year <= new Date().getFullYear();
             },
             { message: "Year must be between 2000 and the current year." }
         ),
     getInvolved: z.boolean().default(false).optional(),
 }).superRefine((data, ctx) => {
-    if (data.dept === "other" && (!data.otherDept || data.otherDept.trim() === "")) {
+    if (data.dept === "other" && !data.subfield) {
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
             message: "Please specify your department.",
-            path: ["otherDept"],
+            path: ["subfield"],
         });
     }
-    if (data.additionalDept === "other" && (!data.additionalOtherDept || data.additionalOtherDept.trim() === "")) {
+    if (data.additionalDept === "other" && !data.additionalSubfield) {
         ctx.addIssue({
             code: z.ZodIssueCode.custom,
             message: "Please specify your additional department.",
-            path: ["additionalOtherDept"],
+            path: ["additionalSubfield"],
         });
     }
     if (data.additionalDept && data.additionalDept === data.dept) {
@@ -87,4 +121,5 @@ export const unionCardSchema = z.object({
     }
 });
 
-export type UnionCardInput = z.infer<typeof unionCardSchema>;
+export type UnionCardFormValues = z.input<typeof unionCardSchema>;
+export type UnionCardInput = z.output<typeof unionCardSchema>;
