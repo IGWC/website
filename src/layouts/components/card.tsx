@@ -260,7 +260,7 @@ export function Card({depts} : CardProps) {
 							<FormControl>
 								<Input autoComplete="given-name" placeholder="Preferred First Name" {...field} />
 							</FormControl>
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -273,7 +273,7 @@ export function Card({depts} : CardProps) {
 							<FormControl>
 								<Input autoComplete="family-name" placeholder="Last Name" {...field} />
 							</FormControl>
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -287,7 +287,7 @@ export function Card({depts} : CardProps) {
 							<FormControl>
 								<Input placeholder="IU Username" {...field} />
 							</FormControl>
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -301,7 +301,7 @@ export function Card({depts} : CardProps) {
 							<FormControl>
 								<Input type="email" autoComplete="email" placeholder="Non-IU Email" {...field} />
 							</FormControl>
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -323,7 +323,7 @@ export function Card({depts} : CardProps) {
 										onCountryChange={setSelectedPhoneCountry}
 									/>
 								</FormControl>
-								<FormMessage className="m-0" />
+								<FormMessage />
 							</FormItem>
 						)}
 					/>
@@ -356,7 +356,7 @@ export function Card({depts} : CardProps) {
 					render={({ field }) => (
 						<FormItem className="basis-full flex flex-col min-w-2xs">
 							<FormLabel className="font-headline-serif text-2xl">Department</FormLabel>
-							<FormDescription className="my-0">
+							<FormDescription>
 								What department are you enrolled in? Select "Other" if you don't see it.
 							</FormDescription>
 								<div className="flex flex-wrap items-center justify-between gap-4">
@@ -430,7 +430,7 @@ export function Card({depts} : CardProps) {
 										</Button>
 									)}
 								</div>
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -446,7 +446,7 @@ export function Card({depts} : CardProps) {
                             </FormLabel>
 
 	                            {selectedSubfieldHelpText && (
-	                            <FormDescription className="my-0">
+	                            <FormDescription>
 	                                {selectedSubfieldHelpText}
                             </FormDescription>
                             )}
@@ -460,7 +460,7 @@ export function Card({depts} : CardProps) {
 	                            />
                             </FormControl>
 
-                            <FormMessage className="m-0" />
+                            <FormMessage />
                         </FormItem>
                         )}
                     />
@@ -571,7 +571,7 @@ export function Card({depts} : CardProps) {
 	                                        </FormLabel>
 
 	                                        {selectedAdditionalSubfieldHelpText && (
-	                                            <FormDescription className="my-0">
+	                                            <FormDescription>
 	                                                {selectedAdditionalSubfieldHelpText}
 	                                            </FormDescription>
 	                                        )}
@@ -584,7 +584,7 @@ export function Card({depts} : CardProps) {
 	                                                value={field.value ?? ""}
 	                                            />
 	                                        </FormControl>
-                                        <FormMessage className="m-0" />
+                                        <FormMessage />
                                     </FormItem>
 	                    )}
                             />
@@ -596,9 +596,9 @@ export function Card({depts} : CardProps) {
 					control={form.control}
 					name="contract"
 					render={({ field }) => (
-						<FormItem className="space-y-3 basis-full">
+						<FormItem className="basis-full">
 							<FormLabel className="font-headline-serif text-2xl">What contract type are you on?</FormLabel>
-                            <FormDescription className="my-0">
+                            <FormDescription>
                                 IGWC represents graduate workers on SAA contracts and graduate workers working hourly, but all graduate workers gain from better benefits and working conditions. Fellowship amounts are often tied to SAA pay. 
 							</FormDescription>
 							<FormControl>
@@ -661,7 +661,7 @@ export function Card({depts} : CardProps) {
                                     )}
                                 />
                             )}
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -672,6 +672,7 @@ export function Card({depts} : CardProps) {
 					render={({ field }) => (
 						<FormItem className="basis-2/3 min-w-2xs">
 							<FormLabel className="font-headline-serif text-2xl">Year Entered</FormLabel>
+							<FormDescription>What year did you enter your program at IU?</FormDescription>
 							<FormControl>
 								<Input 
                                     type="number"
@@ -680,10 +681,9 @@ export function Card({depts} : CardProps) {
                                     max={new Date().getFullYear()}
                                     step={1}
                                     placeholder="Year" {...field} 
-                                />
+								/>
 							</FormControl>
-							<FormDescription className="m-0">What year did you enter your program at IU?</FormDescription>
-							<FormMessage className="m-0" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -702,8 +702,8 @@ export function Card({depts} : CardProps) {
 								/>
 							</FormControl>
 							<FormLabel className="font-headline-serif text-2xl">Get Involved!</FormLabel>
-							<FormDescription className="basis-full m-0">Our goal is to sign up a majority of graduate workers on union cards.<br/> Would you be willing to help sign up grad workers in your department?</FormDescription>
-							<FormMessage className="m-0" />
+							<FormDescription className="basis-full">Our goal is to sign up a majority of graduate workers on union cards.<br/> Would you be willing to help sign up grad workers in your department?</FormDescription>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>

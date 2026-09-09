@@ -1,6 +1,70 @@
 import { ActionError, defineAction, isActionError } from "astro:actions";
-import { db, IGWCSubmissions, Departments, eq } from "astro:db";
+import { db, IGWC, IGWCSubmissions, Departments, eq } from "astro:db";
+import { getSecret } from "astro:env/server";
 import { unionCardSchema } from "../schemas/card";
+import type { UnionCardInput } from "../schemas/card";
+
+function toLegacySubmission(
+  input: UnionCardInput,
+  subfield: string | undefined,
+  additionalDept: string | undefined,
+  additionalSubfield: string | undefined,
+) {
+  const isOtherDepartment = input.dept === "other";
+  const isOtherAdditionalDepartment = additionalDept === "other";
+
+  const legacyContract =
+    input.contract === "saa" && input.teaching
+      ? "saa-instructional"
+      : input.contract;
+
+  return {
+    userID: input.userID,
+    firstName: input.firstName,
+    lastName: input.lastName,
+    email: input.email,
+    phone: input.phone,
+    textOK: input.textOK ?? true,
+
+    otherDept: isOtherDepartment ? subfield ?? null : null,
+    dept: input.dept,
+    subfield: isOtherDepartment ? null : subfield ?? null,
+
+    card: true,
+    contract: legacyContract,
+    location: null,
+    year: input.year,
+    getInvolved: input.getInvolved ?? false,
+    additionalDept: additionalDept ?? null,
+    additionalOtherDept: isOtherAdditionalDepartment
+      ? additionalSubfield ?? null
+      : null,
+    organizer: null,
+  };
+}
+
+type LegacySubmission = ReturnType<typeof toLegacySubmission>;
+
+async function sendLegacySubmissionToGoogleSheet(
+  submission: LegacySubmission,
+) {
+  const googleScriptUrl = getSecret("GOOGLE_SHEETS_WEBHOOK_URL");
+
+  if (!googleScriptUrl) {
+    throw new Error("GOOGLE_SHEETS_WEBHOOK_URL is not configured.");
+  }
+
+  const response = await fetch(googleScriptUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(submission),
+    signal: AbortSignal.timeout(10_000),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Google Sheets request failed with HTTP ${response.status}.`);
+  }
+}
 
 const findDepartment = async (deptCode: string) => {
   const [department] = await db.select({
@@ -111,6 +175,39 @@ export const server = {
           "Stored submission:",
           submission.submissionID
         );
+
+        const legacyRow = toLegacySubmission(
+          input,
+          subfield,
+          additionalDepartment?.deptCode,
+          additionalSubfield,
+        );
+        const { userID: _userID, ...legacyUpdate } = legacyRow;
+
+        const compatibilityResults = await Promise.allSettled([
+          db
+            .insert(IGWC)
+            .values(legacyRow)
+            .onConflictDoUpdate({
+              target: IGWC.userID,
+              set: legacyUpdate,
+            }),
+          sendLegacySubmissionToGoogleSheet(legacyRow),
+        ]);
+
+        const compatibilityDestinations = ["legacy-database", "google-sheet"];
+        compatibilityResults.forEach((result, index) => {
+          if (result.status === "rejected") {
+            console.error("Compatibility write failed:", {
+              submissionID: submission.submissionID,
+              destination: compatibilityDestinations[index],
+              type:
+                result.reason instanceof Error
+                  ? result.reason.name
+                  : "UnknownError",
+            });
+          }
+        });
 
         return { success: true };
       } catch (error) {

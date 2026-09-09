@@ -10,6 +10,7 @@ services:
     environment:
       ASTRO_DB_REMOTE_URL: ${ASTRO_DB_REMOTE_URL:?ASTRO_DB_REMOTE_URL is required}
       ASTRO_DB_APP_TOKEN: ${ASTRO_DB_APP_TOKEN:?ASTRO_DB_APP_TOKEN is required}
+      GOOGLE_SHEETS_WEBHOOK_URL: ${GOOGLE_SHEETS_WEBHOOK_URL:?GOOGLE_SHEETS_WEBHOOK_URL is required}
 
     ports:
       - ":4324"
