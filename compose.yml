@@ -1,10 +1,21 @@
 services:
   astro-website:
-    build: .
+    build:
+      context: .
+      args:
+        ASTRO_DB_REMOTE_URL: ${ASTRO_DB_REMOTE_URL:?ASTRO_DB_REMOTE_URL is required}
+
     container_name: igwc-website
+
+    environment:
+      ASTRO_DB_REMOTE_URL: ${ASTRO_DB_REMOTE_URL:?ASTRO_DB_REMOTE_URL is required}
+      ASTRO_DB_APP_TOKEN: ${ASTRO_DB_APP_TOKEN:?ASTRO_DB_APP_TOKEN is required}
+
     ports:
-      - ":4324" 
+      - ":4324"
+
     restart: unless-stopped
+
     networks:
       - proxy
 
