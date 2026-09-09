@@ -4,7 +4,7 @@
 
 **Goal:** Deliver new website submissions to both the legacy card sheet and the new Sheets database, including department dashboard refreshes and term-specific SAA status.
 
-**Architecture:** Use saved Turso submissions as the durable delivery source. One Node process polls ordered rows with independent persistent cursors for the two destinations; a versioned Apps Script request reuses the existing authenticated card receiver. Retry the same submission ID, signing timestamp and assigned term.
+**Architecture:** Use saved Turso submissions as the durable delivery source. The existing handler owns legacy delivery. One Node process polls ordered rows with a persistent cursor for the new destination; a versioned Apps Script request reuses the existing authenticated card receiver. Retry the same submission ID, signing timestamp and assigned term.
 
 **Tech Stack:** Existing Astro/Drizzle, Node filesystem/fetch/test, existing Apps Script TypeScript/Vitest.
 
@@ -22,12 +22,12 @@
 
 **Files:** `src/actions/card-delivery.mjs`, `src/actions/card-delivery.test.mjs`, `src/actions/index.ts`, `src/middleware.ts`, `compose.yml`, `docs/card-delivery.md`, `.env.card-delivery.example`, `package.json`.
 
-**Interfaces:** `createCardDelivery({loadSubmissions, directory, afterId, term, legacyUrl, backendUrl, websiteToken, fetch?, log?})` returns `{drain, start}`. `loadSubmissions(afterId, limit)` returns saved rows in ascending ID order. Version 2 POST sends the saved row fields plus `schemaVersion: 2`, `term`, `action: 'recordCard'`, and the dedicated token; dates are ISO UTC and absent optional strings become null.
+**Interfaces:** `createCardDelivery({loadSubmissions, directory, afterId, term, backendUrl, websiteToken, fetch?, log?})` returns `{drain, start}`. `loadSubmissions(afterId, limit)` returns saved rows in ascending ID order. Version 2 POST sends the saved row fields plus `schemaVersion: 2`, `term`, `action: 'recordCard'`, and the dedicated token; dates are ISO UTC and absent optional strings become null.
 
-- [x] Add Node tests for two-destination delivery, retry/restart without duplicates, invalid response handling, retained rejections, stable timestamp/term, and explicit migration cutoff. Example assertion: `assert.deepEqual(deliveries.map(x => x.submissionID), [1311, 1312])` after loading rows above 1310.
+- [x] Add Node tests for new-database-only delivery, retry/restart without duplicates, invalid response handling, retained rejections, stable timestamp/term, and explicit migration cutoff. Example assertion: `assert.deepEqual(deliveries.map(x => x.submissionID), [1311, 1312])` after loading rows above 1310.
 - [x] Run `node --test src/actions/card-delivery.test.mjs` and confirm the unimplemented helper fails.
-- [x] Implement the helper with an atomic fsynced checkpoint containing cursors and rejected IDs, not member data. Isolate destination failures. Keep Turso success independent of Sheets delivery; start polling on server initialization and kick after insert.
-- [x] Add private runtime environment configuration and a persistent directory mount; document activation, term changes, retries, and the legacy endpoint's unavoidable duplicate risk after a lost acknowledgement.
+- [x] Implement the helper with an atomic fsynced checkpoint containing a cursor and rejected IDs, not member data. Preserve the existing legacy delivery and keep new-database failures independent. Keep Turso success independent of Sheets delivery; start polling on server initialization and kick after insert.
+- [x] Add private runtime environment configuration and a persistent directory mount; document activation, term changes, retries, and the unchanged best-effort legacy delivery.
 - [x] Run `node --test src/actions/card-delivery.test.mjs` and `ASTRO_TELEMETRY_DISABLED=1 ASTRO_DATABASE_FILE=file:/tmp/igwc-website-local.db npx astro build` (local DB only), then commit the focused website change.
 
 ### Task 2: Sheets receiver
@@ -47,6 +47,4 @@
 - [x] Prepare the website change for review with build/test results and the backend-first activation order.
 - [ ] Ask for server activation approval only after the implementation is concrete and reviewable.
 
-Verification: website Node tests pass (6). Local Astro build passes using a temporary SQLite database. Built-server smoke check passes: GET /card initializes polling, a local action saves one synthetic native row, both mocked endpoints receive the saved ID/date and expected v2 fields, and logs exclude credentials/contact details. Sender review found no important issues; its old-queue handoff clarification was incorporated.
-
-Integrated review is complete. The companion receiver passes lint/typecheck, 81 Node tests, 833 Vitest tests, and both builds. Review caught and fixed same-second submission ordering after organizer edits and tightened international phone validation. Scoped re-review is clean. Website draft PR: https://github.com/IGWC/website/pull/2. Server activation remains pending approval because merging to main triggers deployment.
+Verification: rebased onto current main e169c81. The existing legacy Sheet helper, legacy Turso upsert, form, and schema are unchanged relative to that base. Six Node tests and the local Astro build pass. A built-server smoke test verifies one native insert, one legacy upsert, exactly one existing legacy POST and one new-database POST, and saved signing ID/date preservation. The companion receiver passes lint/typecheck, 81 Node tests, 833 Vitest tests, and both builds. Draft PR: https://github.com/IGWC/website/pull/2. Website activation remains pending approval because merging to main triggers deployment.

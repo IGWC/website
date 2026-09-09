@@ -17,7 +17,6 @@ const cardDelivery = (() => {
       afterId: process.env.IGWC_CARD_SYNC_AFTER_ID?.trim()
         ? Number(process.env.IGWC_CARD_SYNC_AFTER_ID) : undefined,
       term: process.env.IGWC_CARD_TERM,
-      legacyUrl: process.env.IGWC_CARD_LEGACY_URL,
       backendUrl: process.env.IGWC_CARD_BACKEND_URL,
       websiteToken: process.env.IGWC_CARD_WEBSITE_TOKEN,
     });
