@@ -1,15 +1,4 @@
 import { z } from "astro/zod";
-import { isPossiblePhoneNumber } from "react-phone-number-input";
-
-function isAcceptedPhoneNumber(value: string): boolean {
-    const normalized = value.trim();
-
-    if (/^\d{10}$/.test(normalized)) {
-        return isPossiblePhoneNumber(`+1${normalized}`);
-    }
-
-    return /^\+[1-9]\d{6,14}$/.test(normalized) && isPossiblePhoneNumber(normalized);
-}
 
 export const unionCardSchema = z.object({
     firstName: z.string().trim().min(1, { message: "First name is required." }).max(100, { message: "First name must be at most 100 characters." }),
@@ -49,13 +38,8 @@ export const unionCardSchema = z.object({
                     message: "Please use a non-IU email address.",
                 }
             ),
-    phone: z.string()
-        .trim()
-        .min(1, { message: "Phone number is required." })
-        .max(16, { message: "Phone number is too long." })
-        .refine(isAcceptedPhoneNumber, {
-            message: "Please enter a valid phone number.",
-        }),
+    phone: z.string().min(10, { message: "Phone number must be at least 10 digits." }).regex(/^\d{10}$/, { message: "Phone number must contain only digits." }).trim(),
+
     textOK: z.boolean().default(true).optional(),
 
     dept: z.string()
