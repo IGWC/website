@@ -17,6 +17,4 @@ To cover these fees, IGWC matched [contributions to the Emergency Mutual Aid Fun
 
 Want to help improve working conditions and pay for graduate workers? Talk to your Department Organizer or join our Organizing Committee Meetings every Wednesday at 5pm at Canterbury House ([719 E 7th St](https://maps.app.goo.gl/dDqFqpeWJxWSW4Fk6))! 
 
-::: centered  
-**United We Bargain, Divided We Beg.**  
-:::
+**United We Bargain, Divided We Beg.**
