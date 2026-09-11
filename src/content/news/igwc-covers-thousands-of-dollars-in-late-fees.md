@@ -13,7 +13,7 @@ By our estimate, IU's decision to schedule the first payday after September 1st 
 
 To cover these fees, IGWC matched [contributions to the Emergency Mutual Aid Fund](https://indianagradworkers.org/aid) using our operating budget from [Voluntary Dues](https://indianagradworkers.org/dues). These dues not only keep the organization strong, but allow IGWC to directly support members when the situation arises. If you value the work IGWC does to fight for a living wage and collective bargaining but don't have time to organize, dues are a great way ensure that fight can continue. 
 
-[https://indianagradworkers.org/dues](https://indianagradworkers.org/dues)  
+[Contribute Voluntary Dues](https://indianagradworkers.org/dues)  
 
 Want to help improve working conditions and pay for graduate workers? Talk to your Department Organizer or join our Organizing Committee Meetings every Wednesday at 5pm at Canterbury House ([719 E 7th St](https://maps.app.goo.gl/dDqFqpeWJxWSW4Fk6))! 
 
