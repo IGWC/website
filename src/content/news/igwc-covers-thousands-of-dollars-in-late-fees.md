@@ -7,7 +7,7 @@ description: By our estimate, IU's decision to schedule the first payday after
 date: 2026-09-11
 listserv: igwc-ue-news-l
 ---
-By our estimate, IU's decision to schedule the first payday after September 1st collectively cost graduate workers nearly $23,000—almost a year's pay—in late fees alone. Graduate workers who had carefully budgeted trips home were forced to borrow money from friends and family when they realized there would be no paycheck in August. One graduate worker told us that their lease terms meant they were just 1 day away from the start of the eviction process. When IU pays so far below the living wage, even minor disruptions have devastating impacts. A living wage isn't optional. 
+By our estimate, IU's decision to schedule the first payday after September 1st collectively cost graduate workers nearly $23,000—almost a year's pay—in late fees alone. Graduate workers who had carefully budgeted trips home were forced to borrow money from friends and family when they realized there would be no paycheck in August. One graduate worker told us that their lease terms meant they were a single day away from the start of the eviction process. When IU pays so far below the living wage, even minor disruptions have devastating impacts. A living wage isn't optional. 
 
 **Thanks to the solidarity between graduate students and supporters, every graduate worker who requested aid received it.** IGWC was able to fully cover late fees for the majority graduate workers who requested aid. For the remaining graduate workers, IGWC was able to cover on average more than half of their expenses. 
 
